@@ -1,0 +1,47 @@
+/* 
+#exampleadpopup,#examplehighscorepopup, #examplerewardad{
+  position: absolute;
+  z-index: 100000;
+  width:300px;
+  height:275px;
+  border: 2px solid #000;
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 50%);
+  left: calc(50% - 150px);
+  top: calc(50% - 137px);
+  cursor: pointer;
+  background: transparent url(test-ad-1.png) 0 0 no-repeat;
+  background-size: 300px 275px;
+  color:#000;
+}
+
+#exampleawardpopup{
+  position: absolute;
+  z-index: 100000;
+  width:300px;
+  height:100px;
+  border: 2px solid #000;
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 50%);
+  left: 15px;
+  top: 15px;
+  color:#000;
+  cursor: pointer;
+  background: transparent url(achievement-test.png) 0 0 no-repeat;
+  background-size: 300px 100px;
+  color:#000;
+}
+#exampleawardpopup p{margin:40px 0 0 80px;}
+
+#examplehighscorepopup{
+  background: transparent url(high-score-test.png) 0 0 no-repeat;
+  background-size: 300px 275px;
+  right:15px;top:15px;left:auto;
+}
+#examplehighscorepopup p{
+  margin: 180px 0 0 0;
+  text-align: center;
+}
+
+#examplerewardad{
+  background: transparent url(test-reward-ad.png) 0 0 no-repeat;
+  background-size: 300px 275px;
+} */

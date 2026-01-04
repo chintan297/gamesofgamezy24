@@ -1,0 +1,53 @@
+/* Make the whole page center everything */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa; /* optional light background */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Make canvas responsive */
+canvas {
+  background: #000;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 600px; /* keeps it from stretching too much */
+  height: auto; /* keeps aspect ratio */
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* buttons wrap on small screens */
+  margin-top: 15px;
+}
+
+.btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+.control {
+  text-align: center;
+  margin-top: 10px;
+}

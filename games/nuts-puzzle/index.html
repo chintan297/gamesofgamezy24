@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Nuts Puzzle: Sort By Color Game</title>
+    <link rel="stylesheet" href="TemplateData/style.css" />
+  </head>
+  <body class="dark">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loading-cover" style="display: none">
+      <div id="unity-loading-bar">
+        <div id="unity-progress-bar-empty" style="display: none">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/Link and Color Pictures .loader.js";
+      const config = {
+        dataUrl: buildUrl + "/cbaa5915e1c67450e255fba270db7838.data.br",
+        frameworkUrl: buildUrl + "/6ff84e9af86f4894cf498d96c9f55549.js.br",
+        codeUrl: buildUrl + "/d7722e902987ac5755f926f64b4af3ab.wasm.br",
+        streamingAssetsUrl: "",
+        companyName: "Nuts Puzzle: Sort By Color",
+        productName: "Nuts Puzzle",
+        productVersion: "1.0",
+      };
+
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingCover = document.querySelector("#loading-cover");
+      const progressBarEmpty = document.querySelector(
+        "#unity-progress-bar-empty"
+      );
+      const progressBarFull = document.querySelector(
+        "#unity-progress-bar-full"
+      );
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      }
+
+      loadingCover.style.display = "";
+
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = function () {
+        createUnityInstance(canvas, config, function (progress) {
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        })
+          .then(function (unityInstance) {
+            window.unityInstance = unityInstance;
+
+            loadingCover.style.display = "none";
+          })
+          .catch(function (message) {
+            alert(message);
+          });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+
+  <script>
+    config.devicePixelRatio = 1;
+  </script>
+</html>
