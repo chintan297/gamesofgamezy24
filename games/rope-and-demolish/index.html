@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<title>Rope and Demolish</title>
+<link rel="stylesheet" href="TemplateData/style.css"/>
+<!-- GamePush SDK REMOVED - Contains ads and analytics -->
+<!-- <script src="TemplateData/gamepush-unity.js"></script> -->
+<script type="text/javascript" src="./Web Audio Plugin/howler.min.js"></script>
+<script type="text/javascript" src="./Web Audio Plugin/WebAudio.js"></script>
+<style>
+  canvas:focus {
+    outline: none;
+  }
+  
+  html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    height: 100%;
+  }
+</style>
+</head>
+<body class="dark">
+<div id="unity-container" class="unity-desktop">
+  <canvas id="unity-canvas"></canvas>
+</div>
+<div id="loading-cover" style="display:none;">
+  <div id="unity-loading-bar">
+    <div id="unity-logo"><img src="logo.png"/></div>
+    <div id="unity-progress-bar-empty" style="display: none;">
+      <div id="unity-progress-bar-full"></div>
+    </div>
+    <div class="spinner"></div>
+  </div>
+</div>
+<script>
+  const buildUrl = "Build";
+  const loaderUrl = buildUrl + "/BUILD_ROPE.loader.js";
+  const config = {
+    dataUrl: buildUrl + "/BUILD_ROPE.data.unityweb",
+    frameworkUrl: buildUrl + "/BUILD_ROPE.framework.js.unityweb",
+    codeUrl: buildUrl + "/BUILD_ROPE.wasm.unityweb",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "Eccentric Games",
+    productName: "Rope and Demolish",
+    productVersion: "0.1",
+  };
+
+  const container = document.querySelector("#unity-container");
+  const canvas = document.querySelector("#unity-canvas");
+  const loadingCover = document.querySelector("#loading-cover");
+  const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+  const progressBarFull = document.querySelector("#unity-progress-bar-full");
+  const spinner = document.querySelector('.spinner');
+
+  // Detect mobile devices
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+    container.className = "unity-mobile";
+  }
+
+  // Disable right-click context menu
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  loadingCover.style.display = "";
+
+  const unityLoader = document.createElement("script");
+  unityLoader.src = loaderUrl;
+  unityLoader.onload = async () => {
+    createUnityInstance(canvas, config, (progress) => {
+      spinner.style.display = "none";
+      progressBarEmpty.style.display = "";
+      progressBarFull.style.width = `${100 * progress}%`;
+    }).then((unityInstance) => {
+      window.unityInstance = unityInstance;
+      loadingCover.style.display = "none";
+      console.log("Game loaded successfully - No ads active");
+    }).catch((message) => {
+      console.warn("Unity loading error:", message);
+    });
+  };
+  document.body.appendChild(unityLoader);
+
+  // Focus game on interaction
+  document.addEventListener("pointerdown", () => {
+    container.focus();
+    window.focus();
+    canvas.focus();
+  });
+
+  // Create stub for GamePush functions if game expects them
+  window.gp = window.gp || {
+    ads: {
+      showFullscreen: () => console.log("Ads disabled"),
+      showRewarded: () => console.log("Rewarded ads disabled"),
+      showPreloader: () => console.log("Preloader ads disabled"),
+      showSticky: () => console.log("Sticky ads disabled"),
+      closeSticky: () => console.log("Sticky ads disabled"),
+    },
+    player: {
+      ready: true,
+      isLoggedIn: false,
+      get: () => ({ id: "guest", name: "Guest" }),
+    },
+    analytics: {
+      hit: () => console.log("Analytics disabled"),
+    },
+    getProjectId: () => "local",
+    isReady: true,
+  };
+
+  console.log("GamePush SDK disabled - Game running in standalone mode");
+</script>
+</body>
+</html>

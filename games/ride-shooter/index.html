@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!--OTP version 1.2-->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ride Shooter</title>
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <script src="./game.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="unity-container"
+      class="unity-desktop"
+      style="width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"
+    >
+      <canvas
+        id="unity-canvas"
+        style="width: 100%; height: 100%; cursor: default"
+      ></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Lock Scaling/Zooming
+      document.getElementsByTagName("head")[0].innerHTML +=
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">';
+      document.getElementsByTagName("head")[0].innerHTML +=
+        '<meta name="HandheldFriendly" content="true" />';
+
+      document.addEventListener("gesturestart", function (e) {
+        e.preventDefault();
+      });
+
+      document.addEventListener("gesturechange", function (e) {
+        e.preventDefault();
+      });
+      document.addEventListener("gestureend", function (e) {
+        e.preventDefault();
+      });
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/cb920d8b733cd23ce4a70d099980f02d.js";
+      var config = {
+        dataUrl: buildUrl + "/b1164a5e7e0552df1a2c290194ce9a34.data.unityweb",
+        frameworkUrl:
+          buildUrl + "/315901082814fc94993c5d81e808f686.js.unityweb",
+        codeUrl: buildUrl + "/5d5ae57b90115bf5c01927662dff7b19.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Dorfer",
+        productName: "Ride Shooter",
+        productVersion: "1.1.9",
+      };
+
+      //Mobile
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content =
+          "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+        document.getElementsByTagName("head")[0].appendChild(meta);
+
+        container.className = "unity-mobile";
+
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+
+        //Resize window when chage orentation
+        window.addEventListener("orientationchange", (event) => {
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+        });
+      }
+      //PC
+      else {
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+      }
+
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        })
+          .then((unityInstance) => {
+            loadingBar.style.display = "none";
+          })
+          .catch((message) => {
+            console.warn(message);
+          });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
