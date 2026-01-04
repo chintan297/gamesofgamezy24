@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'Doctor Soos Bold';
+	src: url('fonts/Doctor Soos Bold 2.1.eot');
+	src: local('☺'), url('fonts/Doctor Soos Bold 2.1.woff') format('woff'), url('fonts/Doctor Soos Bold 2.1.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+body {    
+	font-family: 'Digital2';
+}.fontLoader {    
+	position: absolute;    
+	left: -1000px;
+}

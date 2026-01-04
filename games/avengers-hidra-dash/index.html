@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Avengers: Hydra Dash Game</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+
+    <!-- Game Libraries -->
+    <script src="libs/pixi/pixi.min.js"></script>
+    <script src="libs/pixi/pixi-particles.min.js"></script>
+    <script src="libs/pixi/pixi-ext.js"></script>
+    <script src="libs/pixi/pixi-spine.js"></script>
+    <script src="libs/signals.min.js"></script>
+    <script src="libs/greensock/easepack.js"></script>
+    <script src="libs/greensock/tweenmax.min.js"></script>
+    <script src="libs/howler.min.js"></script>
+    <script src="libs/bowser/bowser.min.js"></script>
+    <script src="libs/poly2tri.min.js"></script>
+    <script src="libs/md5.min.js"></script>
+    <script src="libs/jquery-3.2.1.min.js"></script>
+    <script src="libs/screenfull.min.js"></script>
+    <script src="libs/p3.min.js"></script>
+
+    <!-- Game bundle -->
+    <script src="bin/bundle.min.js"></script>
+    <script src="game_html_headScripts.js"></script>
+  </head>
+
+  <body>
+    <script>
+      window.og = {};
+      window.og.gameDir = "";
+      window.og.language = "en";
+      window.og.mode = "game";
+
+      var main = new Main(1024, 768, window.og.language);
+      main.init();
+    </script>
+  </body>
+</html>
