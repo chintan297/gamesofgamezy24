@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SquadTower</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Construct Metadata -->
+    <meta name="generator" content="Scirra Construct" />
+    <meta name="author" content="gamerkzstan@gmail.com" />
+    <meta name="description" content="Squad Game Tower Defense" />
+
+    <link rel="manifest" href="appmanifest.json" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
+    <link rel="icon" type="image/png" href="icons/icon-512.png" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+      // Warning for local file preview
+      if (location.protocol.startsWith("file")) {
+        alert(
+          "Web exports won't work until you upload them. Browsers block features when using the file:// protocol."
+        );
+      }
+    </script>
+
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">
+          Please enable JavaScript to play this game.
+        </p>
+      </div>
+    </noscript>
+
+    <!-- Only necessary runtime scripts (no ads, no tracking, no SDKs) -->
+    <script src="scripts/supportcheck.js"></script>
+    <script src="scripts/offlineclient.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/register-sw.js" type="module"></script>
+  </body>
+</html>

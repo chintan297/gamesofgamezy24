@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:00a3f183380568a020990235cc7abd63:a375f4081c043c7d4b9126b4f1620fcc:8fbd6d55108a049adbf37bfd1fe0d45c$ -->
+<TextureAtlas imagePath="group_1.png" width="1024" height="512">
+    <SubTexture name="clouds_0_background" x="354" y="4" width="554" height="80" frameX="-15" frameY="0" frameWidth="600" frameHeight="80"/>
+    <SubTexture name="clouds_1_background" x="354" y="90" width="513" height="48" frameX="0" frameY="0" frameWidth="544" frameHeight="48"/>
+    <SubTexture name="fog_background_0" x="868" y="208" width="40" height="10"/>
+    <SubTexture name="fog_background_1" x="814" y="144" width="49" height="22"/>
+    <SubTexture name="fog_background_2" x="814" y="172" width="49" height="22"/>
+    <SubTexture name="graveyard_0_background" x="354" y="144" width="384" height="64"/>
+    <SubTexture name="graveyard_1_background" x="873" y="90" width="16" height="16"/>
+    <SubTexture name="graveyard_tree_0" x="914" y="4" width="72" height="96"/>
+    <SubTexture name="graveyard_tree_1" x="814" y="200" width="48" height="96"/>
+    <SubTexture name="graveyard_tree_2" x="911" y="106" width="64" height="96"/>
+    <SubTexture name="jungle_background_0" x="4" y="4" width="344" height="137"/>
+    <SubTexture name="jungle_background_1" x="354" y="214" width="288" height="32"/>
+    <SubTexture name="jungle_background_2" x="873" y="112" width="16" height="16"/>
+    <SubTexture name="jungle_background_3" x="4" y="147" width="344" height="137"/>
+    <SubTexture name="jungle_background_4" x="354" y="252" width="288" height="32"/>
+    <SubTexture name="jungle_background_5" x="873" y="134" width="16" height="16"/>
+    <SubTexture name="jungle_background_6" x="4" y="302" width="287" height="9" frameX="0" frameY="0" frameWidth="288" frameHeight="9"/>
+    <SubTexture name="jungle_background_7" x="992" y="23" width="18" height="48"/>
+    <SubTexture name="jungle_background_8" x="4" y="317" width="287" height="9" frameX="0" frameY="0" frameWidth="288" frameHeight="9"/>
+    <SubTexture name="jungle_background_9" x="992" y="77" width="18" height="48"/>
+    <SubTexture name="moon_background" x="744" y="144" width="64" height="64"/>
+    <SubTexture name="sea_0_background" x="981" y="131" width="16" height="16"/>
+    <SubTexture name="sea_1_background" x="1016" y="23" width="3" height="1"/>
+    <SubTexture name="sea_2_background" x="992" y="4" width="23" height="13"/>
+    <SubTexture name="sea_3_background" x="895" y="102" width="10" height="5"/>
+    <SubTexture name="sea_4_background" x="895" y="90" width="12" height="6"/>
+    <SubTexture name="sky_0_background" x="1003" y="131" width="16" height="16"/>
+    <SubTexture name="sky_1_background" x="981" y="153" width="16" height="16"/>
+    <SubTexture name="sky_2_background" x="1003" y="153" width="16" height="16"/>
+</TextureAtlas>
