@@ -1,0 +1,553 @@
+{
+  "name": "Level 1",
+  "position": [
+    0,
+    0,
+    0
+  ],
+  "eulerAngles": [
+    0,
+    0,
+    0
+  ],
+  "scale": [
+    1,
+    1,
+    1
+  ],
+  "exportEntity": false,
+  "children": [
+    {
+      "name": "model_road_001",
+      "position": [
+        0,
+        0,
+        -11.962499618530273
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_001",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_002",
+      "position": [
+        0,
+        0,
+        -11.978699684143066
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_002",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_003",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_003",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_002",
+      "position": [
+        0,
+        -6.519899845123291,
+        85.67780303955078
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_002",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_002",
+      "position": [
+        0,
+        -6.519899845123291,
+        73.68270111083984
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_002",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_002",
+      "position": [
+        0,
+        -6.519899845123291,
+        61.73400115966797
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_002",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_001",
+      "position": [
+        0,
+        -6.525300025939941,
+        97.66510009765625
+      ],
+      "eulerAngles": [
+        180,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_001",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_road_014",
+      "position": [
+        0,
+        -3.2711000442504883,
+        46.16640090942383
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_014",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_finish_001",
+      "position": [
+        0,
+        -6.384200096130371,
+        102.31880187988281
+      ],
+      "eulerAngles": [
+        180,
+        0,
+        180
+      ],
+      "scale": [
+        1.2000000476837158,
+        1.2000000476837158,
+        1.2000000476837158
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_finish_001",
+      "materials": [
+        "mat_gate_001",
+        "mat_gate_001_teleport"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        0.5774999856948853,
+        29.38599967956543
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        0.5774999856948853,
+        34.30780029296875
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        0.5778999924659729,
+        37.49420166015625
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        0.3000999987125397,
+        40.90299987792969
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        -5.337399959564209,
+        89.25430297851562
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_coin_001",
+      "position": [
+        0,
+        -5.337399959564209,
+        92.16639709472656
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_coin_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_box_obstacle_001",
+      "position": [
+        -0.7932000160217285,
+        -5.4679999351501465,
+        85.27880096435547
+      ],
+      "eulerAngles": [
+        0,
+        -24.316200256347656,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_box_obstacle_001",
+      "materials": [
+        "mat_box_obstacle_001"
+      ]
+    },
+    {
+      "name": "collectable_ball",
+      "position": [
+        0,
+        -5.94920015335083,
+        80.82779693603516
+      ],
+      "eulerAngles": [
+        0,
+        45,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_platform_life_bonus_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "collectable_key",
+      "position": [
+        0,
+        0.578000009059906,
+        3.672600030899048
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_key_001",
+      "materials": [
+        "mat_items_001",
+        "mat_items_001"
+      ]
+    },
+    {
+      "name": "model_road_013",
+      "position": [
+        0,
+        0,
+        35.95289993286133
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_road_013",
+      "materials": [
+        "mat_road_001"
+      ]
+    },
+    {
+      "name": "model_obstacle",
+      "position": [
+        0,
+        0,
+        -10.712800025939941
+      ],
+      "eulerAngles": [
+        180,
+        0,
+        180
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [
+        {
+          "name": "model_barrier_001",
+          "position": [
+            0,
+            1.7896000146865845,
+            -0.015799999237060547
+          ],
+          "eulerAngles": [
+            180,
+            0,
+            180
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "exportEntity": true,
+          "children": [],
+          "model": "model_barrier_001",
+          "materials": [
+            "mat_gate_001"
+          ]
+        }
+      ],
+      "model": "model_finish_001",
+      "materials": [
+        "mat_gate_001",
+        "mat_gate_001_teleport"
+      ]
+    },
+    {
+      "name": "model_obstacle_hammerhead_001",
+      "position": [
+        0,
+        4.553299903869629,
+        34.888301849365234
+      ],
+      "eulerAngles": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "exportEntity": true,
+      "children": [],
+      "model": "model_obstacle_hammerhead_001",
+      "materials": [
+        "mat_items_001"
+      ]
+    }
+  ]
+}

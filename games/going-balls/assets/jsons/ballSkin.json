@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ball_001",
+    "model": "model_ball_001",
+    "price": 0,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_001",
+        "emissiveMap": "tex_ball_001_emissive"
+      }
+    ]
+  },
+  {
+    "name": "ball_002",
+    "model": "model_ball_002",
+    "price": 200,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_002",
+        "emissiveMap": "tex_ball_002"
+      }
+    ]
+  },
+  {
+    "name": "ball_003",
+    "model": "model_ball_003",
+    "price": 500,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_003",
+        "emissiveMap": "tex_ball_003"
+      }
+    ]
+  },
+  {
+    "name": "ball_004",
+    "model": "model_ball_004",
+    "price": 1000,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_004",
+        "emissiveMap": "tex_ball_004"
+      }
+    ]
+  },
+  {
+    "name": "ball_006",
+    "model": "model_ball_006",
+    "price": 2000,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_006",
+        "emissiveMap": "tex_ball_006"
+      }
+    ]
+  },
+  {
+    "name": "ball_005",
+    "model": "model_ball_005",
+    "price": 4000,
+    "materials": [
+      {
+        "emissiveIntensity": 1,
+        "diffuseMap": "tex_ball_005",
+        "emissiveMap": "tex_ball_005"
+      }
+    ]
+  }
+]
