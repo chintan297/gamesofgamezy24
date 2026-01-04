@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+    <title>Moto X3M Pool Party</title>
+  </head>
+
+  <body>
+    <div id="content"></div>
+    <div id="orientation"></div>
+    <div id="loader">Loading ...</div>
+
+    <!-- ============================
+       Disable/Stub Ad SDKs (no-op)
+       ============================ -->
+    <script type="text/javascript">
+      // Global flag you can check elsewhere in your game
+      window.DISABLE_ADS = true;
+
+      // Provide a safe SDK_OPTIONS so game can still read it
+      window.SDK_OPTIONS = {
+        gameId: "mim4uot21hygwai6uek2u1t2ovb3lkzd",
+        disableAds: true,
+        onEvent: function (event) {
+          // no-op: prevent ad-related event handling from throwing
+          // if you want to handle certain events, do it here
+          // console.log("SDK_OPTIONS onEvent stub:", event);
+        },
+      };
+
+      // Stub Google IMA namespace (prevents errors if game tries to call the IMA API)
+      window.google = window.google || {};
+      window.google.ima =
+        window.google.ima ||
+        (function () {
+          function noop() {}
+          function Stub() {}
+          Stub.prototype.addEventListener = noop;
+          Stub.prototype.getSettings = function () {
+            return {};
+          };
+          // Provide constructors used by ad code (AdDisplayContainer, AdsLoader, AdsManager)
+          return {
+            AdDisplayContainer: function () {
+              // pretend display container
+              this.initialize = noop;
+            },
+            AdsLoader: function () {
+              // ads loader stub
+              this.addEventListener = noop;
+              this.requestAds = noop;
+              this.contentComplete = noop;
+            },
+            AdsManager: function () {
+              // ads manager stub
+              this.init = noop;
+              this.start = noop;
+              this.destroy = noop;
+              this.addEventListener = noop;
+            },
+            // In case code expects enums or classes
+            AdsRequest: function () {
+              return {};
+            },
+            CompanionAds: Stub,
+            CompanionAdSlot: Stub,
+          };
+        })();
+
+      // Stub for AdSense style global (if any ad code uses it)
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push =
+        window.adsbygoogle.push ||
+        function () {
+          /* no-op */
+        };
+
+      // If your code uses document.write for ad tags (rare), block it while game loads
+      (function () {
+        var _docWrite = document.write;
+        document.write = function () {
+          /* no-op to avoid ad injection */
+        };
+        // restore after a tick if desired (optional)
+        setTimeout(function () {
+          document.write = _docWrite;
+        }, 2000);
+      })();
+    </script>
+
+    <!--
+    NOTE: I removed:
+      - https://imasdk.googleapis.com/js/sdkloader/ima3.js
+      - gamemonetize SDK injection
+
+    If your game still displays ads after this, the ad logic may be embedded in motox3m5.min.js itself
+    (server-driven or internal). In that case you must edit the game file to remove or bypass ad calls.
+  -->
+
+    <!-- Game libraries (kept) -->
+    <script type="text/javascript" src="assets/lib/nape.min.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/lib/jquery-3.1.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/lib/easeljs-0.8.2.combined.js"
+    ></script>
+    <script type="text/javascript" src="assets/lib/bluebird.min.js"></script>
+    <script type="text/javascript" src="assets/lib/phaser.min.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/lib/phaser-cachebuster.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/lib/phaser-super-storage.min.js"
+    ></script>
+    <script type="text/javascript" src="assets/lib/dragonBones.min.js"></script>
+
+    <!-- Main game (kept) -->
+    <script
+      type="text/javascript"
+      src="motox3m5.min.js?82fd5975ca48711170f8"
+    ></script>
+  </body>
+</html>
