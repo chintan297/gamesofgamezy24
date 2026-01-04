@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<script
+  data-game-files='["index.html","game.json","js/game.js","css/normalize.css","css/style.css","assets/lang.xml","assets/music/game.mp3","assets/music/game.ogg","assets/music/mec1.mp3","assets/music/mec1.ogg","assets/music/mec2.mp3","assets/music/mec2.ogg","assets/music/mec3.mp3","assets/music/mec3.ogg","assets/music/medal.mp3","assets/music/medal.ogg","assets/music/menu.mp3","assets/music/menu.ogg","assets/music/pistol1.mp3","assets/music/pistol1.ogg","assets/music/pistol2.mp3","assets/music/pistol2.ogg","assets/music/pistol3.mp3","assets/music/pistol3.ogg","assets/music/ruky1.mp3","assets/music/ruky1.ogg","assets/music/ruky2.mp3","assets/music/ruky2.ogg","assets/music/ruky3.mp3","assets/music/ruky3.ogg","assets/music/sekera1.mp3","assets/music/sekera1.ogg","assets/music/sekera2.mp3","assets/music/sekera2.ogg","assets/music/sekera3.mp3","assets/music/sekera3.ogg","assets/music/TH-RIP1.mp3","assets/music/TH-RIP1.ogg","assets/music/TH-RIP3.mp3","assets/music/TH-RIP3.ogg","assets/music/TH-RIP4.mp3","assets/music/TH-RIP4.ogg","assets/img/background_01.png","assets/img/background_02.png","assets/img/background_03.png","assets/img/dialogove_okno.png","assets/img/dialogove_okno2.png","assets/img/efekt_hrob_01.png","assets/img/efekt_hrob_02.png","assets/img/efekt_hrob_03.png","assets/img/fajka.png","assets/img/flags.png","assets/img/font_01.png","assets/img/font_02.png","assets/img/font_cisla_01.png","assets/img/font_cisla_velke_01.png","assets/img/hero_beatrix.png","assets/img/hero_beatrix_menu.png","assets/img/hero_k.png","assets/img/hero_k_menu.png","assets/img/hero_logan.png","assets/img/hero_logan_menu.png","assets/img/hero_michael.png","assets/img/hero_michael_menu.png","assets/img/hrob_01.png","assets/img/hrob_02.png","assets/img/hrob_03.png","assets/img/konar_01.png","assets/img/konar_02.png","assets/img/konar_03.png","assets/img/konar_04.png","assets/img/konar_05.png","assets/img/konar_06.png","assets/img/krizik.png","assets/img/logo_inlogic.png","assets/img/medaila_01.png","assets/img/medaila_02.png","assets/img/medaila_03.png","assets/img/medaila_04.png","assets/img/More_Games600x253_onWhite.png","assets/img/pauza.png","assets/img/pen_01.png","assets/img/pen_02.png","assets/img/pen_03.png","assets/img/rotate_screen.png","assets/img/sipka_tutorial_01.png","assets/img/sipka_tutorial_02.png","assets/img/sipky_01.png","assets/img/sipky_02.png","assets/img/spet.png","assets/img/stvorcek_fajka_01.png","assets/img/tien_hra_01.png","assets/img/tien_hra_02.png","assets/img/tien_hra_03.png","assets/img/tien_menu.png","assets/img/title_01.png","assets/img/tlacidlo.png","assets/img/void.png","assets/img/vypnut.png","assets/img/wood_01.png","assets/img/wood_02.png","assets/img/wood_03.png","assets/img/zrusit.png","assets/fnt/OFL.txt","assets/fnt/VT323-Regular.ttf","assets/favicon/icon-144x144.png","assets/favicon/icon-36x36.png","assets/favicon/icon-48x48.png","assets/favicon/icon-72x72.png","assets/favicon/icon-96x96.png"]'
+  nonce="7IgFPQ36MXN3msmuvcd_Zw"
+>
+  (function () {
+    "use strict";
+    var aa =
+        typeof Object.create == "function"
+          ? Object.create
+          : function (a) {
+              function b() {}
+              b.prototype = a;
+              return new b();
+            },
+      n =
+        typeof Object.defineProperties == "function"
+          ? Object.defineProperty
+          : function (a, b, c) {
+              if (a == Array.prototype || a == Object.prototype) return a;
+              a[b] = c.value;
+              return a;
+            };
+    function ba(a) {
+      a = [
+        "object" == typeof globalThis && globalThis,
+        a,
+        "object" == typeof window && window,
+        "object" == typeof self && self,
+        "object" == typeof global && global,
+      ];
+      for (var b = 0; b < a.length; ++b) {
+        var c = a[b];
+        if (c && c.Math == Math) return c;
+      }
+      throw Error("Cannot find global object");
+    }
+    var p = ba(this);
+    function q(a, b) {
+      if (b)
+        a: {
+          var c = p;
+          a = a.split(".");
+          for (var e = 0; e < a.length - 1; e++) {
+            var k = a[e];
+            if (!(k in c)) break a;
+            c = c[k];
+          }
+          a = a[a.length - 1];
+          e = c[a];
+          b = b(e);
+          b != e &&
+            b != null &&
+            n(c, a, { configurable: !0, writable: !0, value: b });
+        }
+    }
+    var t;
+    if (typeof Object.setPrototypeOf == "function") t = Object.setPrototypeOf;
+    else {
+      var v;
+      a: {
+        var ca = { a: !0 },
+          w = {};
+        try {
+          w.__proto__ = ca;
+          v = w.a;
+          break a;
+        } catch (a) {}
+        v = !1;
+      }
+      t = v
+        ? function (a, b) {
+            a.__proto__ = b;
+            if (a.__proto__ !== b)
+              throw new TypeError(a + " is not extensible");
+            return a;
+          }
+        : null;
+    }
+    var y = t;
+    function da(a) {
+      var b = 0;
+      return function () {
+        return b < a.length ? { done: !1, value: a[b++] } : { done: !0 };
+      };
+    }
+    function z(a) {
+      var b =
+        typeof Symbol != "undefined" && Symbol.iterator && a[Symbol.iterator];
+      if (b) return b.call(a);
+      if (typeof a.length == "number") return { next: da(a) };
+      throw Error(String(a) + " is not an iterable or ArrayLike");
+    }
+    function ea(a) {
+      return fa(a, a);
+    }
+    function fa(a, b) {
+      a.raw = b;
+      Object.freeze && (Object.freeze(a), Object.freeze(b));
+      return a;
+    }
+    function A(a, b) {
+      return Object.prototype.hasOwnProperty.call(a, b);
+    }
+    var ha =
+      typeof Object.assign == "function"
+        ? Object.assign
+        : function (a, b) {
+            if (a == null) throw new TypeError("No nullish arg");
+            a = Object(a);
+            for (var c = 1; c < arguments.length; c++) {
+              var e = arguments[c];
+              if (e) for (var k in e) A(e, k) && (a[k] = e[k]);
+            }
+            return a;
+          };
+    q("Object.assign", function (a) {
+      return a || ha;
+    });
+    function B() {
+      this.o = !1;
+      this.j = null;
+      this.h = void 0;
+      this.g = 1;
+      this.v = this.i = 0;
+      this.l = null;
+    }
+    function C(a) {
+      if (a.o) throw new TypeError("Generator is already running");
+      a.o = !0;
+    }
+    B.prototype.u = function (a) {
+      this.h = a;
+    };
+    function D(a, b) {
+      a.l = { B: b, J: !0 };
+      a.g = a.i || a.v;
+    }
+    B.prototype.return = function (a) {
+      this.l = { return: a };
+      this.g = this.v;
+    };
+    function E(a, b, c) {
+      a.g = c;
+      return { value: b };
+    }
+    function F(a) {
+      a.i = 0;
+      var b = a.l.B;
+      a.l = null;
+      return b;
+    }
+    function ia(a) {
+      this.g = new B();
+      this.h = a;
+    }
+    function ja(a, b) {
+      C(a.g);
+      var c = a.g.j;
+      if (c)
+        return G(
+          a,
+          "return" in c
+            ? c["return"]
+            : function (e) {
+                return { value: e, done: !0 };
+              },
+          b,
+          a.g.return
+        );
+      a.g.return(b);
+      return H(a);
+    }
+    function G(a, b, c, e) {
+      try {
+        var k = b.call(a.g.j, c);
+        if (!(k instanceof Object))
+          throw new TypeError("Iterator result " + k + " is not an object");
+        if (!k.done) return (a.g.o = !1), k;
+        var l = k.value;
+      } catch (f) {
+        return (a.g.j = null), D(a.g, f), H(a);
+      }
+      a.g.j = null;
+      e.call(a.g, l);
+      return H(a);
+    }
+    function H(a) {
+      for (; a.g.g; )
+        try {
+          var b = a.h(a.g);
+          if (b) return (a.g.o = !1), { value: b.value, done: !1 };
+        } catch (c) {
+          (a.g.h = void 0), D(a.g, c);
+        }
+      a.g.o = !1;
+      if (a.g.l) {
+        b = a.g.l;
+        a.g.l = null;
+        if (b.J) throw b.B;
+        return { value: b.return, done: !0 };
+      }
+      return { value: void 0, done: !0 };
+    }
+    function ka(a) {
+      this.next = function (b) {
+        C(a.g);
+        a.g.j ? (b = G(a, a.g.j.next, b, a.g.u)) : (a.g.u(b), (b = H(a)));
+        return b;
+      };
+      this.throw = function (b) {
+        C(a.g);
+        a.g.j ? (b = G(a, a.g.j["throw"], b, a.g.u)) : (D(a.g, b), (b = H(a)));
+        return b;
+      };
+      this.return = function (b) {
+        return ja(a, b);
+      };
+      this[Symbol.iterator] = function () {
+        return this;
+      };
+    }
+    function la(a) {
+      function b(e) {
+        return a.next(e);
+      }
+      function c(e) {
+        return a.throw(e);
+      }
+      return new Promise(function (e, k) {
+        function l(f) {
+          f.done ? e(f.value) : Promise.resolve(f.value).then(b, c).then(l, k);
+        }
+        l(a.next());
+      });
+    }
+    function I(a) {
+      return la(new ka(new ia(a)));
+    }
+    function ma() {
+      for (var a = Number(this), b = [], c = a; c < arguments.length; c++)
+        b[c - a] = arguments[c];
+      return b;
+    }
+    q("globalThis", function (a) {
+      return a || p;
+    });
+    q("Reflect.setPrototypeOf", function (a) {
+      return a
+        ? a
+        : y
+        ? function (b, c) {
+            try {
+              return y(b, c), !0;
+            } catch (e) {
+              return !1;
+            }
+          }
+        : null;
+    });
+    q("Symbol", function (a) {
+      function b(l) {
+        if (this instanceof b)
+          throw new TypeError("Symbol is not a constructor");
+        return new c(e + (l || "") + "_" + k++, l);
+      }
+      function c(l, f) {
+        this.g = l;
+        n(this, "description", { configurable: !0, writable: !0, value: f });
+      }
+      if (a) return a;
+      c.prototype.toString = function () {
+        return this.g;
+      };
+      var e = "jscomp_symbol_" + ((Math.random() * 1e9) >>> 0) + "_",
+        k = 0;
+      return b;
+    });
+    q("Symbol.iterator", function (a) {
+      if (a) return a;
+      a = Symbol("Symbol.iterator");
+      n(Array.prototype, a, {
+        configurable: !0,
+        writable: !0,
+        value: function () {
+          return na(da(this));
+        },
+      });
+      return a;
+    });
+    function na(a) {
+      a = { next: a };
+      a[Symbol.iterator] = function () {
+        return this;
+      };
+      return a;
+    }
+    q("Promise", function (a) {
+      function b(f) {
+        this.h = 0;
+        this.i = void 0;
+        this.g = [];
+        this.u = !1;
+        var d = this.j();
+        try {
+          f(d.resolve, d.reject);
+        } catch (g) {
+          d.reject(g);
+        }
+      }
+      function c() {
+        this.g = null;
+      }
+      function e(f) {
+        return f instanceof b
+          ? f
+          : new b(function (d) {
+              d(f);
+            });
+      }
+      if (a) return a;
+      c.prototype.h = function (f) {
+        if (this.g == null) {
+          this.g = [];
+          var d = this;
+          this.i(function () {
+            d.l();
+          });
+        }
+        this.g.push(f);
+      };
+      var k = p.setTimeout;
+      c.prototype.i = function (f) {
+        k(f, 0);
+      };
+      c.prototype.l = function () {
+        for (; this.g && this.g.length; ) {
+          var f = this.g;
+          this.g = [];
+          for (var d = 0; d < f.length; ++d) {
+            var g = f[d];
+            f[d] = null;
+            try {
+              g();
+            } catch (h) {
+              this.j(h);
+            }
+          }
+        }
+        this.g = null;
+      };
+      c.prototype.j = function (f) {
+        this.i(function () {
+          throw f;
+        });
+      };
+      b.prototype.j = function () {
+        function f(h) {
+          return function (m) {
+            g || ((g = !0), h.call(d, m));
+          };
+        }
+        var d = this,
+          g = !1;
+        return { resolve: f(this.F), reject: f(this.l) };
+      };
+      b.prototype.F = function (f) {
+        if (f === this)
+          this.l(new TypeError("A Promise cannot resolve to itself"));
+        else if (f instanceof b) this.H(f);
+        else {
+          a: switch (typeof f) {
+            case "object":
+              var d = f != null;
+              break a;
+            case "function":
+              d = !0;
+              break a;
+            default:
+              d = !1;
+          }
+          d ? this.D(f) : this.o(f);
+        }
+      };
+      b.prototype.D = function (f) {
+        var d = void 0;
+        try {
+          d = f.then;
+        } catch (g) {
+          this.l(g);
+          return;
+        }
+        typeof d == "function" ? this.I(d, f) : this.o(f);
+      };
+      b.prototype.l = function (f) {
+        this.v(2, f);
+      };
+      b.prototype.o = function (f) {
+        this.v(1, f);
+      };
+      b.prototype.v = function (f, d) {
+        if (this.h != 0)
+          throw Error(
+            "Cannot settle(" +
+              f +
+              ", " +
+              d +
+              "): Promise already settled in state" +
+              this.h
+          );
+        this.h = f;
+        this.i = d;
+        this.h === 2 && this.G();
+        this.K();
+      };
+      b.prototype.G = function () {
+        var f = this;
+        k(function () {
+          if (f.C()) {
+            var d = p.console;
+            typeof d !== "undefined" && d.error(f.i);
+          }
+        }, 1);
+      };
+      b.prototype.C = function () {
+        if (this.u) return !1;
+        var f = p.CustomEvent,
+          d = p.Event,
+          g = p.dispatchEvent;
+        if (typeof g === "undefined") return !0;
+        typeof f === "function"
+          ? (f = new f("unhandledrejection", { cancelable: !0 }))
+          : typeof d === "function"
+          ? (f = new d("unhandledrejection", { cancelable: !0 }))
+          : ((f = p.document.createEvent("CustomEvent")),
+            f.initCustomEvent("unhandledrejection", !1, !0, f));
+        f.promise = this;
+        f.reason = this.i;
+        return g(f);
+      };
+      b.prototype.K = function () {
+        if (this.g != null) {
+          for (var f = 0; f < this.g.length; ++f) l.h(this.g[f]);
+          this.g = null;
+        }
+      };
+      var l = new c();
+      b.prototype.H = function (f) {
+        var d = this.j();
+        f.A(d.resolve, d.reject);
+      };
+      b.prototype.I = function (f, d) {
+        var g = this.j();
+        try {
+          f.call(d, g.resolve, g.reject);
+        } catch (h) {
+          g.reject(h);
+        }
+      };
+      b.prototype.then = function (f, d) {
+        function g(u, x) {
+          return typeof u == "function"
+            ? function (P) {
+                try {
+                  h(u(P));
+                } catch (Q) {
+                  m(Q);
+                }
+              }
+            : x;
+        }
+        var h,
+          m,
+          r = new b(function (u, x) {
+            h = u;
+            m = x;
+          });
+        this.A(g(f, h), g(d, m));
+        return r;
+      };
+      b.prototype.catch = function (f) {
+        return this.then(void 0, f);
+      };
+      b.prototype.A = function (f, d) {
+        function g() {
+          switch (h.h) {
+            case 1:
+              f(h.i);
+              break;
+            case 2:
+              d(h.i);
+              break;
+            default:
+              throw Error("Unexpected state: " + h.h);
+          }
+        }
+        var h = this;
+        this.g == null ? l.h(g) : this.g.push(g);
+        this.u = !0;
+      };
+      b.resolve = e;
+      b.reject = function (f) {
+        return new b(function (d, g) {
+          g(f);
+        });
+      };
+      b.race = function (f) {
+        return new b(function (d, g) {
+          for (var h = z(f), m = h.next(); !m.done; m = h.next())
+            e(m.value).A(d, g);
+        });
+      };
+      b.all = function (f) {
+        var d = z(f),
+          g = d.next();
+        return g.done
+          ? e([])
+          : new b(function (h, m) {
+              function r(P) {
+                return function (Q) {
+                  u[P] = Q;
+                  x--;
+                  x == 0 && h(u);
+                };
+              }
+              var u = [],
+                x = 0;
+              do
+                u.push(void 0),
+                  x++,
+                  e(g.value).A(r(u.length - 1), m),
+                  (g = d.next());
+              while (!g.done);
+            });
+      };
+      return b;
+    });
+    q("Object.setPrototypeOf", function (a) {
+      return a || y;
+    });
+    q("WeakMap", function (a) {
+      function b(g) {
+        this.g = (d += Math.random() + 1).toString();
+        if (g) {
+          g = z(g);
+          for (var h; !(h = g.next()).done; )
+            (h = h.value), this.set(h[0], h[1]);
+        }
+      }
+      function c() {}
+      function e(g) {
+        var h = typeof g;
+        return (h === "object" && g !== null) || h === "function";
+      }
+      function k(g) {
+        if (!A(g, f)) {
+          var h = new c();
+          n(g, f, { value: h });
+        }
+      }
+      function l(g) {
+        var h = Object[g];
+        h &&
+          (Object[g] = function (m) {
+            if (m instanceof c) return m;
+            Object.isExtensible(m) && k(m);
+            return h(m);
+          });
+      }
+      if (
+        (function () {
+          if (!a || !Object.seal) return !1;
+          try {
+            var g = Object.seal({}),
+              h = Object.seal({}),
+              m = new a([
+                [g, 2],
+                [h, 3],
+              ]);
+            if (m.get(g) != 2 || m.get(h) != 3) return !1;
+            m.delete(g);
+            m.set(h, 4);
+            return !m.has(g) && m.get(h) == 4;
+          } catch (r) {
+            return !1;
+          }
+        })()
+      )
+        return a;
+      var f = "$jscomp_hidden_" + Math.random();
+      l("freeze");
+      l("preventExtensions");
+      l("seal");
+      var d = 0;
+      b.prototype.set = function (g, h) {
+        if (!e(g)) throw Error("Invalid WeakMap key");
+        k(g);
+        if (!A(g, f)) throw Error("WeakMap key fail: " + g);
+        g[f][this.g] = h;
+        return this;
+      };
+      b.prototype.get = function (g) {
+        return e(g) && A(g, f) ? g[f][this.g] : void 0;
+      };
+      b.prototype.has = function (g) {
+        return e(g) && A(g, f) && A(g[f], this.g);
+      };
+      b.prototype.delete = function (g) {
+        return e(g) && A(g, f) && A(g[f], this.g) ? delete g[f][this.g] : !1;
+      };
+      return b;
+    });
+    q("Map", function (a) {
+      function b() {
+        var d = {};
+        return (d.m = d.next = d.head = d);
+      }
+      function c(d, g) {
+        var h = d[1];
+        return na(function () {
+          if (h) {
+            for (; h.head != d[1]; ) h = h.m;
+            for (; h.next != h.head; )
+              return (h = h.next), { done: !1, value: g(h) };
+            h = null;
+          }
+          return { done: !0, value: void 0 };
+        });
+      }
+      function e(d, g) {
+        var h = g && typeof g;
+        h == "object" || h == "function"
+          ? l.has(g)
+            ? (h = l.get(g))
+            : ((h = "" + ++f), l.set(g, h))
+          : (h = "p_" + g);
+        var m = d[0][h];
+        if (m && A(d[0], h))
+          for (d = 0; d < m.length; d++) {
+            var r = m[d];
+            if ((g !== g && r.key !== r.key) || g === r.key)
+              return { id: h, list: m, index: d, entry: r };
+          }
+        return { id: h, list: m, index: -1, entry: void 0 };
+      }
+      function k(d) {
+        this[0] = {};
+        this[1] = b();
+        this.size = 0;
+        if (d) {
+          d = z(d);
+          for (var g; !(g = d.next()).done; )
+            (g = g.value), this.set(g[0], g[1]);
+        }
+      }
+      if (
+        (function () {
+          if (
+            !a ||
+            typeof a != "function" ||
+            !a.prototype.entries ||
+            typeof Object.seal != "function"
+          )
+            return !1;
+          try {
+            var d = Object.seal({ x: 4 }),
+              g = new a(z([[d, "s"]]));
+            if (
+              g.get(d) != "s" ||
+              g.size != 1 ||
+              g.get({ x: 4 }) ||
+              g.set({ x: 4 }, "t") != g ||
+              g.size != 2
+            )
+              return !1;
+            var h = g.entries(),
+              m = h.next();
+            if (m.done || m.value[0] != d || m.value[1] != "s") return !1;
+            m = h.next();
+            return m.done ||
+              m.value[0].x != 4 ||
+              m.value[1] != "t" ||
+              !h.next().done
+              ? !1
+              : !0;
+          } catch (r) {
+            return !1;
+          }
+        })()
+      )
+        return a;
+      var l = new WeakMap();
+      k.prototype.set = function (d, g) {
+        d = d === 0 ? 0 : d;
+        var h = e(this, d);
+        h.list || (h.list = this[0][h.id] = []);
+        h.entry
+          ? (h.entry.value = g)
+          : ((h.entry = {
+              next: this[1],
+              m: this[1].m,
+              head: this[1],
+              key: d,
+              value: g,
+            }),
+            h.list.push(h.entry),
+            (this[1].m.next = h.entry),
+            (this[1].m = h.entry),
+            this.size++);
+        return this;
+      };
+      k.prototype.delete = function (d) {
+        d = e(this, d);
+        return d.entry && d.list
+          ? (d.list.splice(d.index, 1),
+            d.list.length || delete this[0][d.id],
+            (d.entry.m.next = d.entry.next),
+            (d.entry.next.m = d.entry.m),
+            (d.entry.head = null),
+            this.size--,
+            !0)
+          : !1;
+      };
+      k.prototype.clear = function () {
+        this[0] = {};
+        this[1] = this[1].m = b();
+        this.size = 0;
+      };
+      k.prototype.has = function (d) {
+        return !!e(this, d).entry;
+      };
+      k.prototype.get = function (d) {
+        return (d = e(this, d).entry) && d.value;
+      };
+      k.prototype.entries = function () {
+        return c(this, function (d) {
+          return [d.key, d.value];
+        });
+      };
+      k.prototype.keys = function () {
+        return c(this, function (d) {
+          return d.key;
+        });
+      };
+      k.prototype.values = function () {
+        return c(this, function (d) {
+          return d.value;
+        });
+      };
+      k.prototype.forEach = function (d, g) {
+        for (var h = this.entries(), m; !(m = h.next()).done; )
+          (m = m.value), d.call(g, m[1], m[0], this);
+      };
+      k.prototype[Symbol.iterator] = k.prototype.entries;
+      var f = 0;
+      return k;
+    });
+    function oa(a, b) {
+      a instanceof String && (a += "");
+      var c = 0,
+        e = !1,
+        k = {
+          next: function () {
+            if (!e && c < a.length) {
+              var l = c++;
+              return { value: b(l, a[l]), done: !1 };
+            }
+            e = !0;
+            return { done: !0, value: void 0 };
+          },
+        };
+      k[Symbol.iterator] = function () {
+        return k;
+      };
+      return k;
+    }
+    q("Array.prototype.keys", function (a) {
+      return a
+        ? a
+        : function () {
+            return oa(this, function (b) {
+              return b;
+            });
+          };
+    });
+    function J(a, b, c) {
+      if (a == null)
+        throw new TypeError(
+          "The 'this' value for String.prototype." +
+            c +
+            " must not be null or undefined"
+        );
+      if (b instanceof RegExp)
+        throw new TypeError(
+          "First argument to String.prototype." +
+            c +
+            " must not be a regular expression"
+        );
+      return a + "";
+    }
+    q("String.prototype.startsWith", function (a) {
+      return a
+        ? a
+        : function (b, c) {
+            var e = J(this, b, "startsWith"),
+              k = e.length,
+              l = b.length;
+            c = Math.max(0, Math.min(c | 0, e.length));
+            for (var f = 0; f < l && c < k; ) if (e[c++] != b[f++]) return !1;
+            return f >= l;
+          };
+    });
+    q("String.prototype.endsWith", function (a) {
+      return a
+        ? a
+        : function (b, c) {
+            var e = J(this, b, "endsWith");
+            c === void 0 && (c = e.length);
+            c = Math.max(0, Math.min(c | 0, e.length));
+            for (var k = b.length; k > 0 && c > 0; )
+              if (e[--c] != b[--k]) return !1;
+            return k <= 0;
+          };
+    });
+    q("Array.from", function (a) {
+      return a
+        ? a
+        : function (b, c, e) {
+            c =
+              c != null
+                ? c
+                : function (d) {
+                    return d;
+                  };
+            var k = [],
+              l =
+                typeof Symbol != "undefined" &&
+                Symbol.iterator &&
+                b[Symbol.iterator];
+            if (typeof l == "function") {
+              b = l.call(b);
+              for (var f = 0; !(l = b.next()).done; )
+                k.push(c.call(e, l.value, f++));
+            } else
+              for (l = b.length, f = 0; f < l; f++) k.push(c.call(e, b[f], f));
+            return k;
+          };
+    });
+    q("Object.is", function (a) {
+      return a
+        ? a
+        : function (b, c) {
+            return b === c ? b !== 0 || 1 / b === 1 / c : b !== b && c !== c;
+          };
+    });
+    q("Array.prototype.includes", function (a) {
+      return a
+        ? a
+        : function (b, c) {
+            var e = this;
+            e instanceof String && (e = String(e));
+            var k = e.length;
+            c = c || 0;
+            for (c < 0 && (c = Math.max(c + k, 0)); c < k; c++) {
+              var l = e[c];
+              if (l === b || Object.is(l, b)) return !0;
+            }
+            return !1;
+          };
+    });
+    q("String.prototype.includes", function (a) {
+      return a
+        ? a
+        : function (b, c) {
+            return J(this, b, "includes").indexOf(b, c || 0) !== -1;
+          };
+    }); /*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+    var pa = this || self; /*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+    var qa = globalThis.trustedTypes,
+      K;
+    function ra() {
+      var a = null;
+      if (!qa) return a;
+      try {
+        var b = function (c) {
+          return c;
+        };
+        a = qa.createPolicy("goog#html", {
+          createHTML: b,
+          createScript: b,
+          createScriptURL: b,
+        });
+      } catch (c) {}
+      return a;
+    }
+    function L(a) {
+      this.g = a;
+    }
+    L.prototype.toString = function () {
+      return this.g + "";
+    };
+    function sa(a) {
+      var b;
+      K === void 0 && (K = ra());
+      a = (b = K) ? b.createScriptURL(a) : a;
+      return new L(a);
+    }
+    function M(a) {
+      this.g = a;
+    }
+    M.prototype.toString = function () {
+      return this.g;
+    };
+    var ta = /^\s*(?!javascript:)(?:[\w+.-]+:|[^:/?#]*(?:[/?#]|$))/i;
+    function ua(a, b) {
+      if (b instanceof M)
+        if (b instanceof M) b = b.g;
+        else throw Error("");
+      else b = ta.test(b) ? b : void 0;
+      b !== void 0 && (a.href = b);
+    }
+    function va() {
+      var a = navigator.serviceWorker,
+        b = wa(xa, window.location.pathname) || wa(ya),
+        c = a.register;
+      if (b instanceof L) b = b.g;
+      else throw Error("");
+      return c.call(a, b, void 0);
+    }
+    function wa(a) {
+      var b = ma.apply(1, arguments);
+      if (b.length === 0) return sa(a[0]);
+      for (var c = a[0], e = 0; e < b.length; e++)
+        c += encodeURIComponent(b[e]) + a[e + 1];
+      return sa(c);
+    }
+    function za() {
+      var a = document;
+      var b = "A";
+      a.contentType === "application/xhtml+xml" && (b = b.toLowerCase());
+      return a.createElement(b);
+    }
+    var Aa = pa.URL,
+      N;
+    try {
+      new Aa("http://example.com"), (N = !0);
+    } catch (a) {
+      N = !1;
+    }
+    var Ba = N;
+    function Ca(a) {
+      var b = za();
+      try {
+        ua(b, new M(a));
+        var c = b.protocol;
+      } catch (k) {
+        throw Error(a + " is not a valid URL.");
+      }
+      if (c === "" || c === ":" || c[c.length - 1] != ":")
+        throw Error(a + " is not a valid URL.");
+      if (!O.has(c)) throw Error(a + " is not a valid URL.");
+      if (!b.hostname) throw Error(a + " is not a valid URL.");
+      var e = b.href;
+      a = {
+        href: e,
+        protocol: b.protocol,
+        username: "",
+        password: "",
+        hostname: b.hostname,
+        pathname: "/" + b.pathname,
+        search: b.search,
+        hash: b.hash,
+        toString: function () {
+          return e;
+        },
+      };
+      O.get(b.protocol) === b.port
+        ? ((a.host = a.hostname),
+          (a.port = ""),
+          (a.origin = a.protocol + "//" + a.hostname))
+        : ((a.host = b.host),
+          (a.port = b.port),
+          (a.origin = a.protocol + "//" + a.hostname + ":" + a.port));
+      return a;
+    }
+    function R(a) {
+      if (Ba) {
+        try {
+          var b = new Aa(a);
+        } catch (e) {
+          throw Error(a + " is not a valid URL.");
+        }
+        var c = O.get(b.protocol);
+        if (!c) throw Error(a + " is not a valid URL.");
+        if (!b.hostname) throw Error(a + " is not a valid URL.");
+        b.origin == "null" &&
+          ((a = {
+            href: b.href,
+            protocol: b.protocol,
+            username: "",
+            password: "",
+            host: b.host,
+            port: b.port,
+            hostname: b.hostname,
+            pathname: b.pathname,
+            search: b.search,
+            hash: b.hash,
+          }),
+          (a.origin =
+            c === b.port
+              ? b.protocol + "//" + b.hostname
+              : b.protocol + "//" + b.hostname + ":" + b.port),
+          (b = a));
+      } else b = Ca(a);
+      return b;
+    }
+    var O = new Map([
+      ["http:", "80"],
+      ["https:", "443"],
+      ["ws:", "80"],
+      ["wss:", "443"],
+      ["ftp:", "21"],
+    ]);
+    self.addEventListener("install", Da);
+    self.addEventListener("activate", Ea);
+    self.addEventListener("fetch", function (a) {
+      a.respondWith(Fa(a));
+    });
+    self.addEventListener("message", function (a) {
+      var b = decodeURIComponent(location.origin);
+      Ga(a, b);
+    });
+    function S() {
+      return "hosting-cache_" + Ha();
+    }
+    function Ia() {
+      var a;
+      return I(function (b) {
+        if (b.g == 1) return E(b, caches.keys(), 2);
+        a = b.h;
+        return E(
+          b,
+          Promise.all(
+            a.map(function (c) {
+              return I(function (e) {
+                c === S()
+                  ? ((e.g = 0), (e = void 0))
+                  : (e = E(e, caches.delete(c), 0));
+                return e;
+              });
+            })
+          ),
+          0
+        );
+      });
+    }
+    function Da() {
+      self.skipWaiting();
+    }
+    function Ea(a) {
+      a.waitUntil(Ja());
+    }
+    function Fa(a) {
+      return I(function (b) {
+        return b.return(Ka(a.request));
+      });
+    }
+    function T(a, b) {
+      var c;
+      return I(function (e) {
+        return e.g == 1
+          ? E(e, fetch(a), 2)
+          : e.g != 3
+          ? ((c = e.h), E(e, La(a, c, b), 3))
+          : e.return(c);
+      });
+    }
+    function Ma(a) {
+      var b, c, e;
+      return I(function (k) {
+        if (k.g == 1) return E(k, a.blob(), 2);
+        b = k.h;
+        c = {};
+        e = {
+          status: a.status,
+          statusText: a.statusText,
+          headers: Object.assign(
+            {},
+            a.headers,
+            ((c["sw-cache-last-used-time"] = new Date().toUTCString()), c)
+          ),
+        };
+        return k.return(new Response(b, e));
+      });
+    }
+    function La(a, b, c) {
+      var e, k, l, f, d, g;
+      return I(function (h) {
+        switch (h.g) {
+          case 1:
+            if (a.method === "POST") return h.return();
+            e = b.status;
+            if (!Na(R(a.url)) && !b.ok) return h.return();
+            k = b.clone();
+            if (e === 0) {
+              l = k;
+              h.g = 2;
+              break;
+            }
+            return E(h, Ma(k), 3);
+          case 3:
+            l = h.h;
+          case 2:
+            return (f = l), (h.i = 4), E(h, c.put(U(a.url), f), 6);
+          case 6:
+            h.g = 0;
+            h.i = 0;
+            break;
+          case 4:
+            g = d = F(h);
+            if (g.name !== "QuotaExceededError") {
+              h.g = 7;
+              break;
+            }
+            return E(h, Oa(c, a, f), 8);
+          case 8:
+            return h.return();
+          case 7:
+            h.g = 0;
+        }
+      });
+    }
+    function Oa(a, b, c) {
+      var e, k, l, f;
+      return I(function (d) {
+        switch (d.g) {
+          case 1:
+            return E(d, a.keys(), 2);
+          case 2:
+            return (
+              (e = d.h),
+              E(
+                d,
+                Promise.all(
+                  e.map(function (g) {
+                    var h;
+                    return I(function (m) {
+                      return m.g == 1
+                        ? ((h = g), E(m, a.match(g), 2))
+                        : m.return([h, m.h]);
+                    });
+                  })
+                ),
+                3
+              )
+            );
+          case 3:
+            (k = d.h
+              .sort(function (g, h) {
+                g = new Date(
+                  Date.parse(g[1].headers.get("sw-cache-last-used-time"))
+                );
+                h = new Date(
+                  Date.parse(h[1].headers.get("sw-cache-last-used-time"))
+                );
+                return g.getTime() - h.getTime();
+              })
+              .map(function (g) {
+                return g[0];
+              })),
+              (l = 0);
+          case 4:
+            return E(d, a.match(U(b.url)), 7);
+          case 7:
+            if (d.h) {
+              d.g = 0;
+              break;
+            }
+            f = k[l];
+            if (!f) {
+              d.g = 0;
+              break;
+            }
+            return E(d, a.delete(f), 8);
+          case 8:
+            return l++, (d.i = 9), E(d, a.put(U(b.url), c), 11);
+          case 11:
+            d.g = 4;
+            d.i = 0;
+            break;
+          case 9:
+            F(d), (d.g = 4);
+        }
+      });
+    }
+    function Ja() {
+      return I(function (a) {
+        return a.g == 1 ? E(a, Ia(), 2) : E(a, self.clients.claim(), 0);
+      });
+    }
+    function Ha() {
+      var a = decodeURIComponent(location.search).match("/v/([^/]+)/");
+      return a ? a[1] : "";
+    }
+    function Ga(a, b) {
+      var c = Ha(),
+        e,
+        k;
+      I(function (l) {
+        switch (l.g) {
+          case 1:
+            return E(l, self.caches.open(S()), 2);
+          case 2:
+            e = l.h;
+            l.i = 3;
+            k = JSON.parse(a.data);
+            if (k === null) return l.return();
+            if (k.action === 1)
+              return E(
+                l,
+                Promise.all(
+                  k.payload.map(function (f) {
+                    var d;
+                    return I(function (g) {
+                      d = U(b + "/v/" + c + "/" + f);
+                      return E(g, Pa(d, e), 0);
+                    });
+                  })
+                ),
+                6
+              );
+            if (k.action !== 2) {
+              l.g = 6;
+              break;
+            }
+            return E(
+              l,
+              Promise.all(
+                k.payload.map(function (f) {
+                  return I(function (d) {
+                    return d.return(Pa(f, e));
+                  });
+                })
+              ),
+              6
+            );
+          case 6:
+            l.g = 0;
+            l.i = 0;
+            break;
+          case 3:
+            F(l), (l.g = 0);
+        }
+      });
+    }
+    function Pa(a, b) {
+      var c;
+      return I(function (e) {
+        switch (e.g) {
+          case 1:
+            return E(e, b.match(U(a)), 2);
+          case 2:
+            if (e.h) return e.return();
+            c = Na(R(a))
+              ? new Request(a, { credentials: "include", mode: "no-cors" })
+              : new Request(a);
+            e.i = 3;
+            return E(e, T(c, b), 5);
+          case 5:
+            e.g = 0;
+            e.i = 0;
+            break;
+          case 3:
+            F(e), (e.g = 0);
+        }
+      });
+    }
+    function Ka(a) {
+      return I(function (b) {
+        return V(a.url) ||
+          (navigator.onLine
+            ? navigator.connection &&
+              navigator.connection.effectiveType &&
+              (navigator.connection.effectiveType === "slow-2g" ||
+                navigator.connection.effectiveType === "2g")
+            : 1)
+          ? b.return(Qa(a))
+          : b.return(Ra(a));
+      });
+    }
+    function Qa(a) {
+      var b, c, e;
+      return I(function (k) {
+        switch (k.g) {
+          case 1:
+            return E(k, self.caches.open(S()), 2);
+          case 2:
+            return (b = k.h), E(k, b.match(U(a.url)), 3);
+          case 3:
+            if ((c = k.h))
+              return (
+                c.headers.set(
+                  "sw-cache-last-used-time",
+                  new Date().toUTCString()
+                ),
+                k.return(c)
+              );
+            k.i = 4;
+            return E(k, T(a, b), 6);
+          case 6:
+            return k.return(k.h);
+          case 4:
+            return (e = F(k)), k.return(Sa(a, e));
+        }
+      });
+    }
+    function Ra(a) {
+      var b, c, e;
+      return I(function (k) {
+        switch (k.g) {
+          case 1:
+            return E(k, self.caches.open(S()), 2);
+          case 2:
+            return (b = k.h), (k.i = 3), E(k, T(a, b), 5);
+          case 5:
+            return k.return(k.h);
+          case 3:
+            return (c = F(k)), E(k, b.match(U(a.url)), 6);
+          case 6:
+            return (e = k.h) ? k.return(e) : k.return(Sa(a, c));
+        }
+      });
+    }
+    function Sa(a, b) {
+      if (navigator.onLine || V(a.url)) throw b;
+      throw new W("Offline: Unable to connect to the internet");
+    }
+
+    function Ta(a) {
+      return (
+        a.endsWith(".h5games.usercontent.goog") ||
+        a.endsWith(".h5games-staging.corp.googleusercontent.com") ||
+        a.endsWith(".h5games-autopush.corp.googleusercontent.com") ||
+        a.endsWith(".h5games-dev.corp.googleusercontent.com")
+      );
+    }
+    function V(a) {
+      a = R(a);
+      return Ta(a.origin) ? a.pathname.match("/v/[^/]+/.+") !== null : !1;
+    }
+    function U(a) {
+      if (V(a)) {
+        var b = R(a);
+        b = b.protocol + "//" + b.host + b.pathname;
+      } else if (
+        ((b = new URL(a)),
+        Ta(b.origin) && b.pathname.match("/v/[^/]+/?") !== null)
+      ) {
+        b = ["gameCenterId", "origin"];
+        a = new URL(a);
+        var c = Array.from(a.searchParams.keys());
+        c = z(c);
+        for (var e = c.next(); !e.done; e = c.next())
+          (e = e.value), b.includes(e) || a.searchParams.delete(e);
+        b = a.toString();
+      } else b = a;
+      return b;
+    }
+    function W(a) {
+      a = Error.call(this, a);
+      this.message = a.message;
+      "stack" in a && (this.stack = a.stack);
+      Object.setPrototypeOf(this, W.prototype);
+    }
+    var X = W,
+      Y = Error;
+    X.prototype = aa(Y.prototype);
+    X.prototype.constructor = X;
+    if (y) y(X, Y);
+    else
+      for (var Z in Y)
+        if (Z != "prototype")
+          if (Object.defineProperties) {
+            var Ua = Object.getOwnPropertyDescriptor(Y, Z);
+            Ua && Object.defineProperty(X, Z, Ua);
+          } else X[Z] = Y[Z];
+    X.L = Y.prototype;
+    var xa = ea([
+        "../../serviceworker.js?features=GameRendering__support_offline_feature&origin=",
+        "",
+      ]),
+      ya = ea([""]);
+    (function () {
+      var a;
+      return I(function (b) {
+        if (b.g == 1) {
+          if (!navigator.serviceWorker) return b.return();
+          b.i = 2;
+          return E(b, va(), 4);
+        }
+        b.g != 2
+          ? ((a = b.h) &&
+              navigator.serviceWorker.addEventListener(
+                "controllerchange",
+                function () {
+                  if (navigator.serviceWorker.controller) {
+                    var c = document.querySelector("script[data-game-files]");
+                    if (c != null) {
+                      var e = c.dataset.gameFiles;
+                      if (
+                        e != null &&
+                        ((c = c.dataset.cacheableLinks), c != null)
+                      )
+                        try {
+                          var k = JSON.parse(c);
+                          k.push(window.location.href);
+                          navigator.serviceWorker.controller.postMessage(
+                            JSON.stringify({ action: 2, payload: k })
+                          );
+                          var l = JSON.parse(e);
+                          navigator.serviceWorker.controller.postMessage(
+                            JSON.stringify({ action: 1, payload: l })
+                          );
+                        } catch (f) {}
+                    }
+                  }
+                }
+              ),
+            (b.g = 0),
+            (b.i = 0))
+          : (F(b), (b.g = 0));
+      });
+    })();
+  }).call(this);
+</script>
+<!-- <script
+  src="https://sdks.gamesnacks.com/developer/v2/index.js"
+  data-target-origin="https://gamesnacks.com"
+  data-user-activity-metrics
+  data-run-slotcar-ads-in-game-center
+  data-game-center-monetized
+  data-rewarded-monetizable
+  nonce="7IgFPQ36MXN3msmuvcd_Zw"
+></script> -->
+<meta name="robots" content="noindex, nofollow" /><meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+/>
+<meta name="viewport" content="user-scalable=no" />
+
+<title>Timber guy</title>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/favicon/icon-36x36.png"
+  sizes="36x36"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/favicon/icon-48x48.png"
+  sizes="48x48"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/favicon/icon-72x72.png"
+  sizes="72x72"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/favicon/icon-96x96.png"
+  sizes="96x96"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/favicon/icon-144x144.png"
+  sizes="144x144"
+/>
+
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="assets/favicon/icon-36x36.png"
+  sizes="36x36"
+/>
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="assets/favicon/icon-48x48.png"
+  sizes="48x48"
+/>
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="assets/favicon/icon-72x72.png"
+  sizes="72x72"
+/>
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="assets/favicon/icon-96x96.png"
+  sizes="96x96"
+/>
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="assets/favicon/icon-144x144.png"
+  sizes="144x144"
+/>
+
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+<!--RPLC:INDEX_HEAD-->
+<body>
+  <div id="rotateDiv">
+    <img src="assets/img/rotate_screen.png" />
+    <p id="wrongRotationText">Please rotate your device!</p>
+  </div>
+
+  <div id="game">
+    <script src="js/game.js"></script>
+  </div>
+  <!-- <div id="ads"></div> -->
+
+  <div class="font_preload" style="opacity: 0">
+    <span style="font-family: 'VT323', Arial, sans-serif"></span>
+  </div>
+</body>

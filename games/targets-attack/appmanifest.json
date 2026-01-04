@@ -1,0 +1,42 @@
+{
+	"name": "Targets Attack",
+	"short_name": "Targets Attack",
+	"description": "",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"background_color": "#ffffff",
+	"icons": [
+		{
+			"src": "icons/icon-16.png",
+			"sizes": "17x18",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-32.png",
+			"sizes": "31x34",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-64.png",
+			"sizes": "59x66",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-128.png",
+			"sizes": "115x129",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-256.png",
+			"sizes": "228x256",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-512.png",
+			"sizes": "452x508",
+			"type": "image/png"
+		}
+	],
+	"screenshots": []
+}

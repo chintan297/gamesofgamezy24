@@ -1,0 +1,127 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #d7d7d7;
+
+  /* center the game */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tetris {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* responsive scaling */
+  max-width: 95vw;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* main play area */
+#canvas {
+  width: 200px;
+  height: 440px;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+}
+
+/* center "Press Start" text */
+#canvas h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 200px;
+}
+
+/* right side info panel */
+#info {
+  background-color: #000;
+  color: #fff;
+  width: 110px;
+  height: max-content;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#next_shape {
+  position: relative;
+  background-color: #000;
+  border: 1px solid white;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 15px;
+}
+
+/* start button */
+#start {
+  animation: blink 0.7s steps(2, start) infinite;
+  background: #e1ff5f;
+  border-radius: 4px;
+  color: #202020;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+@keyframes blink {
+  to {
+    outline: #e1ff5f solid 1px;
+  }
+}
+
+/* squares and piece styling */
+.piece,
+.square {
+  position: absolute;
+  border: 1px solid white;
+}
+
+.square {
+  width: 19px;
+  height: 19px;
+}
+
+/* block colors */
+.type0 {
+  background-color: #a000f0;
+}
+.type1 {
+  background-color: #00f0f0;
+}
+.type2 {
+  background-color: #f0a000;
+}
+.type3 {
+  background-color: #0000f0;
+}
+.type4 {
+  background-color: #00f000;
+}
+.type5 {
+  background-color: #f00000;
+}
+.type6 {
+  background-color: #f0f000;
+}
+
+.red {
+  color: #f00000;
+  font-size: 12px;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}

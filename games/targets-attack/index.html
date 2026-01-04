@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Targets Attack</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Game metadata -->
+    <meta name="generator" content="Scirra Construct" />
+
+    <!-- Icons -->
+    <link rel="manifest" href="appmanifest.json" />
+    <link rel="apple-touch-icon" sizes="228x256" href="icons/icon-256.png" />
+    <link rel="apple-touch-icon" sizes="452x508" href="icons/icon-512.png" />
+    <link rel="icon" type="image/png" href="icons/icon-512.png" />
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+      /* Keep this – prevents local file errors during testing */
+      if (location.protocol.substr(0, 4) === "file") {
+        alert("This game will not run locally. Upload it to a server first.");
+      }
+    </script>
+
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">Please enable JavaScript to continue.</p>
+      </div>
+    </noscript>
+
+    <!-- Core game scripts only (NO ads, NO redirects) -->
+    <script src="scripts/modernjscheck.js"></script>
+    <script src="scripts/supportcheck.js"></script>
+    <script src="scripts/offlineclient.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/register-sw.js" type="module"></script>
+  </body>
+</html>

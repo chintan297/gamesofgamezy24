@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Truck Loader 5</title>
+
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+    />
+
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+
+    <!-- Scripts -->
+    <script src="./pooki-sdk-1.js"></script>
+    <script src="./lib/isMobile.min.js"></script>
+    <script src="./lib/howler.min.js"></script>
+    <script src="./lib/pako.min.js"></script>
+    <script src="./loader/modernizr-custom.js"></script>
+    <link rel="stylesheet" href="./loader/loader.css" />
+    <script src="./loader/loader.js"></script>
+    <script src="./lib/FileSaver.min.js"></script>
+    <script src="./truckLoader5.js"></script>
+
+    <!-- Loader UI -->
+    <div id="loading_bg" class="loading_bg">
+      <div
+        id="progress-bar-root"
+        style="position: absolute; bottom: 20%; left: 50%"
+      >
+        <div
+          id="progress-bar-text"
+          style="
+            text-align: center;
+            vertical-align: bottom;
+            margin-left: -100%;
+            color: white;
+            font-size: 12px;
+            font-family: Verdana, serif;
+          "
+        ></div>
+
+        <img id="progress-bar-bg" src="loader/load_bar_bg.png" />
+        <img
+          id="progress-bar-fg"
+          src="loader/load_bar_fg.png"
+          style="position: absolute; clip: rect(0px, 0px, 0px, 0px)"
+        />
+      </div>
+    </div>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #openfl-content {
+        background: #000000;
+        width: 100%;
+        height: 100%;
+      }
+      .loading_bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: black;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="openfl-content"></div>
+
+    <noscript>
+      This webpage makes extensive use of JavaScript. Please enable JavaScript
+      in your web browser to view this page.
+    </noscript>
+
+    <script>
+      // Prevent scroll/touch
+      window.addEventListener(
+        "touchmove",
+        function (event) {
+          event.preventDefault();
+        },
+        { passive: false }
+      );
+
+      // Adjust viewport for high DPI screens
+      if (
+        typeof window.devicePixelRatio !== "undefined" &&
+        window.devicePixelRatio > 2
+      ) {
+        var meta = document.getElementById("viewport");
+        meta.setAttribute(
+          "content",
+          "width=device-width, initial-scale=" +
+            2 / window.devicePixelRatio +
+            ", user-scalable=no"
+        );
+      }
+
+      // Block arrow and space scrolling
+      window.addEventListener("keydown", (ev) => {
+        if (["ArrowDown", "ArrowUp", " "].includes(ev.key)) {
+          ev.preventDefault();
+        }
+      });
+
+      // Block mouse wheel scrolling
+      window.addEventListener("wheel", (ev) => ev.preventDefault(), {
+        passive: false,
+      });
+
+      // PookiSDK Init (unchanged)
+      PookiSDK.init()
+        .then(() => {
+          console.log("Pooki SDK successfully initialized");
+        })
+        .catch(() => {
+          console.log("Initialized, but the user likely has adblock");
+        });
+
+      PookiSDK.gameLoadingFinished = function () {};
+      PookiSDK.gameLoadingStart = function () {};
+
+      const adBreak = (adConfig = function () {
+        window.gameHere.goToNext(0);
+      });
+
+      // Start game
+      lime.embed("truckLoader5", "openfl-content", 0, 0, { parameters: {} });
+    </script>
+  </body>
+</html>
