@@ -39840,8 +39840,8 @@
   }.call(this);
 //# sourceMappingURL=phaser.map
 var GameSounds = function () {
-  this.musicON = PookiGame.audio.isEnabled();
-  this.soundON = PookiGame.audio.isEnabled();
+  this.musicON = Gamezy24Game.audio.isEnabled();
+  this.soundON = Gamezy24Game.audio.isEnabled();
   this.musics = [];
   this.sounds = [];
   this.actualMusic = null;
@@ -43604,9 +43604,9 @@ GamePlay.prototype = {
   },
   onGameOver: function (a) {
     a !== LEVEL_OVER_EXIT_BY_USER
-      ? (PookiGame.score.update(this.currentLevel + 1),
-        PookiGame.game.levelComplete(this.currentLevel + 1))
-      : PookiGame.game.gameOver();
+      ? (Gamezy24Game.score.update(this.currentLevel + 1),
+        Gamezy24Game.game.levelComplete(this.currentLevel + 1))
+      : Gamezy24Game.game.gameOver();
     this.showAdvert();
   },
   showAdvert: function () {},
@@ -43875,7 +43875,7 @@ Preloader.prototype = {
     this._create();
   },
   _create: function () {
-    PookiGame.game.ready();
+    Gamezy24Game.game.ready();
     this.showContinueText();
     game.input.onDown.addOnce(function () {
       this.hidePreloadScr();
@@ -43894,7 +43894,7 @@ Preloader.prototype = {
   createPreloadBG: function () {
     document.getElementsByTagName("body")[0].style.backgroundColor = "#301D0D";
     document.getElementsByTagName("canvas")[0].classList.add("shadowed");
-    PookiGame.game.firstFrameReady();
+    Gamezy24Game.game.firstFrameReady();
     var a = game.add.sprite(0, 0, "gameBgImg");
     game.height > a.height && (a.height = game.height);
     this.preloadGroup = game.add.group();
@@ -44005,7 +44005,7 @@ function updateGameLanguage(a) {
 var loadedProfile = "";
 function loadAllGameData() {
   try {
-    var a = PookiGame.storage.getItem("unblockthatData");
+    var a = Gamezy24Game.storage.getItem("unblockthatData");
     if (null !== a && ((parsedData = JSON.parse(a)), null !== parsedData)) {
       loadedProfile = parsedData;
       var b = parsedData.lvlz;
@@ -44046,7 +44046,7 @@ function saveAllGameData() {
   a.msc = musicPlayer.musicON;
   a.lng = [systemLang, GAME_LANGUAGE];
   try {
-    PookiGame.storage.setItem("unblockthatData", JSON.stringify(a));
+    Gamezy24Game.storage.setItem("unblockthatData", JSON.stringify(a));
   } catch (b) {}
 }
 var resolutionY_min = 575,
@@ -44114,11 +44114,11 @@ function createGamesnacksButton() {
     a.textContent = "AUDIO: " + soundState;
   });
 }
-if ("undefined" == typeof PookiGame || null == PookiGame)
+if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
   (soundState = "true" === localStorage.getItem("soundState")),
     createGamesnacksButton(),
-    console.warn("PookiGame is undefined"),
-    (PookiGame = {
+    console.warn("Gamezy24Game is undefined"),
+    (Gamezy24Game = {
       audio: {
         subscribe: function () {},
         isEnabled: function () {
@@ -44144,7 +44144,7 @@ if ("undefined" == typeof PookiGame || null == PookiGame)
         },
       },
     });
-PookiGame.audio.subscribe(function (a) {
+Gamezy24Game.audio.subscribe(function (a) {
   setAudio(a);
 });
 function setAudio(a) {
@@ -44161,7 +44161,7 @@ function setAudio(a) {
 }
 window.showGoogleAd = function () {
   setTimeout(function () {
-    PookiGame.ad.break({
+    Gamezy24Game.ad.break({
       type: "next",
       beforeAd: function () {},
       afterAd: function () {},
@@ -44170,7 +44170,7 @@ window.showGoogleAd = function () {
   }, 250);
 };
 function prepareRewardedAd(a, b, c) {
-  PookiGame.ad.break({
+  Gamezy24Game.ad.break({
     type: "reward",
     beforeReward: function (a) {
       showAdFn = a;
@@ -44192,10 +44192,10 @@ function prepareRewardedAd(a, b, c) {
 function showRewardedAd() {
   showAdFn && showAdFn();
 }
-PookiGame.game.onPause(function () {
+Gamezy24Game.game.onPause(function () {
   if (null != gameState) gameState.onGamePause();
 });
-PookiGame.game.onResume(function () {
+Gamezy24Game.game.onResume(function () {
   if (null != gameState) gameState.onGameResume();
 });
 document.addEventListener("visibilitychange", function () {

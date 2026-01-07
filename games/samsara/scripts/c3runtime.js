@@ -72070,7 +72070,7 @@ void main(void) {
   {
     const C3 = self.C3;
 
-    C3.Plugins.Avix_PookiSDK_ForC3 = class PookiSDKC3Plugin extends (
+    C3.Plugins.Avix_Gamezy24SDK_ForC3 = class Gamezy24SDKC3Plugin extends (
       C3.SDKPluginBase
     ) {
       constructor(opts) {
@@ -72090,7 +72090,7 @@ void main(void) {
   {
     const C3 = self.C3;
 
-    C3.Plugins.Avix_PookiSDK_ForC3.Type = class PookiSDKC3Type extends (
+    C3.Plugins.Avix_Gamezy24SDK_ForC3.Type = class Gamezy24SDKC3Type extends (
       C3.SDKTypeBase
     ) {
       constructor(objectClass) {
@@ -72111,15 +72111,15 @@ void main(void) {
 
   {
     const C3 = self.C3;
-    const DOM_COMPONENT_ID = "avix-pookisdk-forc3";
+    const DOM_COMPONENT_ID = "avix-gamezy24sdk-forc3";
 
-    C3.Plugins.Avix_PookiSDK_ForC3.Instance = class PookiSDKC3Instance extends (
+    C3.Plugins.Avix_Gamezy24SDK_ForC3.Instance = class Gamezy24SDKC3Instance extends (
       C3.SDKInstanceBase
     ) {
       constructor(inst, properties) {
         super(inst, DOM_COMPONENT_ID);
 
-        this._pookiSDKLoaded = false;
+        this._gamezy24SDKLoaded = false;
         this._adBlockDetected = false;
         this._lastError = "";
         this._lastAdRewardedSuccess = false;
@@ -72127,7 +72127,7 @@ void main(void) {
         this._lastTriggeredTag = "";
 
         // Initialise object properties
-        this._pookiEnabled = true;
+        this._gamezy24Enabled = true;
         this._debugOnPreview = false;
         this._loadingNotification = 0; // Immediate
         this._automaticSuspend = true;
@@ -72142,7 +72142,7 @@ void main(void) {
         if (properties) {
           // note properties may be null in some cases
           [
-            this._pookiEnabled,
+            this._gamezy24Enabled,
             this._debugOnPreview,
             this._loadingNotification,
             this._automaticSuspend,
@@ -72197,23 +72197,23 @@ void main(void) {
           });
         }
 
-        if (this._pookiEnabled) {
+        if (this._gamezy24Enabled) {
           this._debugModeActive =
             this._debugOnPreview && this._runtime.IsPreview();
           this._runtime.AddLoadPromise(
-            this.PostToDOMAsync("InitPooki", {
+            this.PostToDOMAsync("InitGamezy24", {
               debugMode: this._debugModeActive,
               preventScroll: this._preventScroll,
             })
               .then(({ loaded, adBlock }) => {
                 this._adBlockDetected = adBlock;
-                this._pookiSDKLoaded = loaded;
+                this._gamezy24SDKLoaded = loaded;
 
                 if (this._adblockSim && this._runtime.IsPreview())
                   this._adBlockDetected = true;
 
-                if (!this._pookiSDKLoaded)
-                  this._lastError = "Pooki SDK did not load";
+                if (!this._gamezy24SDKLoaded)
+                  this._lastError = "Gamezy24 SDK did not load";
                 else if (this._adBlockDetected)
                   this._lastError = "User is likely to have an AdBlock active";
               })
@@ -72242,7 +72242,7 @@ void main(void) {
         this._runtime.SetSuspended(false);
       }
       SetCommercialBreakConstraint({ constrained }) {
-        //this.Trigger(self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnCommercialBreakPossible);
+        //this.Trigger(self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.OnCommercialBreakPossible);
       }
 
       Release() {
@@ -72256,7 +72256,7 @@ void main(void) {
   ("use strict");
 
   {
-    self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds = {
+    self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds = {
       OnCommercialBreakComplete(tag) {
         return tag === "" || tag === this._lastTriggeredTag;
       },
@@ -72268,23 +72268,23 @@ void main(void) {
         return !this._adBlockDetected;
       },
       CommercialBreakPossible() {
-        if (!this._pookiSDKLoaded || !this._pookiEnabled) return false;
+        if (!this._gamezy24SDKLoaded || !this._gamezy24Enabled) return false;
         return !this._adBlockDetected;
       },
 
       LastAdRewardSuccess() {
         return this._lastAdRewardedSuccess;
       },
-      PookiSDKLoaded() {
-        return this._pookiSDKLoaded;
+      Gamezy24SDKLoaded() {
+        return this._gamezy24SDKLoaded;
       },
-      PookiPluginEnabled() {
-        return this._pookiEnabled;
+      Gamezy24PluginEnabled() {
+        return this._gamezy24Enabled;
       },
       AdBlockDetected() {
         return this._adBlockDetected;
       },
-      PookiDebugMode() {
+      Gamezy24DebugMode() {
         return this._debugModeActive;
       },
     };
@@ -72295,11 +72295,11 @@ void main(void) {
   ("use strict");
 
   {
-    self.C3.Plugins.Avix_PookiSDK_ForC3.Acts = {
+    self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts = {
       NotifyLoadingFinished() {
         if (this._loadingNotification !== 2) {
           console.log(
-            "If you use the Notify Loading Finished action, you should configure the Pooki Plugin, set the Loading Notification Mode to Manual."
+            "If you use the Notify Loading Finished action, you should configure the Gamezy24 Plugin, set the Loading Notification Mode to Manual."
           );
         }
         this.PostToDOMAsync("GameLoadingFinished");
@@ -72324,7 +72324,8 @@ void main(void) {
           await Promise.resolve();
           this._lastTriggeredTag = tag;
           this.Trigger(
-            self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnCommercialBreakComplete
+            self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds
+              .OnCommercialBreakComplete
           );
           return;
         }
@@ -72336,7 +72337,7 @@ void main(void) {
         this._lastTriggeredTag = tag;
 
         this.Trigger(
-          self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnCommercialBreakComplete
+          self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.OnCommercialBreakComplete
         );
       },
       async RequestRewardedBreak(tag) {
@@ -72345,7 +72346,7 @@ void main(void) {
           this._lastTriggeredTag = tag;
           this._lastAdRewardedSuccess = false;
           this.Trigger(
-            self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnRewardedBreakComplete
+            self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.OnRewardedBreakComplete
           );
           return;
         }
@@ -72358,7 +72359,7 @@ void main(void) {
         this._lastAdRewardedSuccess = result;
 
         this.Trigger(
-          self.C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnRewardedBreakComplete
+          self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.OnRewardedBreakComplete
         );
       },
     };
@@ -72369,13 +72370,13 @@ void main(void) {
   ("use strict");
 
   {
-    self.C3.Plugins.Avix_PookiSDK_ForC3.Exps = {
+    self.C3.Plugins.Avix_Gamezy24SDK_ForC3.Exps = {
       LastAdRewardSuccess() {
         return this._lastAdRewardedSuccess;
       },
 
       CommercialBreakPossible() {
-        if (!this._pookiSDKLoaded || !this._pookiEnabled) return false;
+        if (!this._gamezy24SDKLoaded || !this._gamezy24Enabled) return false;
         return !this._adBlockDetected;
       },
 
@@ -72386,13 +72387,13 @@ void main(void) {
         return this._lastError;
       },
 
-      PookiSDKLoaded() {
-        return this._pookiSDKLoaded;
+      Gamezy24SDKLoaded() {
+        return this._gamezy24SDKLoaded;
       },
-      PookiPluginEnabled() {
-        return this._pookiEnabled;
+      Gamezy24PluginEnabled() {
+        return this._gamezy24Enabled;
       },
-      PookiDebugMode() {
+      Gamezy24DebugMode() {
         return this._debugModeActive;
       },
     };
@@ -82938,7 +82939,7 @@ void main(void) {
       C3.Plugins.Text,
       C3.Plugins.Dictionary,
       C3.Plugins.Button,
-      C3.Plugins.Avix_PookiSDK_ForC3,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3,
       C3.Plugins.System.Cnds.IsGroupActive,
       C3.Plugins.Touch.Cnds.OnTapGesture,
       C3.Plugins.System.Acts.SetBoolVar,
@@ -82949,19 +82950,19 @@ void main(void) {
       C3.Plugins.Spritefont2.Acts.Destroy,
       C3.Plugins.Touch.Cnds.IsTouchingObject,
       C3.Plugins.Sprite.Acts.SetOpacity,
-      C3.Plugins.Avix_PookiSDK_ForC3.Acts.NotifyLoadingFinished,
-      C3.Plugins.Avix_PookiSDK_ForC3.Acts.NotifyGameplayStart,
-      C3.Plugins.Avix_PookiSDK_ForC3.Acts.NotifyGameplayStop,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts.NotifyLoadingFinished,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts.NotifyGameplayStart,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts.NotifyGameplayStop,
       C3.Plugins.System.Acts.SetVar,
-      C3.Plugins.Avix_PookiSDK_ForC3.Acts.RequestCommercialBreak,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts.RequestCommercialBreak,
       C3.Plugins.System.Acts.WaitForPreviousActions,
-      C3.Plugins.Avix_PookiSDK_ForC3.Acts.RequestRewardedBreak,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Acts.RequestRewardedBreak,
       C3.Plugins.Sprite.Acts.SetAnimFrame,
       C3.Plugins.Mouse.Cnds.IsOverObject,
       C3.Plugins.Touch.Cnds.OnTapGestureObject,
       C3.Plugins.Mouse.Cnds.OnObjectClicked,
-      C3.Plugins.Avix_PookiSDK_ForC3.Cnds.OnRewardedBreakComplete,
-      C3.Plugins.Avix_PookiSDK_ForC3.Cnds.LastAdRewardSuccess,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.OnRewardedBreakComplete,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.LastAdRewardSuccess,
       C3.Plugins.System.Acts.NextPrevLayout,
       C3.Plugins.System.Cnds.Else,
       C3.Plugins.System.Cnds.Compare,
@@ -83122,7 +83123,7 @@ void main(void) {
       C3.Plugins.Spritefont2.Acts.TypewriterText,
       C3.Plugins.System.Acts.SetLayoutScale,
       C3.Plugins.Sprite.Exps.AnimationFrame,
-      C3.Plugins.Avix_PookiSDK_ForC3.Cnds.AdBlockDetected,
+      C3.Plugins.Avix_Gamezy24SDK_ForC3.Cnds.AdBlockDetected,
       C3.Plugins.Arr.Exps.AsJSON,
       C3.Plugins.Audio.Acts.SetMuted,
       C3.Plugins.Audio.Acts.Stop,
@@ -83260,7 +83261,7 @@ void main(void) {
     { MoveButtonRight: 0 },
     { MoveButtonUp: 0 },
     { touchinfomobile: 0 },
-    { PookiSDK: 0 },
+    { Gamezy24SDK: 0 },
     { infoskiptext: 0 },
     { RestartButton: 0 },
     { CollusionWall: 0 },
@@ -83276,8 +83277,8 @@ void main(void) {
     { SolidObjects: 0 },
     { Tombstones: 0 },
     { GameState: 0 },
-    { pookiGameplayStopped: 0 },
-    { pooki_last_ad_tag: 0 },
+    { gamezy24GameplayStopped: 0 },
+    { gamezy24_last_ad_tag: 0 },
     { adWatched: 0 },
     { infounlocked: 0 },
     { start: 0 },
@@ -83397,7 +83398,7 @@ void main(void) {
     MoveButtonRight: class extends self.ISpriteInstance {},
     MoveButtonUp: class extends self.ISpriteInstance {},
     touchinfomobile: class extends self.ISpriteFontInstance {},
-    PookiSDK: class extends self.IInstance {},
+    Gamezy24SDK: class extends self.IInstance {},
     infoskiptext: class extends self.ISpriteFontInstance {},
     RestartButton: class extends self.ISpriteInstance {},
     CollusionWall: class extends self.ISpriteInstance {},
@@ -83485,7 +83486,7 @@ void main(void) {
     () => "Mobile Controls2",
     () => 100,
     () => 60,
-    () => "Pooki",
+    () => "Gamezy24",
     () => "tag",
     (p) => {
       const v0 = p._GetNode(0).GetVar();

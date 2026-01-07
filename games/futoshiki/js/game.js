@@ -43666,7 +43666,7 @@ var Utils;
     };
     c.getLocalStorage = function () {
       try {
-        return PookiGame.storage;
+        return Gamezy24Game.storage;
       } catch (a) {
         return null;
       }
@@ -43921,7 +43921,7 @@ function launch() {
         ),
       (c = !1));
   c &&
-    (initPookiGame(),
+    (initGamezy24Game(),
     (d = new Futoshiki.Game()),
     (App.game = d),
     (Sponsor.api().game = d),
@@ -46816,7 +46816,7 @@ var Log;
       var a = document.getElementById("gameCanvas");
       a.style.position = "fixed";
       a.style.zIndex = 1;
-      SoundToggle(PookiGame.audio.isEnabled());
+      SoundToggle(Gamezy24Game.audio.isEnabled());
       adinplay_init();
     };
     a.prototype.create = function () {
@@ -46892,7 +46892,7 @@ var Log;
       var a = this.game.state.getCurrentState();
       if ("function" === typeof a.onResume) a.onResume();
       gsIsLandscape = !1;
-      SoundToggle(PookiGame.audio.isEnabled());
+      SoundToggle(Gamezy24Game.audio.isEnabled());
     };
     return a;
   })(Phaser.State);
@@ -47268,7 +47268,7 @@ var Log;
     __extends(a, c);
     a.prototype.preload = function () {
       this.setView(this.game.width, this.game.height);
-      PookiGame.game.firstFrameReady();
+      Gamezy24Game.game.firstFrameReady();
       this._bg = this.add.image(0, 0, "ThemeLetter");
       this._bg.anchor.set(0.5);
       this.createLoadingBar();
@@ -47382,7 +47382,7 @@ var Log;
               !1
             );
             a.animations.play("Touch");
-            PookiGame.game.ready();
+            Gamezy24Game.game.ready();
             this.input.onDown.add(function () {
               this.game.state.start("Menu");
             }, this);
@@ -47415,20 +47415,20 @@ var Log;
   })(d.SceneBase);
   d.Preloader = f;
 })(Futoshiki || (Futoshiki = {}));
-var PookiGame, gsGamePaused, gsIsLandscape;
+var Gamezy24Game, gsGamePaused, gsIsLandscape;
 function SoundToggle(d) {
   App &&
     App.game &&
     (App.game.sound.mute = !d || gsGamePaused || gsIsLandscape);
 }
-function initPookiGame() {
+function initGamezy24Game() {
   function d() {}
   var f, c, a, b;
-  if ("undefined" == typeof PookiGame || null == PookiGame)
+  if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
     (f = "true" === localStorage.getItem("soundState")),
       d(),
-      console.warn("PookiGame is undefined"),
-      (PookiGame = {
+      console.warn("Gamezy24Game is undefined"),
+      (Gamezy24Game = {
         audio: {
           subscribe: function (a) {
             c = a;
@@ -47460,20 +47460,20 @@ function initPookiGame() {
           },
         },
       });
-  PookiGame.audio.subscribe(function (a) {
+  Gamezy24Game.audio.subscribe(function (a) {
     SoundToggle(a);
   });
-  PookiGame.game.onPause(function () {
+  Gamezy24Game.game.onPause(function () {
     e();
   });
-  PookiGame.game.onResume(function () {
+  Gamezy24Game.game.onResume(function () {
     gsGamePaused = !1;
-    SoundToggle(PookiGame.audio.isEnabled());
+    SoundToggle(Gamezy24Game.audio.isEnabled());
   });
   document.addEventListener("visibilitychange", function () {
     document.hidden
       ? e()
-      : ((gsGamePaused = !1), SoundToggle(PookiGame.audio.isEnabled()));
+      : ((gsGamePaused = !1), SoundToggle(Gamezy24Game.audio.isEnabled()));
   });
   var e = function () {
     gsGamePaused = !0;
@@ -47485,7 +47485,7 @@ function initPookiGame() {
   };
 }
 function showGoogleAd(d, f, c, a) {
-  PookiGame.ad.break({ type: d || "next" });
+  Gamezy24Game.ad.break({ type: d || "next" });
 }
 var GameData = function () {};
 GameData.BuildTitle = "Futoshiki";
@@ -47509,8 +47509,8 @@ var GAME_OVER_BY_GAME = 0,
   GAME_OVER_BY_USER = 1;
 function onGameOver(d, f, c) {
   d === GAME_OVER_BY_GAME
-    ? (PookiGame.score.update(f), PookiGame.game.levelComplete(0))
-    : PookiGame.game.gameOver();
+    ? (Gamezy24Game.score.update(f), Gamezy24Game.game.levelComplete(0))
+    : Gamezy24Game.game.gameOver();
 }
 var partnerName = "google";
 window.partnerName = partnerName;

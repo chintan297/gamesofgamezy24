@@ -44686,7 +44686,7 @@
               (this._safeArea = null),
               (this._mask = null),
               (this._fpsText = null),
-              (this._dummyPookiGame = null),
+              (this._dummyGamezy24Game = null),
               (this._bfOnWindowResized = null),
               (this._kSafeAreaHeight = 1390),
               (this._kSafeAreaWidth = 854),
@@ -44861,20 +44861,22 @@
                 this._root.scale.set(i),
                 (this._root.x = 0.5 * (t - this._kWidth * i)),
                 (this._root.y = 0.5 * (e - this._kHeight * i)),
-                this._dummyPookiGame &&
-                  (this._dummyPookiGame.scale.set(i),
-                  this._dummyPookiGame.position.copyFrom(this._root.position)),
+                this._dummyGamezy24Game &&
+                  (this._dummyGamezy24Game.scale.set(i),
+                  this._dummyGamezy24Game.position.copyFrom(
+                    this._root.position
+                  )),
                 this._safeArea.position.set(0.5 * t, 0.5 * e),
                 this._safeArea.scale.set(i),
                 this._mask.position.set(0.5 * t, 0.5 * e),
                 this._mask.scale.set(i);
             }),
-            (t.prototype.onDummyPookiGame = function (t) {
-              (this._dummyPookiGame = t),
-                (this._dummyPookiGame.mask = this._mask),
-                this._dummyPookiGame.scale.set(this._root.scale.x),
-                this._dummyPookiGame.position.copyFrom(this._root.position),
-                this._stage.addChild(this._dummyPookiGame);
+            (t.prototype.onDummyGamezy24Game = function (t) {
+              (this._dummyGamezy24Game = t),
+                (this._dummyGamezy24Game.mask = this._mask),
+                this._dummyGamezy24Game.scale.set(this._root.scale.x),
+                this._dummyGamezy24Game.position.copyFrom(this._root.position),
+                this._stage.addChild(this._dummyGamezy24Game);
             }),
             t
           );
@@ -64155,13 +64157,13 @@
                 c.on("pointertap", this._onContinueButton_Click, this),
                 Jv.audio.pause(0),
                 Jv.audio.pause(2),
-                window.PookiGame &&
+                window.Gamezy24Game &&
                   (Jv.main.onGlobalMuteUpdated.add(
                     this._onGlobalMute_Updated,
                     this
                   ),
                   this._onGlobalMute_Updated(
-                    window.PookiGame.audio.isEnabled()
+                    window.Gamezy24Game.audio.isEnabled()
                   ));
             }),
             (e.prototype._onTutorialButton_Click = function () {
@@ -64173,8 +64175,9 @@
               t.onLeave();
             }),
             (e.prototype._onSoundBtn_Click = function () {
-              (!window.PookiGame ||
-                (window.PookiGame && window.PookiGame.audio.isEnabled())) &&
+              (!window.Gamezy24Game ||
+                (window.Gamezy24Game &&
+                  window.Gamezy24Game.audio.isEnabled())) &&
                 ((this._arrSoundButton[0].visible =
                   !this._arrSoundButton[0].visible),
                 (this._arrSoundButton[1].visible =
@@ -64186,8 +64189,9 @@
                 Jv.audio.mute(Jv.saved.data.isMuteSfx, 2));
             }),
             (e.prototype._onMusicBtn_Click = function () {
-              (!window.PookiGame ||
-                (window.PookiGame && window.PookiGame.audio.isEnabled())) &&
+              (!window.Gamezy24Game ||
+                (window.Gamezy24Game &&
+                  window.Gamezy24Game.audio.isEnabled())) &&
                 ((this._arrMusicButton[0].visible =
                   !this._arrMusicButton[0].visible),
                 (this._arrMusicButton[1].visible =
@@ -64235,7 +64239,7 @@
                 (this._onHome = null),
                 this._onRestart.dispose(),
                 (this._onRestart = null),
-                window.PookiGame &&
+                window.Gamezy24Game &&
                   Jv.main.onGlobalMuteUpdated.remove(
                     this._onGlobalMute_Updated,
                     this
@@ -64540,9 +64544,9 @@
                   { x: 1, y: 1, duration: 0.4, ease: "sine.out" },
                   0.6
                 ),
-              window.PookiGame &&
-                (window.PookiGame.score.update(this._score),
-                window.PookiGame.game.gameOver());
+              window.Gamezy24Game &&
+                (window.Gamezy24Game.score.update(this._score),
+                window.Gamezy24Game.game.gameOver());
           }),
           (e.prototype.onRetryBtn_Click = function () {
             this._onRestarted.dispatch(this);
@@ -65002,7 +65006,7 @@
                     { x: 1, y: 1, duration: 0.4, ease: "sine.out" },
                     0.6
                   ),
-                window.PookiGame && window.PookiGame.game.gameOver();
+                window.Gamezy24Game && window.Gamezy24Game.game.gameOver();
             }),
             (e.prototype._toTimeString = function (t) {
               var e, i, r;
@@ -65173,12 +65177,12 @@
             }),
             (e.prototype._onPausePopup_Home = function (t) {
               t.onLeave(),
-                window.PookiGame && window.PookiGame.game.gameOver(),
+                window.Gamezy24Game && window.Gamezy24Game.game.gameOver(),
                 this._onCompleted.dispatch(0);
             }),
             (e.prototype._onPausePopup_Restart = function (t) {
               t.onLeave(),
-                window.PookiGame && window.PookiGame.game.gameOver(),
+                window.Gamezy24Game && window.Gamezy24Game.game.gameOver(),
                 this._restartGame(),
                 (this._isExtraPopup = !1);
             }),
@@ -65290,13 +65294,13 @@
             }),
             (t.prototype.prepare = function () {
               var t = this;
-              window.PookiGame
+              window.Gamezy24Game
                 ? this._showAdFn
                   ? this._onAdReady.dispatch()
                   : ((this._adBreakTimeout = window.setTimeout(function () {
                       t._onAdLost.dispatch();
                     }, 1600)),
-                    window.PookiGame.ad.break({
+                    window.Gamezy24Game.ad.break({
                       type: "reward",
                       name: "rewarded_ad",
                       beforeReward:
@@ -65329,7 +65333,7 @@
                 this._adBreakTimeout &&
                   (window.clearInterval(this._adBreakTimeout),
                   (this._adBreakTimeout = null)),
-                Howler.mute(!window.PookiGame.audio.isEnabled()),
+                Howler.mute(!window.Gamezy24Game.audio.isEnabled()),
                 (this._isShowingAd = !1);
             }),
             (t.prototype.end = function () {
@@ -65344,7 +65348,7 @@
                   (this._adBreakTimeout = null));
             }),
             (t.prototype.watch = function (t) {
-              window.PookiGame
+              window.Gamezy24Game
                 ? ((this._reward = t), this._showAdFn.call(null))
                 : this._onAdCompleted.dispatch(t);
             }),
@@ -65453,18 +65457,19 @@
                 h.position.set(0.5 * i.width, 384),
                 i.addChild(h),
                 h.on("pointertap", this._onTutorialButton_Click, this),
-                window.PookiGame &&
+                window.Gamezy24Game &&
                   (Jv.main.onGlobalMuteUpdated.add(
                     this._onGlobalMute_Updated,
                     this
                   ),
                   this._onGlobalMute_Updated(
-                    window.PookiGame.audio.isEnabled()
+                    window.Gamezy24Game.audio.isEnabled()
                   ));
             }),
             (e.prototype._onMusicBtn_Click = function () {
-              (!window.PookiGame ||
-                (window.PookiGame && window.PookiGame.audio.isEnabled())) &&
+              (!window.Gamezy24Game ||
+                (window.Gamezy24Game &&
+                  window.Gamezy24Game.audio.isEnabled())) &&
                 ((this._arrMusicButton[0].visible =
                   !this._arrMusicButton[0].visible),
                 (this._arrMusicButton[1].visible =
@@ -65477,8 +65482,9 @@
                   : Jv.audio.playMusic("track_0", { loop: !0 }));
             }),
             (e.prototype._onSfxBtn_Click = function () {
-              (!window.PookiGame ||
-                (window.PookiGame && window.PookiGame.audio.isEnabled())) &&
+              (!window.Gamezy24Game ||
+                (window.Gamezy24Game &&
+                  window.Gamezy24Game.audio.isEnabled())) &&
                 ((this._arrSfxButton[0].visible =
                   !this._arrSfxButton[0].visible),
                 (this._arrSfxButton[1].visible =
@@ -65511,7 +65517,7 @@
                   (this._arrMusicButton[1].visible = !0));
             }),
             (e.prototype.onLeave = function () {
-              window.PookiGame &&
+              window.Gamezy24Game &&
                 Jv.main.onGlobalMuteUpdated.remove(
                   this._onGlobalMute_Updated,
                   this
@@ -65871,7 +65877,7 @@
                 e.onCompleted.addOnce(this._onScreen_Completed, this),
                 (this._curScreen = e);
             }
-            window.PookiGame && window.PookiGame.game.ready();
+            window.Gamezy24Game && window.Gamezy24Game.game.ready();
           }),
           (e.prototype._onScreen_Completed = function (t, e) {
             switch (
@@ -65983,7 +65989,8 @@
             (e.prototype.onEnter = function (t) {
               var e, i, r, n;
               void 0 === t && (t = null),
-                window.PookiGame && window.PookiGame.game.firstFrameReady(),
+                window.Gamezy24Game &&
+                  window.Gamezy24Game.game.firstFrameReady(),
                 (this._onComplete = new (eb().Signal)()),
                 (this._root = new ce()),
                 Jv.app.root.addChild(this._root),
@@ -66683,8 +66690,8 @@
             }),
             (t.prototype.load = function () {
               var t;
-              window.PookiGame
-                ? (t = window.PookiGame.storage.getItem(this._kSaveName))
+              window.Gamezy24Game
+                ? (t = window.Gamezy24Game.storage.getItem(this._kSaveName))
                   ? ((this._data = JSON.parse(t)),
                     (null != this._data.version &&
                       this._data.version == this._kVersion) ||
@@ -66710,8 +66717,8 @@
                 this.save();
             }),
             (t.prototype.save = function () {
-              if (window.PookiGame)
-                window.PookiGame.storage.setItem(
+              if (window.Gamezy24Game)
+                window.Gamezy24Game.storage.setItem(
                   this._kSaveName,
                   JSON.stringify(this._data)
                 );
@@ -67033,20 +67040,22 @@
                 (Jv.main = this),
                 (Jv.app = this._app),
                 (Jv.audio = new Kv()),
-                window.PookiGame)
+                window.Gamezy24Game)
               )
-                this._onGlobalMute_Updated(window.PookiGame.audio.isEnabled()),
-                  window.PookiGame.audio.subscribe(
+                this._onGlobalMute_Updated(
+                  window.Gamezy24Game.audio.isEnabled()
+                ),
+                  window.Gamezy24Game.audio.subscribe(
                     this._onGlobalMute_Updated.bind(this)
                   );
               else if (new URLSearchParams(window.location.search).has("dgs")) {
                 var e = new uC();
-                (window.PookiGame = e),
-                  Jv.app.onDummyPookiGame(e),
+                (window.Gamezy24Game = e),
+                  Jv.app.onDummyGamezy24Game(e),
                   this._onGlobalMute_Updated(
-                    window.PookiGame.audio.isEnabled()
+                    window.Gamezy24Game.audio.isEnabled()
                   ),
-                  window.PookiGame.audio.subscribe(
+                  window.Gamezy24Game.audio.subscribe(
                     this._onGlobalMute_Updated.bind(this)
                   );
               }

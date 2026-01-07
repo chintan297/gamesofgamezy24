@@ -3786,7 +3786,9 @@ $jscomp.polyfill(
     update: function (a) {
       ab.prototype.update.call(this, a);
       n.inGameplay != n.prevInGameplay &&
-        (n.inGameplay ? PookiSDK.gameplayStart() : PookiSDK.gameplayStop(),
+        (n.inGameplay
+          ? Gamezy24SDK.gameplayStart()
+          : Gamezy24SDK.gameplayStop(),
         (n.prevInGameplay = n.inGameplay));
       -1 == this.selectedKey
         ? ((a = h.keys.justPressed),
@@ -7780,15 +7782,15 @@ $jscomp.polyfill(
     xOffset: null,
     yOffset: null,
     create: function () {
-      PookiSDK.init()
+      Gamezy24SDK.init()
         .then(function () {
-          console.log("PookiSDK initialized");
+          console.log("Gamezy24SDK initialized");
         })
         .catch(function () {
           console.log("Adblock enabled");
         });
-      PookiSDK.setDebug(!1);
-      PookiSDK.gameLoadingStart();
+      Gamezy24SDK.setDebug(!1);
+      Gamezy24SDK.gameLoadingStart();
       this._width = Q.get_current().stage.stageWidth | 0;
       this._height = Q.get_current().stage.stageHeight | 0;
       1.77777778 < this._width / this._height
@@ -7841,7 +7843,7 @@ $jscomp.polyfill(
     update: function (a) {
       var c = {};
       c.percentageDone = a;
-      PookiSDK.gameLoadingProgress(c);
+      Gamezy24SDK.gameLoadingProgress(c);
       this._width = Q.get_current().stage.stageWidth | 0;
       this._height = Q.get_current().stage.stageHeight | 0;
       1.77777778 < this._width / this._height
@@ -16027,7 +16029,7 @@ $jscomp.polyfill(
       n.justLoadedGame
         ? ((n.justLoadedGame = !1),
           Q.get_current().stage.set_quality(0),
-          PookiSDK.gameLoadingFinished(),
+          Gamezy24SDK.gameLoadingFinished(),
           this.loadSaveInfo())
         : this.playInterstitialAd();
       h.camera.flash(-16777216, 0.55);
@@ -16131,7 +16133,9 @@ $jscomp.polyfill(
       this.updateBackgrounds();
       this.handleHUDAnimation();
       n.inGameplay != n.prevInGameplay &&
-        (n.inGameplay ? PookiSDK.gameplayStart() : PookiSDK.gameplayStop(),
+        (n.inGameplay
+          ? Gamezy24SDK.gameplayStart()
+          : Gamezy24SDK.gameplayStop(),
         (n.prevInGameplay = n.inGameplay));
     },
     createPlayer: function () {
@@ -16537,7 +16541,7 @@ $jscomp.polyfill(
       n.inGameplay = !1;
       n.prevInGameplay = !1;
       n.playingAd = !0;
-      PookiSDK.commercialBreak().then(function () {
+      Gamezy24SDK.commercialBreak().then(function () {
         n.adFinished = !0;
       });
     },
@@ -16551,19 +16555,19 @@ $jscomp.polyfill(
       n.inGameplay = !1;
       n.prevInGameplay = !1;
       n.playingAd = !0;
-      PookiSDK.rewardedBreak().then(function (a) {
+      Gamezy24SDK.rewardedBreak().then(function (a) {
         a && (n.avag = !0);
         a && (n.assAvag = !0);
         n.adFinished = !0;
       });
     },
     onFocus: function () {
-      n.inGameplayBeforeFocusLost && PookiSDK.gameplayStart();
+      n.inGameplayBeforeFocusLost && Gamezy24SDK.gameplayStart();
       n.inGameplay = n.inGameplayBeforeFocusLost;
       n.prevInGameplay = n.prevInGameplayBeforeFocusLost;
     },
     onFocusLost: function () {
-      n.inGameplay && PookiSDK.gameplayStop();
+      n.inGameplay && Gamezy24SDK.gameplayStop();
       n.inGameplayBeforeFocusLost = n.inGameplay;
       n.prevInGameplayBeforeFocusLost = n.prevInGameplay;
       n.inGameplay = !1;
@@ -16765,7 +16769,9 @@ $jscomp.polyfill(
     update: function (a) {
       ab.prototype.update.call(this, a);
       n.inGameplay != n.prevInGameplay &&
-        (n.inGameplay ? PookiSDK.gameplayStart() : PookiSDK.gameplayStop(),
+        (n.inGameplay
+          ? Gamezy24SDK.gameplayStart()
+          : Gamezy24SDK.gameplayStop(),
         (n.prevInGameplay = n.inGameplay));
       1 > this.fadeSprite.alpha &&
         ((a = this.fadeSprite), a.set_alpha(a.alpha + 3.5 * h.elapsed));
@@ -17959,7 +17965,9 @@ $jscomp.polyfill(
       this.speedSoundTime = 0;
       this.firstFrame = !1;
       n.inGameplay != n.prevInGameplay &&
-        (n.inGameplay ? PookiSDK.gameplayStart() : PookiSDK.gameplayStop(),
+        (n.inGameplay
+          ? Gamezy24SDK.gameplayStart()
+          : Gamezy24SDK.gameplayStop(),
         (n.prevInGameplay = n.inGameplay));
     },
     setupLevelData: function () {
@@ -18303,7 +18311,7 @@ $jscomp.polyfill(
               n.onSafari
                 ? h.sound.play("assets/sounds/checkpoint_big.m4a")
                 : h.sound.play("assets/sounds/checkpoint_big.ogg"),
-              PookiSDK.happyTime(1))
+              Gamezy24SDK.happyTime(1))
             : n.onSafari
             ? h.sound.play("assets/sounds/checkpoint.m4a")
             : h.sound.play("assets/sounds/checkpoint.ogg");
@@ -18728,7 +18736,7 @@ $jscomp.polyfill(
       n.inGameplay = !1;
       n.prevInGameplay = !1;
       n.playingAd = !0;
-      PookiSDK.commercialBreak().then(function () {
+      Gamezy24SDK.commercialBreak().then(function () {
         n.adFinished = !0;
         n.inGameplay = !0;
         n.inGameplayBeforeFocusLost = !0;
@@ -18744,7 +18752,7 @@ $jscomp.polyfill(
       n.inGameplay = !1;
       n.prevInGameplay = !1;
       n.playingAd = !0;
-      PookiSDK.rewardedBreak().then(function (a) {
+      Gamezy24SDK.rewardedBreak().then(function (a) {
         a && (n.avag = !0);
         a && (n.assAvag = !0);
         n.adFinished = !0;
@@ -18753,12 +18761,12 @@ $jscomp.polyfill(
       });
     },
     onFocus: function () {
-      n.inGameplayBeforeFocusLost && PookiSDK.gameplayStart();
+      n.inGameplayBeforeFocusLost && Gamezy24SDK.gameplayStart();
       n.inGameplay = n.inGameplayBeforeFocusLost;
       n.prevInGameplay = n.prevInGameplayBeforeFocusLost;
     },
     onFocusLost: function () {
-      n.inGameplay && PookiSDK.gameplayStop();
+      n.inGameplay && Gamezy24SDK.gameplayStop();
       n.inGameplayBeforeFocusLost = n.inGameplay;
       n.prevInGameplayBeforeFocusLost = n.prevInGameplay;
       n.inGameplay = !1;
@@ -19107,7 +19115,9 @@ $jscomp.polyfill(
     update: function (a) {
       ab.prototype.update.call(this, a);
       n.inGameplay != n.prevInGameplay &&
-        (n.inGameplay ? PookiSDK.gameplayStart() : PookiSDK.gameplayStop(),
+        (n.inGameplay
+          ? Gamezy24SDK.gameplayStart()
+          : Gamezy24SDK.gameplayStop(),
         (n.prevInGameplay = n.inGameplay));
       -1 == this.selectedKey
         ? ((a = h.keys.justPressed),

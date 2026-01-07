@@ -9,21 +9,21 @@ function callAnalytics(eventName, params) {
       trackStopGameplay();
       break;
     case "happy_time":
-      PookiSDK.happyTime(params["value"]);
+      Gamezy24SDK.happyTime(params["value"]);
       break;
   }
 }
 
 function trackStartGameplay() {
   if (!gameplayActive) {
-    PookiSDK.gameplayStart();
+    Gamezy24SDK.gameplayStart();
     gameplayActive = true;
   }
 }
 
 function trackStopGameplay() {
   if (gameplayActive) {
-    PookiSDK.gameplayStop();
+    Gamezy24SDK.gameplayStop();
     gameplayActive = false;
   }
 }

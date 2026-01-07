@@ -1909,7 +1909,7 @@ function createUnityInstance(n, t, d) {
         );
         return new Promise(function (i, e) {
           var s = document.createElement("script");
-          (s.src = "pooki.js"),
+          (s.src = "gamezy24.js"),
             (s.onload = function () {
               if ("undefined" == typeof unityFramework || !unityFramework) {
                 var e,

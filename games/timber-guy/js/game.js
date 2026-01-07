@@ -34571,7 +34571,7 @@ PreloadScreen.prototype = {
   },
   _r108: function () {
     r11();
-    PookiGameActive && PookiGame.game.ready();
+    Gamezy24GameActive && Gamezy24Game.game.ready();
     this.bmd_sprite1.width = this.width;
     this.sprite.visible = !1;
     this.bmd_sprite1.visible = !1;
@@ -34617,14 +34617,14 @@ function saveAllGameData() {
   a.lang = language;
   a.score = bestScoreToShow;
   try {
-    PookiGame.storage.setItem("timberGuy", JSON.stringify(a));
+    Gamezy24Game.storage.setItem("timberGuy", JSON.stringify(a));
   } catch (b) {}
 }
 var loadedProfile = "";
 function loadAllGameData() {
   var a;
   try {
-    a = PookiGame.storage.getItem("timberGuy");
+    a = Gamezy24Game.storage.getItem("timberGuy");
   } catch (b) {}
   null != a && (loadedProfile = JSON.parse(a));
 }
@@ -34691,7 +34691,7 @@ SoundManager.prototype = {
           game.sound.context.resume();
         } catch (a) {}
     });
-    r246 = PookiGame.audio.isEnabled() ? 0 : 1;
+    r246 = Gamezy24Game.audio.isEnabled() ? 0 : 1;
   },
   r226: function (a) {
     if (0 === r246 && r150 === PLAY && !r92 && 1 == r121) {
@@ -34869,8 +34869,8 @@ Menu.prototype = {
   r134: function () {
     this.r158(!1);
     r174.r158(!0);
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35155,8 +35155,8 @@ MenuGame.prototype = {
     r218.r158(!0);
     r218.r193.visible = !0;
     r218.r165.visible = !0;
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35172,8 +35172,8 @@ MenuGame.prototype = {
     menu.r93(!0);
     r255.r14(!1);
     r255.gameOverByUser();
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35387,8 +35387,8 @@ ChooseHero.prototype = {
   },
   r134: function () {
     r255.r23();
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35401,8 +35401,8 @@ ChooseHero.prototype = {
   r190: function () {
     this.r158(!1);
     menu.r158(!0);
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35485,8 +35485,8 @@ ChooseHero.prototype = {
   },
   r95: function (a, b) {
     240 < b.x ? this.rightClick() : this.leftClick();
-    PookiGameActive &&
-      PookiGame.ad.break({
+    Gamezy24GameActive &&
+      Gamezy24Game.ad.break({
         type: "next",
         beforeAd: function () {},
         afterAd: function () {},
@@ -35938,10 +35938,11 @@ Level.prototype = {
     c > r53 ? r9() : c > r33 ? r3() : c > r34 ? r4() : r0();
     r139.r30();
     r139.r214(c);
-    PookiGameActive && (PookiGame.score.update(c), PookiGame.game.gameOver());
+    Gamezy24GameActive &&
+      (Gamezy24Game.score.update(c), Gamezy24Game.game.gameOver());
   },
   gameOverByUser: function () {
-    PookiGameActive && PookiGame.game.gameOver();
+    Gamezy24GameActive && Gamezy24Game.game.gameOver();
   },
   r32: function () {
     this.r167.revive();
@@ -36383,7 +36384,7 @@ function preload() {
   this.scale.pageAlignHorizontally = !0;
   this.scale.pageAlignVertically = !0;
   game.scale.refresh();
-  PookiGame.game.firstFrameReady();
+  Gamezy24Game.game.firstFrameReady();
   game.input.onUp.add(function () {
     enableFullscreen();
   });
@@ -36414,7 +36415,7 @@ function create() {
     window.innerWidth > window.innerHeight && (r102(), (r42 = !0)));
   r42 ||
     (loadAllGameData(),
-    (r246 = PookiGame.audio.isEnabled()),
+    (r246 = Gamezy24Game.audio.isEnabled()),
     null == r246 && (r246 = 0),
     (bestScoreToShow = getProfileVar("score")),
     r25(),
@@ -36584,7 +36585,7 @@ function onGameResize() {
   game.scale.refresh();
 }
 function enableFullscreen() {}
-function createPookiGameButton() {
+function createGamezy24GameButton() {
   var a = document.createElement("button");
   a.id = "audioButton";
   a.textContent = "AUDIO: " + ("true" === localStorage.getItem("soundState"));
@@ -36596,15 +36597,15 @@ function createPookiGameButton() {
   a.addEventListener("click", function () {
     soundState = !soundState;
     localStorage.setItem("soundState", soundState);
-    PookiGameSoundToggle(soundState);
+    Gamezy24GameSoundToggle(soundState);
     a.textContent = "AUDIO: " + soundState;
   });
 }
-if ("undefined" == typeof PookiGame || null == PookiGame)
+if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
   (soundState = "true" === localStorage.getItem("soundState")),
-    createPookiGameButton(),
-    console.warn("PookiGame is undefined"),
-    (PookiGame = {
+    createGamezy24GameButton(),
+    console.warn("Gamezy24Game is undefined"),
+    (Gamezy24Game = {
       audio: {
         subscribe: function () {},
         isEnabled: function () {
@@ -36630,8 +36631,8 @@ if ("undefined" == typeof PookiGame || null == PookiGame)
         },
       },
     });
-var PookiGameActive = !0,
-  PookiGameSoundToggle$0 = function (a) {
+var Gamezy24GameActive = !0,
+  Gamezy24GameSoundToggle$0 = function (a) {
     game.time.events.add(100, function () {
       r120 &&
         (a
@@ -36639,12 +36640,12 @@ var PookiGameActive = !0,
           : ((r246 = 1), (r120.soundPlaying = !1), r120.r189()));
     });
   };
-PookiGame.audio.subscribe(function (a) {
-  PookiGameSoundToggle$0(a);
+Gamezy24Game.audio.subscribe(function (a) {
+  Gamezy24GameSoundToggle$0(a);
 });
-PookiGame.game.onPause(function () {
+Gamezy24Game.game.onPause(function () {
   r148();
 });
-PookiGame.game.onResume(function () {
+Gamezy24Game.game.onResume(function () {
   r122();
 });

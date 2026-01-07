@@ -64832,7 +64832,7 @@ self.C3_ExpressionFuncs = [
     const b = a._GetNode(0).GetVar();
     return () => and("BEST  ", b.GetValue());
   },
-  () => "https://pookigame.com",
+  () => "https://gamezy24.com",
   () => "NewWindow",
 ];
 var module$content$working$470284629$scripts$c3runtime = {};

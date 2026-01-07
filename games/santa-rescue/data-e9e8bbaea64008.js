@@ -35378,7 +35378,7 @@
                     402508277186588,
                     false,
                     [
-                      [1, [2, "https//pookigame.com"]],
+                      [1, [2, "https//gamezy24.com"]],
                       [1, [2, "More_games"]],
                     ],
                   ],

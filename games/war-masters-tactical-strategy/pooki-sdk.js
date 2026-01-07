@@ -46,7 +46,7 @@
           }),
           (this.throwNotLoaded = function () {
             console.debug(
-              "PookiSDK is not loaded yet. Not all methods are available."
+              "Gamezy24SDK is not loaded yet. Not all methods are available."
             );
           }),
           (this.doNothing = function () {});
@@ -71,14 +71,14 @@
                   r = i,
                   a = r.fn,
                   u = r.args;
-                if ("function" == typeof window.PookiSDK[a])
+                if ("function" == typeof window.Gamezy24SDK[a])
                   if (
                     (null == i ? void 0 : i.resolveFn) ||
                     (null == i ? void 0 : i.rejectFn)
                   ) {
                     var c = "init" === a;
                     if (
-                      ((n = window.PookiSDK)[a]
+                      ((n = window.Gamezy24SDK)[a]
                         .apply(n, u)
                         .catch(function () {
                           for (var n = [], t = 0; t < arguments.length; t++)
@@ -103,7 +103,7 @@
                       c)
                     )
                       return "break";
-                  } else (o = window.PookiSDK)[a].apply(o, u);
+                  } else (o = window.Gamezy24SDK)[a].apply(o, u);
                 else console.error("Cannot execute ".concat(a));
               },
               t = this;
@@ -116,7 +116,7 @@
         e
       );
     })())();
-  (window.PookiSDK = {
+  (window.Gamezy24SDK = {
     init: i.init,
     initWithVideoHB: i.init,
     commercialBreak: i.commercialBreak,
@@ -159,9 +159,9 @@
       "setPlaytestCanvas",
       "enableEventTracking",
     ].forEach(function (e) {
-      window.PookiSDK[e] = i.withArguments(e);
+      window.Gamezy24SDK[e] = i.withArguments(e);
     });
-  var r = "./pooki-sdk-core.js",
+  var r = "./gamezy24-sdk-core.js",
     c = document.createElement("script");
   c.setAttribute("src", r),
     c.setAttribute("type", "text/javascript"),

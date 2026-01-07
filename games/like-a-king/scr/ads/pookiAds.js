@@ -12,7 +12,7 @@ function showRewardedVideo(placement, callback) {
   debugLog("AD: show rewarded ad...");
   let inGame = gameplayActive;
   trackStopGameplay();
-  PookiSDK.rewardedBreak().then((success) => {
+  Gamezy24SDK.rewardedBreak().then((success) => {
     if (inGame) {
       trackStartGameplay();
     }
@@ -35,7 +35,7 @@ const INTERSTITIAL_AD_STATUS_FAILED = "interstitialAdFailed";
 function showInterstitialVideo(placement, callback) {
   let inGame = gameplayActive;
   trackStopGameplay();
-  PookiSDK.commercialBreak()
+  Gamezy24SDK.commercialBreak()
     .then(() => {
       debugLog("Commercial break finished, proceeding to game");
       if (inGame) {

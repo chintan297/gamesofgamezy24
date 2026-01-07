@@ -205,7 +205,7 @@
             )) &&
               decodeURIComponent(e[1].replace(/\+/g, " "))) ||
             "v2");
-        return "./pooki-sdk-core.js";
+        return "./gamezy24-sdk-core.js";
       })(),
       i = document.createElement("script");
     i.setAttribute("src", r),

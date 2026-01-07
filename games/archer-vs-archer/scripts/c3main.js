@@ -46949,15 +46949,13 @@ C3$jscomp$197.InstanceEffectList = class extends C3$jscomp$197.DefendedBase {
     return this._effectList.GetAllEffectTypes();
   }
   _SaveToJson() {
-    return this._effectList
-      .GetAllEffectTypes()
-      .map((a) => ({
-        name: a.GetName(),
-        active: this._activeEffectFlags[a.GetIndex()],
-        params: C3$jscomp$197.EffectList.SaveFxParamsToJson(
-          this._effectParams[a.GetIndex()]
-        ),
-      }));
+    return this._effectList.GetAllEffectTypes().map((a) => ({
+      name: a.GetName(),
+      active: this._activeEffectFlags[a.GetIndex()],
+      params: C3$jscomp$197.EffectList.SaveFxParamsToJson(
+        this._effectParams[a.GetIndex()]
+      ),
+    }));
   }
   _LoadFromJson(a) {
     for (const b of a)
@@ -65267,7 +65265,7 @@ self.C3_ExpressionFuncs = [
   () => 0.05,
   () => -50,
   () => -100,
-  () => "https://pookigame.com",
+  () => "https://gamezy24.com",
   () => "NewWindow",
   () => "CREATE EFFECT",
   () => 0.7,

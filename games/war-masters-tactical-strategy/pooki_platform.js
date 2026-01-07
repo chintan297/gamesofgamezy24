@@ -13,23 +13,23 @@ var SOCIAL_API_INITIALIZED_MSG = "social_api_initialized",
     _sdkInitialized: !1,
     _gameLoadingFinished: !1,
     progress: function (progress) {
-      "undefined" == typeof PookiSDK ||
+      "undefined" == typeof Gamezy24SDK ||
         100 !== progress ||
         socialPlatform._gameLoadingFinished ||
         ((socialPlatform._gameLoadingFinished = !0),
-        PookiSDK.gameLoadingFinished());
+        Gamezy24SDK.gameLoadingFinished());
     },
     preInitialize: function (callback) {
-      if ("undefined" == typeof PookiSDK)
-        throw new Error("Unable to resolve PookiSDK");
-      PookiSDK.init()
+      if ("undefined" == typeof Gamezy24SDK)
+        throw new Error("Unable to resolve Gamezy24SDK");
+      Gamezy24SDK.init()
         .then(function () {
-          console.log("Pooki SDK successfully initialized"),
+          console.log("Gamezy24 SDK successfully initialized"),
             (socialPlatform._sdkInitialized = !0),
             callback();
         })
         .catch(function (error) {
-          console.log("Unable to initialize Pooki SDK:", error), callback();
+          console.log("Unable to initialize Gamezy24 SDK:", error), callback();
         });
     },
     initialize: function () {
@@ -66,7 +66,7 @@ var SOCIAL_API_INITIALIZED_MSG = "social_api_initialized",
     },
     showInterstitial: function () {
       var videoStarted = !1;
-      PookiSDK.commercialBreak(function () {
+      Gamezy24SDK.commercialBreak(function () {
         console.log("Interstitial video started"), (videoStarted = !0);
       })
         .then(function () {
@@ -85,7 +85,7 @@ var SOCIAL_API_INITIALIZED_MSG = "social_api_initialized",
       JsToDef.send(REWARDED_AD_LOADED_MSG);
     },
     showRewarded: function () {
-      PookiSDK.rewardedBreak(function () {
+      Gamezy24SDK.rewardedBreak(function () {
         console.log("Rewarded video started");
       })
         .then(function (status) {

@@ -62878,7 +62878,7 @@ THE SOFTWARE.
       const v0 = p._GetNode(0).GetVar();
       return () => and("Level:", v0.GetValue());
     },
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
     () => "NewWindow",
     (p) => {
       const v0 = p._GetNode(0).GetVar();

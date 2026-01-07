@@ -5496,9 +5496,9 @@
 
   // NOTE: use a unique DOM component ID to ensure it doesn't clash with anything else
   // This must also match the ID in instance.js and plugin.js.
-  const DOM_COMPONENT_ID = "avix-pookisdk-forc3";
+  const DOM_COMPONENT_ID = "avix-gamezy24sdk-forc3";
 
-  // this method is the same that PookiSDK uses to detect if navigator is mobile
+  // this method is the same that Gamezy24SDK uses to detect if navigator is mobile
   function IsMobile() {
     return (
       "undefined" != typeof navigator &&
@@ -5507,8 +5507,8 @@
       )
     );
   }
-  // this method is the same that PookiSDK uses to detect if navigator is tablet
-  // el problema es que no estoy muy seguro que comportamiento tiene Pooki en las tablets :/
+  // this method is the same that Gamezy24SDK uses to detect if navigator is tablet
+  // el problema es que no estoy muy seguro que comportamiento tiene Gamezy24 en las tablets :/
   function IsTablet() {
     return (
       "undefined" != typeof navigator &&
@@ -5518,17 +5518,17 @@
     );
   }
 
-  const HANDLER_CLASS = class PookiHandler extends self.DOMHandler {
+  const HANDLER_CLASS = class Gamezy24Handler extends self.DOMHandler {
     constructor(iRuntime) {
       super(iRuntime, DOM_COMPONENT_ID);
 
-      this._pookiSDKLoaded = false;
+      this._gamezy24SDKLoaded = false;
       this._debugModeActive = false;
       this._gameplayActive = false;
       this._finishedLoadingSent = false;
 
       this.AddRuntimeMessageHandlers([
-        ["InitPooki", this.InitPooki.bind(this)],
+        ["InitGamezy24", this.InitGamezy24.bind(this)],
         ["NotifyGameplayStart", this.NotifyGameplayStart.bind(this)],
         ["NotifyGameplayStop", this.NotifyGameplayStop.bind(this)],
         ["HappyTime", this.HappyTime.bind(this)],
@@ -5540,38 +5540,38 @@
     }
 
     GameLoadingFinished() {
-      if (!this._pookiSDKLoaded) return;
+      if (!this._gamezy24SDKLoaded) return;
       if (this._finishedLoadingSent) return;
       this._finishedLoadingSent = true;
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
     }
     NotifyGameplayStart() {
-      if (!this._pookiSDKLoaded) return;
+      if (!this._gamezy24SDKLoaded) return;
 
       if (!this._finishedLoadingSent) {
         console.log(
-          "Don't forget to send the Loading Finished Notification, or configure the Pooki Plugin to manage it automatically."
+          "Don't forget to send the Loading Finished Notification, or configure the Gamezy24 Plugin to manage it automatically."
         );
       }
 
       this._gameplayActive = true;
-      PookiSDK.gameplayStart();
+      Gamezy24SDK.gameplayStart();
     }
     NotifyGameplayStop() {
-      if (!this._pookiSDKLoaded) return;
+      if (!this._gamezy24SDKLoaded) return;
       this._gameplayActive = false;
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
     }
     HappyTime({ intensity }) {
-      if (!this._pookiSDKLoaded) return;
-      PookiSDK.happyTime(intensity);
+      if (!this._gamezy24SDKLoaded) return;
+      Gamezy24SDK.happyTime(intensity);
     }
 
     RequestCommercialBreak() {
-      if (!this._pookiSDKLoaded) return { result: false, err: false };
+      if (!this._gamezy24SDKLoaded) return { result: false, err: false };
       if (this._gameplayActive) this.NotifyGameplayStop();
       this.PostToRuntime("SuspendRuntime");
-      return PookiSDK.commercialBreak()
+      return Gamezy24SDK.commercialBreak()
         .then(() => {
           this.PostToRuntime("ResumeRuntime");
           return { result: true, err: false };
@@ -5582,10 +5582,10 @@
         });
     }
     RequestRewardedBreak() {
-      if (!this._pookiSDKLoaded) return { result: false, err: false };
+      if (!this._gamezy24SDKLoaded) return { result: false, err: false };
       if (this._gameplayActive) this.NotifyGameplayStop();
       this.PostToRuntime("SuspendRuntime");
-      return PookiSDK.rewardedBreak()
+      return Gamezy24SDK.rewardedBreak()
         .then((success) => {
           this.PostToRuntime("ResumeRuntime");
           return { result: success, err: false };
@@ -5597,33 +5597,33 @@
     }
 
     SetDebugMode({ enable }) {
-      if (!this._pookiSDKLoaded) return;
-      PookiSDK.setDebug((this._debugModeActive = enable));
+      if (!this._gamezy24SDKLoaded) return;
+      Gamezy24SDK.setDebug((this._debugModeActive = enable));
     }
-    InitPooki({ debugMode, preventScroll }) {
-      if (typeof PookiSDK !== "undefined") {
+    InitGamezy24({ debugMode, preventScroll }) {
+      if (typeof Gamezy24SDK !== "undefined") {
         if (preventScroll) this.preventScroll();
 
-        this._pookiSDKLoaded = true;
+        this._gamezy24SDKLoaded = true;
         let adBlock = false;
-        return PookiSDK.init()
+        return Gamezy24SDK.init()
           .then(() => {
-            console.log("Pooki SDK successfully initialized");
-            return { loaded: this._pookiSDKLoaded, adBlock: adBlock };
+            console.log("Gamezy24 SDK successfully initialized");
+            return { loaded: this._gamezy24SDKLoaded, adBlock: adBlock };
           })
           .catch(() => {
             console.log("Initialized, but the user likely has adblock");
             adBlock = true;
-            return { loaded: this._pookiSDKLoaded, adBlock: adBlock };
+            return { loaded: this._gamezy24SDKLoaded, adBlock: adBlock };
           })
           .finally(() => {
             if (debugMode) this.SetDebugMode(true);
-            PookiSDK.gameLoadingStart();
+            Gamezy24SDK.gameLoadingStart();
           });
       } else {
-        console.log("Pooki SDK failed to load");
+        console.log("Gamezy24 SDK failed to load");
         return Promise.resolve({
-          loaded: this._pookiSDKLoaded,
+          loaded: this._gamezy24SDKLoaded,
           adBlock: false,
         });
       }

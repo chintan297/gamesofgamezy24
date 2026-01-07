@@ -3315,7 +3315,7 @@ $jscomp.polyfill(
     this._parent = null;
     wa.call(this);
     this.cLevel = b;
-    PookiSDK.gameplayStop();
+    Gamezy24SDK.gameplayStop();
     this._parent = a;
     k.previousLevel = null;
     this.score = c;
@@ -4330,7 +4330,7 @@ $jscomp.polyfill(
     this.gameScreen = k.theGame;
     this.bombForceDefault = (3500 * this.bombZone) / 2;
     k.curSprite = this._parent;
-    PookiSDK.gameplayStart();
+    Gamezy24SDK.gameplayStart();
     ca.trace("before load", {
       fileName: "PlayState.hx",
       lineNumber: 374,
@@ -7247,7 +7247,7 @@ $jscomp.polyfill(
     },
     goToMenu: function (a) {
       this.stopTheGame();
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       this.refreshWorld();
       this.clearState();
       a = new Lf(this._parent);
@@ -10345,7 +10345,7 @@ $jscomp.polyfill(
     });
     k.adsInited || (k.adsInited = !0);
     pauseGame();
-    PookiSDK.commercialBreak().then(function () {
+    Gamezy24SDK.commercialBreak().then(function () {
       resumeGame();
     });
   };
@@ -36476,7 +36476,7 @@ $jscomp.polyfill(
     null != a &&
       (a.addEventListener("unload", m(this, this.display_onUnload)),
       N.get_current().addChild(a),
-      PookiSDK.gameLoadingStart(),
+      Gamezy24SDK.gameLoadingStart(),
       ca.trace("start", {
         fileName: "Preloader.hx",
         lineNumber: 39,
@@ -36499,7 +36499,7 @@ $jscomp.polyfill(
         className: "openfl.display.Preloader",
         methodName: "start",
       });
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
       N.get_current().get_loaderInfo().__complete();
       if (null != this.display) {
         var a = new X("complete", !0, !0);
@@ -36511,7 +36511,7 @@ $jscomp.polyfill(
     update: function (a, b) {
       var c = {};
       c.percentageDone = a / b;
-      PookiSDK.gameLoadingProgress(c);
+      Gamezy24SDK.gameLoadingProgress(c);
       N.get_current().get_loaderInfo().__update(a, b);
       null != this.display &&
         this.display.dispatchEvent(new gg("progress", !0, !0, a, b));

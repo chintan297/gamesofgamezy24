@@ -40755,25 +40755,25 @@ SoundManager = function (a) {
   this.game = a;
   try {
     (this.musicPlaying = this.soundPlaying = SOUNDS_ENABLED),
-      PookiGame.storage.getItem(GameData.ProfileName + "-sounds") &&
+      Gamezy24Game.storage.getItem(GameData.ProfileName + "-sounds") &&
         (this.soundPlaying =
           SOUNDS_ENABLED &&
           !0 ===
             JSON.parse(
-              PookiGame.storage.getItem(GameData.ProfileName + "-sounds")
+              Gamezy24Game.storage.getItem(GameData.ProfileName + "-sounds")
             )),
-      PookiGame.storage.getItem(GameData.ProfileName + "-music") &&
+      Gamezy24Game.storage.getItem(GameData.ProfileName + "-music") &&
         (this.musicPlaying =
           SOUNDS_ENABLED &&
           !0 ===
             JSON.parse(
-              PookiGame.storage.getItem(GameData.ProfileName + "-music")
+              Gamezy24Game.storage.getItem(GameData.ProfileName + "-music")
             ));
   } catch (b) {
     this.musicPlaying = this.soundPlaying = SOUNDS_ENABLED;
   }
-  this.musicPlaying = PookiGame.audio.isEnabled();
-  this.soundPlaying = PookiGame.audio.isEnabled();
+  this.musicPlaying = Gamezy24Game.audio.isEnabled();
+  this.soundPlaying = Gamezy24Game.audio.isEnabled();
   this.music = [];
   this.sounds = [];
   this.prevSoundPlayed = this.actualMusic = null;
@@ -40830,7 +40830,7 @@ SoundManager.prototype = {
       ? ((this.musicPlaying = !1), this.stopMusic())
       : ((this.musicPlaying = !0), this.playMusic(a));
     try {
-      PookiGame.storage.setItem(
+      Gamezy24Game.storage.setItem(
         GameData.ProfileName + "-music",
         this.musicPlaying
       );
@@ -40842,7 +40842,7 @@ SoundManager.prototype = {
       for (var a in this.sounds) "contains" != a && this.sounds[a].stop();
     } else this.soundPlaying = !0;
     try {
-      PookiGame.storage.setItem(
+      Gamezy24Game.storage.setItem(
         GameData.ProfileName + "-sounds",
         this.soundPlaying
       );
@@ -42340,7 +42340,7 @@ GameData.Load = function () {
   GameData.Reset();
   var a = null;
   try {
-    a = JSON.parse(PookiGame.storage.getItem(GameData.ProfileName));
+    a = JSON.parse(Gamezy24Game.storage.getItem(GameData.ProfileName));
   } catch (b) {}
   try {
     (gameSize = a.gameSize),
@@ -42357,7 +42357,7 @@ GameData.Save = function () {
   a.gameDifficulty = gameDifficulty;
   a.selectedCol = selectedCol;
   try {
-    PookiGame.storage.setItem(GameData.ProfileName, JSON.stringify(a));
+    Gamezy24Game.storage.setItem(GameData.ProfileName, JSON.stringify(a));
   } catch (b) {}
 };
 GAME_SIZE = [, 3, 5, 7];
@@ -44060,7 +44060,7 @@ SceneLanguages.prototype = {
   },
   OnLanguageSelected: function () {
     try {
-      PookiGame.storage.setItem("pwrwl-lang", "" + language);
+      Gamezy24Game.storage.setItem("pwrwl-lang", "" + language);
     } catch (a) {}
     Languages.instance.language = language;
     languageLoaded = !0;
@@ -44578,11 +44578,11 @@ function createGamesnacksButton() {
     a.textContent = "AUDIO: " + soundState;
   });
 }
-if ("undefined" == typeof PookiGame || null == PookiGame)
+if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
   (soundState = "true" === localStorage.getItem("soundState")),
     createGamesnacksButton(),
-    console.warn("PookiGame is undefined"),
-    (PookiGame = {
+    console.warn("Gamezy24Game is undefined"),
+    (Gamezy24Game = {
       audio: {
         subscribe: function () {},
         isEnabled: function () {
@@ -44608,7 +44608,7 @@ if ("undefined" == typeof PookiGame || null == PookiGame)
         },
       },
     });
-PookiGame.audio.subscribe(function (a) {
+Gamezy24Game.audio.subscribe(function (a) {
   gamesnacksSoundToggle(a);
 });
 var pauseFunction = function () {
@@ -44617,10 +44617,10 @@ var pauseFunction = function () {
   unpauseFunction = function () {
     game.sound.mute = !1;
   };
-PookiGame.game.onPause(function () {
+Gamezy24Game.game.onPause(function () {
   pauseFunction();
 });
-PookiGame.game.onResume(function () {
+Gamezy24Game.game.onResume(function () {
   unpauseFunction();
 });
 function gamesnacksSoundToggle(a) {
@@ -44635,13 +44635,13 @@ document.addEventListener("visibilitychange", function () {
   document.hidden ? pauseFunction() : unpauseFunction();
 });
 inlHelper.game.onSplashLoadedListeners.push(function () {
-  return PookiGame.game.firstFrameReady();
+  return Gamezy24Game.game.firstFrameReady();
 });
 inlHelper.game.onGameLoadedListeners.push(function () {
-  return PookiGame.game.ready();
+  return Gamezy24Game.game.ready();
 });
 inlHelper.game.onGameOverListeners.push(function (a) {
   a == GAMEOVER_BY_WIN
-    ? PookiGame.game.levelComplete(inlHelper.game.currentLevel)
-    : PookiGame.game.gameOver();
+    ? Gamezy24Game.game.levelComplete(inlHelper.game.currentLevel)
+    : Gamezy24Game.game.gameOver();
 });

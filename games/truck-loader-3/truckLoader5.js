@@ -4067,7 +4067,7 @@ $jscomp.polyfill(
     this.skipButton = this.skipWindow = this.skipYes = this.skipNo = null;
     this.gravity = new v(0, 350);
     ta.call(this);
-    PookiSDK.gameplayStart();
+    Gamezy24SDK.gameplayStart();
     this._parent = a;
     this.cLevel = b;
     g.playState = this;
@@ -7079,7 +7079,7 @@ $jscomp.polyfill(
     },
     goToRestart: function (a) {
       A.play("SoundGameButonsClick");
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       g.showInterstital("restartPlay");
       a = this.mainBackGround3 = g.initSpriteUI("menu");
       a.set_x(a.get_x() + this.mainBackGround3.get_width() / 2);
@@ -7115,7 +7115,7 @@ $jscomp.polyfill(
     goToNext: function (a) {
       0 == a &&
         (a = this.scores.getScore(this.pastTime, this.currentLevelNumber));
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       A.stopOneSound("SoundLoaderMagnet");
       A.stopOneSound("SoundFeedGo");
       A.stopOneSound("SoundLoaderMove");
@@ -7139,7 +7139,7 @@ $jscomp.polyfill(
       A.play("SoundGameButonsClick");
     },
     goToMenu: function (a) {
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       this.stopTheGame();
       this.refreshWorld();
       this.clearState();
@@ -7298,7 +7298,7 @@ $jscomp.polyfill(
       this.skipYes.set_visible(!1);
       this.skipNo.set_visible(!1);
       A.play("SoundGameButonsClick");
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       g.showReward("reward");
     },
     goToNo: function (a) {
@@ -10560,7 +10560,7 @@ $jscomp.polyfill(
     g.adsInited || (g.adsInited = !0);
     0 == A.loopPaused && A.stopLoop(!1);
     0 == A.soundsPaused && (A.stopSound(!1), (A.soundsPauseAds = !0));
-    PookiSDK.commercialBreak().then(function () {
+    Gamezy24SDK.commercialBreak().then(function () {
       g.resumeGame();
     });
   };
@@ -10570,7 +10570,7 @@ $jscomp.polyfill(
     g.adsInited || (g.adsInited = !0);
     0 == A.loopPaused && A.stopLoop(!1);
     0 == A.soundsPaused && (A.stopSound(!1), (A.soundsPauseAds = !0));
-    // PookiSDK.rewardedBreak().then(function(a) {
+    // Gamezy24SDK.rewardedBreak().then(function(a) {
     g.resumeGame(a);
     // })
   };
@@ -35319,7 +35319,7 @@ $jscomp.polyfill(
       className: "openfl.display.DefaultPreloader",
       methodName: "new",
     });
-    PookiSDK.gameLoadingStart();
+    Gamezy24SDK.gameLoadingStart();
     window.game.load_start();
   };
   k["openfl.display.DefaultPreloader"] = Eg;
@@ -35346,7 +35346,7 @@ $jscomp.polyfill(
       this.addEventListener("enterFrame", l(this, this.this_onEnterFrame));
     },
     onLoaded: function () {
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
       ma.trace("finish load", {
         fileName: "Preloader.hx",
         lineNumber: 255,

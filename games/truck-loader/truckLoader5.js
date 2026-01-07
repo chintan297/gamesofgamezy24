@@ -4066,7 +4066,7 @@ $jscomp.polyfill(
     this.Score = new $a();
     this.gravity = new v(0, 350);
     ta.call(this);
-    PookiSDK.gameplayStart();
+    Gamezy24SDK.gameplayStart();
     this._parent = a;
     this.cLevel = b;
     g.playState = this;
@@ -7030,7 +7030,7 @@ $jscomp.polyfill(
     },
     goToRestart: function (a) {
       C.play("SoundGameButonsClick");
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       g.showInterstital("restartPlay");
       a = this.mainBackGround3 = g.initSpriteUI("menu");
       a.set_x(a.get_x() + this.mainBackGround3.get_width() / 2);
@@ -7064,7 +7064,7 @@ $jscomp.polyfill(
         : (C.resumeLoop(), this.music.showBehavior("selectEnable"));
     },
     goToNext: function (a) {
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       C.stopOneSound("SoundLoaderMagnet");
       C.stopOneSound("SoundFeedGo");
       C.stopOneSound("SoundLoaderMove");
@@ -7088,7 +7088,7 @@ $jscomp.polyfill(
       C.play("SoundGameButonsClick");
     },
     goToMenu: function (a) {
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
       this.stopTheGame();
       this.refreshWorld();
       this.clearState();
@@ -10446,7 +10446,7 @@ $jscomp.polyfill(
     g.adsInited || (g.adsInited = !0);
     0 == C.loopPaused && C.stopLoop(!1);
     0 == C.soundsPaused && (C.stopSound(!1), (C.soundsPauseAds = !0));
-    PookiSDK.commercialBreak().then(function () {
+    Gamezy24SDK.commercialBreak().then(function () {
       g.resumeGame();
     });
   };
@@ -35186,7 +35186,7 @@ $jscomp.polyfill(
       className: "openfl.display.DefaultPreloader",
       methodName: "new",
     });
-    PookiSDK.gameLoadingStart();
+    Gamezy24SDK.gameLoadingStart();
   };
   k["openfl.display.DefaultPreloader"] = Dg;
   Dg.__name__ = ["openfl", "display", "DefaultPreloader"];
@@ -35212,7 +35212,7 @@ $jscomp.polyfill(
       this.addEventListener("enterFrame", l(this, this.this_onEnterFrame));
     },
     onLoaded: function () {
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
       ma.trace("finish load", {
         fileName: "Preloader.hx",
         lineNumber: 254,

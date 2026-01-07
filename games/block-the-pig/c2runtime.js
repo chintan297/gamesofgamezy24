@@ -20786,11 +20786,11 @@ cr.plugins_.Mouse = function (runtime) {
   };
   pluginProto.exps = new Exps();
 })();
-cr.plugins_.Pooki_ST = function (runtime) {
+cr.plugins_.Gamezy24_ST = function (runtime) {
   this.runtime = runtime;
 };
 (function () {
-  var pluginProto = cr.plugins_.Pooki_ST.prototype;
+  var pluginProto = cr.plugins_.Gamezy24_ST.prototype;
   var debug = 0;
   var initialized = 0;
   var isInCommercialBreak = 0;
@@ -20807,20 +20807,20 @@ cr.plugins_.Pooki_ST = function (runtime) {
   };
   var instanceProto = pluginProto.Instance.prototype;
   instanceProto.onCreate = function () {
-    function onPookiInitialized() {
+    function onGamezy24Initialized() {
       initialized = 1;
       theInstance.runtime.trigger(
-        cr.plugins_.Pooki_ST.prototype.cnds.OnAPIInitialized,
+        cr.plugins_.Gamezy24_ST.prototype.cnds.OnAPIInitialized,
         theInstance
       );
     }
     theInstance = this;
-    if (typeof PookiSDK == "undefined" || !PookiSDK) {
+    if (typeof Gamezy24SDK == "undefined" || !Gamezy24SDK) {
       return;
     }
-    PookiSDK.init()
+    Gamezy24SDK.init()
       .then(() => {
-        console.log("Pooki SDK successfully initialized");
+        console.log("Gamezy24 SDK successfully initialized");
         initialized = 1;
       })
       .catch(() => {
@@ -20829,7 +20829,7 @@ cr.plugins_.Pooki_ST = function (runtime) {
       });
     debug = this.properties[0];
     if (debug) {
-      PookiSDK.setDebug(true);
+      Gamezy24SDK.setDebug(true);
     } else {
       const _0x1918 = [
         "top",
@@ -20905,45 +20905,45 @@ cr.plugins_.Pooki_ST = function (runtime) {
   function Acts() {}
   Acts.prototype.gameLoadingStart = function () {
     if (debug) {
-      console.log("Pooki.gameLoadingStart");
+      console.log("Gamezy24.gameLoadingStart");
     }
     if (initialized) {
-      PookiSDK.gameLoadingStart();
+      Gamezy24SDK.gameLoadingStart();
     }
   };
   Acts.prototype.gameLoadingFinished = function () {
     if (debug) {
-      console.log("Pooki.gameLoadingFinished");
+      console.log("Gamezy24.gameLoadingFinished");
     }
     if (initialized) {
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
     }
   };
   Acts.prototype.gameplayStart = function () {
     if (debug) {
-      console.log("Pooki.gameplayStart");
+      console.log("Gamezy24.gameplayStart");
     }
     if (initialized) {
-      PookiSDK.gameplayStart();
+      Gamezy24SDK.gameplayStart();
     }
   };
   Acts.prototype.gameplayStop = function () {
     if (debug) {
-      console.log("Pooki.gameplayStop");
+      console.log("Gamezy24.gameplayStop");
     }
     if (initialized) {
-      PookiSDK.gameplayStop();
+      Gamezy24SDK.gameplayStop();
     }
   };
   Acts.prototype.commercialBreak = function () {
     if (debug) {
-      console.log("pookigame.commercialBreak");
+      console.log("gamezy24game.commercialBreak");
     }
     if (!initialized) {
       return;
     }
     isInCommercialBreak = 1;
-    PookiSDK.commercialBreak().then(() => {
+    Gamezy24SDK.commercialBreak().then(() => {
       console.log("Commercial break finished, proceeding to game");
       isInCommercialBreak = 0;
     });
@@ -29471,7 +29471,7 @@ cr.getObjectRefTable = function () {
     cr.plugins_.iFrameAd_ST,
     cr.plugins_.GoogleAnalytics_ST,
     cr.plugins_.Sprite,
-    cr.plugins_.Pooki_ST,
+    cr.plugins_.Gamezy24_ST,
     cr.plugins_.Text,
     cr.plugins_.Rex_gInstGroup,
     cr.plugins_.Spritefont2,
@@ -29500,7 +29500,7 @@ cr.getObjectRefTable = function () {
     cr.plugins_.Sprite.prototype.acts.SetVisible,
     cr.system_object.prototype.exps.max,
     cr.plugins_.WebStorage.prototype.acts.StoreLocal,
-    cr.plugins_.Pooki_ST.prototype.acts.gameplayStart,
+    cr.plugins_.Gamezy24_ST.prototype.acts.gameplayStart,
     cr.plugins_.Audio.prototype.acts.SetMasterVolume,
     cr.system_object.prototype.cnds.For,
     cr.plugins_.Rex_SLGBoard.prototype.acts.CreateTile,
@@ -29565,7 +29565,7 @@ cr.getObjectRefTable = function () {
     cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
     cr.plugins_.Sprite.prototype.acts.SetMirrored,
     cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
-    cr.plugins_.Pooki_ST.prototype.cnds.IsInCommercialBreak,
+    cr.plugins_.Gamezy24_ST.prototype.cnds.IsInCommercialBreak,
     cr.system_object.prototype.acts.RestartLayout,
     cr.plugins_.Touch.prototype.cnds.OnTouchStart,
     cr.plugins_.Rex_SLGMovement.prototype.cnds.OnCostFn,
@@ -29574,8 +29574,8 @@ cr.getObjectRefTable = function () {
     cr.plugins_.Rex_SLGMovement.prototype.acts.SetCost,
     cr.plugins_.Touch.prototype.cnds.OnTouchEnd,
     cr.plugins_.Touch.prototype.cnds.IsTouchingObject,
-    cr.plugins_.Pooki_ST.prototype.acts.gameplayStop,
-    cr.plugins_.Pooki_ST.prototype.acts.commercialBreak,
+    cr.plugins_.Gamezy24_ST.prototype.acts.gameplayStop,
+    cr.plugins_.Gamezy24_ST.prototype.acts.commercialBreak,
     cr.system_object.prototype.exps.min,
     cr.plugins_.Sprite.prototype.cnds.OnCreated,
     cr.behaviors.Sin.prototype.acts.SetMovement,
@@ -29599,9 +29599,9 @@ cr.getObjectRefTable = function () {
     cr.system_object.prototype.cnds.TriggerOnce,
     cr.plugins_.GoogleAnalytics_ST.prototype.acts.TrackEvent,
     cr.system_object.prototype.exps.loadingprogress,
-    cr.plugins_.Pooki_ST.prototype.cnds.IsAPIInitialized,
-    cr.plugins_.Pooki_ST.prototype.acts.gameLoadingStart,
-    cr.plugins_.Pooki_ST.prototype.acts.gameLoadingFinished,
+    cr.plugins_.Gamezy24_ST.prototype.cnds.IsAPIInitialized,
+    cr.plugins_.Gamezy24_ST.prototype.acts.gameLoadingStart,
+    cr.plugins_.Gamezy24_ST.prototype.acts.gameLoadingFinished,
     cr.system_object.prototype.cnds.OnLoadFinished,
     cr.plugins_.Audio.prototype.acts.Preload,
     cr.system_object.prototype.cnds.IsMobile,

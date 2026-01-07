@@ -1,4 +1,4 @@
-console.log("pookiAPI Revenue Share: v1.7.6");
+console.log("gamezy24API Revenue Share: v1.7.6");
 var adBreak = function () {};
 "remove" in Element.prototype ||
   (Element.prototype.remove = function () {
@@ -6,10 +6,10 @@ var adBreak = function () {};
   });
 
 //
-// to do new2 for v3/pooki.js -> Replace all ajax v3/ calls to v4/
+// to do new2 for v3/gamezy24.js -> Replace all ajax v3/ calls to v4/
 //
 
-pookiAPI = {};
+gamezy24API = {};
 !(function () {
   function S() {}
   function e(e) {
@@ -26,12 +26,12 @@ pookiAPI = {};
   }
   function _() {
     //
-    // to do new2 for v3/pooki.js -> handle all login in parent
+    // to do new2 for v3/gamezy24.js -> handle all login in parent
     //
     //  Q.getElementById("createloginBtnMain").disabled=!0;var d=Q.getElementById("createloginBtnMain").innerText;Q.getElementById("createloginBtnMain").innerText="Loading...",Q.getElementById("createloginBtnMain").className+=" btnloading",Q.getElementById("errorsubmit")&&Q.getElementById("errorsubmit").remove();
     //var e,t,a="",i=!1,o=[];if("login"!=n&&(Q.getElementById("inputEmail1")&&(a=Q.getElementById("inputEmail1").value),(a.length<2||30<a.length)&&(i=!0,o.push("Nickname must be between 2-30 characters"))),(e=Q.getElementById("inputEmail2").value).length<5&&(i=!0,o.push("Please enter a valid email address")),((t=Q.getElementById("inputEmail3").value).length<6||30<t.length)&&(i=!0,o.push("Password must be between 6-30 characters")),i){Q.getElementById("createloginBtnMain").innerText=d,Q.getElementById("createloginBtnMain").classList.remove("btnloading"),Q.getElementById("createloginBtnMain").disabled=!1;var l=document.createElement("div");l.id="errorsubmit",l.className="error_msg";var s=document.createTextNode(o[0]);
-    //l.appendChild(s),Q.getElementById("signupFormWrap").insertBefore(l,Q.getElementById("loginit"))}else{var c=new XMLHttpRequest;c.onreadystatechange=function(){if(4==this.readyState&&200==this.status){var e=this.responseText;if(e=e.replace(")]}',",""),!0===(e=JSON.parse(e)).success&&0<e.uid)Q.getElementById("createloginBtnMain").innerText="Success!",Q.getElementById("createloginBtnMain").className+=" btnSuccessMsg",window.parent.showUserInfo(e),setTimeout(function(){Q.getElementById("createloginBtnMain").className="main_hs_btn viewranks btnSuccessMsg",p(Q.getElementById("leaderboard-modal")),setTimeout(function(){Q.getElementById("leaderboard-wrapper").remove()},200),setTimeout(function(){Q.getElementById("leaderboard-modal").remove(),r&&pookiAPI.Scores.load(u,n)},300)},600);else{Q.getElementById("createloginBtnMain").innerText=d,Q.getElementById("createloginBtnMain").className="main_hs_btn viewranks",Q.getElementById("createloginBtnMain").disabled=!1;
-    //var t=document.createElement("div");t.id="errorsubmit",t.className="error_msg";var a=document.createTextNode(e.errors);t.appendChild(a),Q.getElementById("signupFormWrap").insertBefore(t,Q.getElementById("loginit"))}}};var m={fnickname:null};m.ftype=n,a&&(m.fnickname=encodeURIComponent(a)),m.femail=encodeURIComponent(e),m.fpass=encodeURIComponent(t),c.open("POST","//pooki.com/api/v4/ajax.php",!0),c.setRequestHeader("Content-type","application/x-www-form-urlencoded"),c.send("ftype="+m.ftype+"&fnickname="+m.fnickname+"&femail="+m.femail+"&fpass="+m.fpass)}return!1}function p(e){var t=1;a=setInterval(function(){if(t<=.1){clearInterval(a);try{e.style.display="none"}catch(e){console.log(e)}}try{e.style.opacity=t,e.style.filter="alpha(opacity="+100*t+")"}catch(e){console.log(e)}t-=.1*t},13)}function q(e){return String(e).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function z(e){return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}function j(e){if(999<e)return z(e);if(99<e)return e;var t=e%10,a=e%100;return 1==t&&11!=a?e+"st":2==t&&12!=a?e+"nd":3==t&&13!=a?e+"rd":e+"th"}function S(){p(Q.getElementById("leaderboard-loading")),setTimeout(function(){Q.getElementById("leaderboard-loading").remove()},200)}function D(e){if(h=window.parent.isFullscreen,Q=h?document:window.parent.document,!e){var t=document.createElement("div");t.id="leaderboard-modal",t.onclick=function(e){return e.preventDefault(),e.stopPropagation(),!1},Q.body.appendChild(t)}var a=document.createElement("div");a.id="leaderboard-loading",a.className="leaderboard-circle";
+    //l.appendChild(s),Q.getElementById("signupFormWrap").insertBefore(l,Q.getElementById("loginit"))}else{var c=new XMLHttpRequest;c.onreadystatechange=function(){if(4==this.readyState&&200==this.status){var e=this.responseText;if(e=e.replace(")]}',",""),!0===(e=JSON.parse(e)).success&&0<e.uid)Q.getElementById("createloginBtnMain").innerText="Success!",Q.getElementById("createloginBtnMain").className+=" btnSuccessMsg",window.parent.showUserInfo(e),setTimeout(function(){Q.getElementById("createloginBtnMain").className="main_hs_btn viewranks btnSuccessMsg",p(Q.getElementById("leaderboard-modal")),setTimeout(function(){Q.getElementById("leaderboard-wrapper").remove()},200),setTimeout(function(){Q.getElementById("leaderboard-modal").remove(),r&&gamezy24API.Scores.load(u,n)},300)},600);else{Q.getElementById("createloginBtnMain").innerText=d,Q.getElementById("createloginBtnMain").className="main_hs_btn viewranks",Q.getElementById("createloginBtnMain").disabled=!1;
+    //var t=document.createElement("div");t.id="errorsubmit",t.className="error_msg";var a=document.createTextNode(e.errors);t.appendChild(a),Q.getElementById("signupFormWrap").insertBefore(t,Q.getElementById("loginit"))}}};var m={fnickname:null};m.ftype=n,a&&(m.fnickname=encodeURIComponent(a)),m.femail=encodeURIComponent(e),m.fpass=encodeURIComponent(t),c.open("POST","//gamezy24.com/api/v4/ajax.php",!0),c.setRequestHeader("Content-type","application/x-www-form-urlencoded"),c.send("ftype="+m.ftype+"&fnickname="+m.fnickname+"&femail="+m.femail+"&fpass="+m.fpass)}return!1}function p(e){var t=1;a=setInterval(function(){if(t<=.1){clearInterval(a);try{e.style.display="none"}catch(e){console.log(e)}}try{e.style.opacity=t,e.style.filter="alpha(opacity="+100*t+")"}catch(e){console.log(e)}t-=.1*t},13)}function q(e){return String(e).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function z(e){return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}function j(e){if(999<e)return z(e);if(99<e)return e;var t=e%10,a=e%100;return 1==t&&11!=a?e+"st":2==t&&12!=a?e+"nd":3==t&&13!=a?e+"rd":e+"th"}function S(){p(Q.getElementById("leaderboard-loading")),setTimeout(function(){Q.getElementById("leaderboard-loading").remove()},200)}function D(e){if(h=window.parent.isFullscreen,Q=h?document:window.parent.document,!e){var t=document.createElement("div");t.id="leaderboard-modal",t.onclick=function(e){return e.preventDefault(),e.stopPropagation(),!1},Q.body.appendChild(t)}var a=document.createElement("div");a.id="leaderboard-loading",a.className="leaderboard-circle";
     // // var n=Math.max(document.documentElement.clientHeight,window.parent.innerHeight||0),r=window.parent.innerWidth;r<769&&599<r&&719<n&&a.setAttribute("style","top:calc("+n+"px/2 - 249px)");
     // Q.body.appendChild(a)
   }
@@ -48,7 +48,7 @@ pookiAPI = {};
         r(e, d);
       }
     };
-    var o = "//pooki.com/api/v4/ajax_" + t + ".php";
+    var o = "//gamezy24.com/api/v4/ajax_" + t + ".php";
     i.open("POST", o, !0),
       i.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
       i.send("type=" + e + "&action=" + a + "&data=" + n);
@@ -626,7 +626,7 @@ pookiAPI = {};
 
   var Q;
   var useEvent = false;
-  var isOnpooki = false;
+  var isOngamezy24 = false;
   var isDevMode = false;
   var isOnApprovedWebsite = false;
   var isTestingMode = false;
@@ -656,10 +656,10 @@ pookiAPI = {};
     console.log(e);
   }
   if (!Q) {
-    console.log("not on pooki, use event");
+    console.log("not on gamezy24, use event");
     useEvent = true;
   } else {
-    isOnpooki = true;
+    isOngamezy24 = true;
     isOnApprovedWebsite = true;
     try {
       parent_campaign_id = window.parent.campaign_id;
@@ -680,14 +680,14 @@ pookiAPI = {};
       location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "preview.construct.net" ||
-      location.hostname === "pooki.app"
+      location.hostname === "gamezy24.app"
     ) {
       isDevMode = true;
-      isOnpooki = false;
+      isOngamezy24 = false;
       useEvent = true;
       isApprovedDomain = false;
 
-      if (location.hostname === "pooki.app") {
+      if (location.hostname === "gamezy24.app") {
         try {
           if (window.parent.isTestingMode) {
             isTestingMode = true;
@@ -704,19 +704,19 @@ pookiAPI = {};
   try {
     var currentUrl = document.referrer.split("/")[2];
     console.log(currentUrl);
-    if (currentUrl != "pooki.com") {
+    if (currentUrl != "gamezy24.com") {
       useEvent = true;
-      isOnpooki = false;
+      isOngamezy24 = false;
     }
     if (!currentUrl) {
-      currentUrl = "pooki.com";
+      currentUrl = "gamezy24.com";
     }
 
-    //var approvedDomainsList=['pooki.com'];
+    //var approvedDomainsList=['gamezy24.com'];
     approvedDomainsList = [
-      "pooki.com",
-      "pooki.app",
-      "pooki.dev",
+      "gamezy24.com",
+      "gamezy24.app",
+      "gamezy24.dev",
       "brainplay.com",
     ];
 
@@ -725,15 +725,15 @@ pookiAPI = {};
       isOnApprovedWebsite = false;
       if (!isDevMode) {
         var openUrlOnClick =
-          "https://pooki.com/redirect_to_game.php?swf=" + location.href;
+          "https://gamezy24.com/redirect_to_game.php?swf=" + location.href;
 
         console.log(
-          "DEV TO DO: This domain is not approved, need to hide the game and link to correct game on pooki"
+          "DEV TO DO: This domain is not approved, need to hide the game and link to correct game on gamezy24"
         );
         console.log("cover game, open on click: ", openUrlOnClick);
 
         //
-        // Message "sorry this game is only playable on pooki.com"
+        // Message "sorry this game is only playable on gamezy24.com"
         //
         var sampleAdPopup = document.createElement("div");
         sampleAdPopup.id = "examplepopup";
@@ -752,7 +752,7 @@ pookiAPI = {};
         sampleAdPopup.style.color = "#000";
         sampleAdPopup.style.cursor = "pointer";
         sampleAdPopup.innerHTML =
-          "<b>Website Not Approved</b><br>Sorry this game is only playable on pooki";
+          "<b>Website Not Approved</b><br>Sorry this game is only playable on gamezy24";
         document.body.appendChild(sampleAdPopup);
 
         //any click opens openUrlOnClick
@@ -786,8 +786,8 @@ pookiAPI = {};
   if (!useEvent) {
     try {
       if (
-        typeof window.parent.usepookiapiembed !== "undefined" &&
-        window.parent.usepookiapiembed
+        typeof window.parent.usegamezy24apiembed !== "undefined" &&
+        window.parent.usegamezy24apiembed
       ) {
         useEvent = true;
       }
@@ -798,7 +798,7 @@ pookiAPI = {};
 
   console.log("dev mode: ", isDevMode);
   console.log("is testing mode: ", isTestingMode);
-  console.log("is on pooki.com ", isOnpooki);
+  console.log("is on gamezy24.com ", isOngamezy24);
   console.log("use events: ", useEvent);
   console.log("is website approved for ads: ", isOnApprovedWebsite);
 
@@ -827,7 +827,7 @@ pookiAPI = {};
   var useParentChannel = false;
   var parentChanneltoUse = "";
 
-  pookiAPI.init = function (developer_id, dev_adsense_id, usePreloader) {
+  gamezy24API.init = function (developer_id, dev_adsense_id, usePreloader) {
     if (hasBeenInit) {
       return;
     }
@@ -836,9 +836,9 @@ pookiAPI = {};
     dev_adsense_id = dev_adsense_id.trim();
 
     //if(isDevMode){
-    console.log("pookiAPI INIT: Developer ID: ", developer_id);
+    console.log("gamezy24API INIT: Developer ID: ", developer_id);
     console.log(
-      "pookiAPI INIT: Developer Adsense Publisher ID: ",
+      "gamezy24API INIT: Developer Adsense Publisher ID: ",
       dev_adsense_id
     );
     //}
@@ -862,12 +862,12 @@ pookiAPI = {};
 
         var meta2 = document.createElement("meta");
         meta2.name = "google-adsense-platform-domain";
-        meta2.content = "pooki.com";
+        meta2.content = "gamezy24.com";
         document.getElementsByTagName("head")[0].appendChild(meta2);
 
         var meta3 = document.createElement("meta");
         meta3.name = "google-adsense-platform-author-url";
-        meta3.content = "pooki.com/developer/" + realDevId + "/";
+        meta3.content = "gamezy24.com/developer/" + realDevId + "/";
         document.getElementsByTagName("head")[0].appendChild(meta3);
 
         var element = document.createElement("script");
@@ -884,7 +884,7 @@ pookiAPI = {};
         element.setAttribute("data-ad-frequency-hint", "30s");
 
         try {
-          if (isOnpooki) {
+          if (isOngamezy24) {
             if (window.parent.customHostChannel) {
               element.setAttribute(
                 "data-ad-host-channel",
@@ -932,7 +932,7 @@ pookiAPI = {};
     }
 
     try {
-      if (isOnpooki) {
+      if (isOngamezy24) {
         if (
           window.parent.aFoundValue &&
           window.parent.aValueRules &&
@@ -997,16 +997,16 @@ pookiAPI = {};
   //
   // get user information
   //
-  pookiAPI.User = {
+  gamezy24API.User = {
     get: function (response) {
       var returnData = {
         user: {
           id: 0,
           name: "Example User",
-          avatar: "https://pooki.com/images/avatars/default-avatar.jpg",
+          avatar: "https://gamezy24.com/images/avatars/default-avatar.jpg",
         },
       };
-      if (isOnpooki && !isDevMode) {
+      if (isOngamezy24 && !isDevMode) {
         try {
           returnData.user.id = window.parent.userid_ds;
           returnData.user.name = window.parent.username;
@@ -1020,10 +1020,10 @@ pookiAPI = {};
   };
 
   //
-  // pooki achievements
+  // gamezy24 achievements
   //
   (vL = []), (b = []);
-  pookiAPI.Achievements = {
+  gamezy24API.Achievements = {
     save: function (e, t) {
       for (var a = 0, n = e.length; a < n; a++)
         -1 === vL.indexOf(e[a]) && (vL.push(e[a]), b.push(e[a]));
@@ -1040,7 +1040,7 @@ pookiAPI = {};
                 a = g.base64(t);
 
               if (isDevMode) {
-                console.log("pookiAPI: Save achievements: ", e.awards);
+                console.log("gamezy24API: Save achievements: ", e.awards);
 
                 var sampleAdPopup = document.createElement("div");
                 sampleAdPopup.id = "exampleawardpopup";
@@ -1090,19 +1090,19 @@ pookiAPI = {};
   };
 
   //
-  // pooki high scores
+  // gamezy24 high scores
   //
-  var pookiScoresSaved = [];
-  pookiAPI.Scores = {
+  var gamezy24ScoresSaved = [];
+  gamezy24API.Scores = {
     save: function (e, t) {
       u = e.board;
       if (e.score === 0 || e.score < 0) {
         return;
       }
-      if (!pookiScoresSaved[e.board]) {
-        pookiScoresSaved[e.board] = e.score;
-      } else if (pookiScoresSaved[e.board] < e.score) {
-        pookiScoresSaved[e.board] = e.score;
+      if (!gamezy24ScoresSaved[e.board]) {
+        gamezy24ScoresSaved[e.board] = e.score;
+      } else if (gamezy24ScoresSaved[e.board] < e.score) {
+        gamezy24ScoresSaved[e.board] = e.score;
       } else {
         return;
       }
@@ -1113,7 +1113,7 @@ pookiAPI = {};
         r = g.base64(n);
 
       if (isDevMode) {
-        console.log("pookiAPI: Save high score: ", e);
+        console.log("gamezy24API: Save high score: ", e);
 
         var sampleAdPopup = document.createElement("div");
         sampleAdPopup.id = "examplehighscorepopup";
@@ -1187,7 +1187,7 @@ pookiAPI = {};
               window.parent.showHSSaved(hsData);
 
               //add call for older games
-              pookiAPI.GEvents.next(function () {
+              gamezy24API.GEvents.next(function () {
                 console.log("ad done");
               });
             } catch (e) {
@@ -1197,7 +1197,7 @@ pookiAPI = {};
             //     Y=0,!(G=J=!1);var e=document.createElement("div");e.id="leaderboard-wrapper";
 
             // // var t=Math.max(document.documentElement.clientHeight,window.parent.innerHeight||0),a=window.parent.innerWidth;710<t?e.setAttribute("style","margin:calc(("+t+"px - 710px)/2) 0 0 calc((100vw - 688px)/2);"):e.setAttribute("style","height:"+t+"px;margin:0 0 0 calc((100vw - 688px)/2);"),599<a&&a<769&&719<t?e.setAttribute("style","margin:calc("+t+"px/2 - 355px) 0 0;"):a<601&&e.setAttribute("style","margin:0;height:100%"),a<1205&&t<501&&e.setAttribute("style","margin:0;height:100%");
-            // var n=document.createElement("div");n.id="leaderboard-wrapper-header";var r=document.createElement("button");r.onclick=function(){Q.getElementById("leaderboard-wrapper")&&Q.getElementById("leaderboard-wrapper").remove(),Q.getElementById("leaderboard-modal")&&(Q.getElementById("leaderboard-modal").onclick="",Q.getElementById("leaderboard-modal").remove()),!1},r.id="leaderboard-header-button";var d=document.createElement("a");d.setAttribute("href","https://pooki.com"),d.setAttribute("target","_blank"),d.id="headerlogolink";var o=document.createElement("div");if(o.id="score-circle",o.className="leaderboard-circle",n.appendChild(r),n.appendChild(d),e.appendChild(n),hsData.data&&!hsData.data.login){(c=document.createElement("div")).className="yourscore_txtdiv",m=document.createTextNode("Your High Score"),c.appendChild(m),(p=document.createElement("div")).className="finalscore_divtxt",u=document.createTextNode(z(hsData.data.utop.score)),p.appendChild(u),o.appendChild(c),o.appendChild(p),e.appendChild(o);var l=document.createElement("div");l.className="signup_txti";(g=document.createElement("button")).onclick=function(){
+            // var n=document.createElement("div");n.id="leaderboard-wrapper-header";var r=document.createElement("button");r.onclick=function(){Q.getElementById("leaderboard-wrapper")&&Q.getElementById("leaderboard-wrapper").remove(),Q.getElementById("leaderboard-modal")&&(Q.getElementById("leaderboard-modal").onclick="",Q.getElementById("leaderboard-modal").remove()),!1},r.id="leaderboard-header-button";var d=document.createElement("a");d.setAttribute("href","https://gamezy24.com"),d.setAttribute("target","_blank"),d.id="headerlogolink";var o=document.createElement("div");if(o.id="score-circle",o.className="leaderboard-circle",n.appendChild(r),n.appendChild(d),e.appendChild(n),hsData.data&&!hsData.data.login){(c=document.createElement("div")).className="yourscore_txtdiv",m=document.createTextNode("Your High Score"),c.appendChild(m),(p=document.createElement("div")).className="finalscore_divtxt",u=document.createTextNode(z(hsData.data.utop.score)),p.appendChild(u),o.appendChild(c),o.appendChild(p),e.appendChild(o);var l=document.createElement("div");l.className="signup_txti";(g=document.createElement("button")).onclick=function(){
             //   try{window.parent.openLeaderboards(hsData)}catch(e){console.log(e)}
             // },g.className="main_hs_btn viewranks",h=document.createTextNode("View Leaderboard"),g.appendChild(h),e.appendChild(l),e.appendChild(g)}else{(o=document.createElement("div")).id="guestscorecircle";var c=document.createElement("div");c.className="yourscore_txtdiv";var m=document.createTextNode("Your High Score");c.appendChild(m);var p=document.createElement("div");p.className="finalscore_divtxt";var u=document.createTextNode(z(hsData.data.topscore));
             //p.appendChild(u),o.appendChild(c),o.appendChild(p),e.appendChild(o);var g=document.createElement("button");g.onclick=function(){!function b(e){2===e?Q.getElementById("achlistwrap").remove():1===e?(Q.getElementById("guestscorecircle").remove(),Q.getElementsByClassName("signup_txti")[0].remove(),Q.getElementsByClassName("viewleaderguest")[0].remove(),Q.getElementsByClassName("moregames_wrapper")[0].remove(),Q.getElementsByClassName("main_hs_btn")[0].remove()):Q.getElementById("signupFormWrap").remove();var t=document.createElement("div");t.id="signupFormWrap";
@@ -1205,13 +1205,13 @@ pookiAPI = {};
             //e.id="signupFormWrap";var t=document.createElement("div");t.id="tabsButtonWraps",t.className="logintabs",(a=document.createElement("button")).onclick=function(){b(3)},a.className="tabs_links",a.style.width="50%";var a,n=document.createTextNode("Sign Up for Free");a.appendChild(n),t.appendChild(a),(a=document.createElement("button")).className="tabs_links active",a.style.width="50%",n=document.createTextNode("Log in"),a.appendChild(n),t.appendChild(a),e.appendChild(t);var r=document.createElement("form");
             //r.id="loginit",r.onsubmit=function(){return _("login")};var d=document.createElement("div");d.className="form-group";var i=document.createElement("label");i.setAttribute("form","inputEmail2");var o=document.createTextNode("Your email address");i.appendChild(o),d.appendChild(i);var l=document.createElement("input");l.setAttribute("type","email"),l.setAttribute("name","name"),l.id="inputEmail2",l.className="form-control",l.required=!0,isMobile||(l.autofocus=!0),d.appendChild(l),r.appendChild(d);var s=document.createElement("div");s.className="form-group";var c=document.createElement("label");
             //c.setAttribute("form","inputEmail3");var m=document.createTextNode("Your password");c.appendChild(m),s.appendChild(c);var p=document.createElement("input");p.setAttribute("type","password"),p.setAttribute("name","name"),p.id="inputEmail3",p.className="form-control",p.required=!0,s.appendChild(p),r.appendChild(s);var u=document.createElement("button");u.onclick=function(){return _("login",E)},u.className="main_hs_btn viewranks",u.id="createloginBtnMain";var g=document.createTextNode("Submit");u.appendChild(g),r.appendChild(u),e.appendChild(r);var h=document.createElement("a"),v=document.createTextNode("Forgot password?");
-            //h.style.marginTop="15px",h.setAttribute("href","https://pooki.com/help/password/"),h.setAttribute("target","_blank"),h.appendChild(v),e.appendChild(h),Q.getElementById("leaderboard-wrapper").appendChild(e),isMobile||Q.getElementById("inputEmail2").focus()}()},r=document.createTextNode("Log in"),n.appendChild(r),a.appendChild(n),t.appendChild(a);var d=document.createElement("form");d.id="loginit",d.onsubmit=function(){return _("signup")};var i=document.createElement("div");i.className="form-group";var o=document.createElement("label");o.setAttribute("form","inputEmail1");var l=document.createTextNode("Choose a nickname");o.appendChild(l),i.appendChild(o);var s=document.createElement("input");
+            //h.style.marginTop="15px",h.setAttribute("href","https://gamezy24.com/help/password/"),h.setAttribute("target","_blank"),h.appendChild(v),e.appendChild(h),Q.getElementById("leaderboard-wrapper").appendChild(e),isMobile||Q.getElementById("inputEmail2").focus()}()},r=document.createTextNode("Log in"),n.appendChild(r),a.appendChild(n),t.appendChild(a);var d=document.createElement("form");d.id="loginit",d.onsubmit=function(){return _("signup")};var i=document.createElement("div");i.className="form-group";var o=document.createElement("label");o.setAttribute("form","inputEmail1");var l=document.createTextNode("Choose a nickname");o.appendChild(l),i.appendChild(o);var s=document.createElement("input");
             //s.setAttribute("type","text"),s.setAttribute("name","name"),s.id="inputEmail1",s.className="form-control",s.required=!0,isMobile||(s.autofocus=!0),i.appendChild(s),d.appendChild(i);var c=document.createElement("div");c.className="form-group";var m=document.createElement("label");m.setAttribute("form","inputEmail2");var p=document.createTextNode("Your email address");m.appendChild(p),c.appendChild(m);var u=document.createElement("input");u.setAttribute("type","email"),u.setAttribute("name","name"),u.id="inputEmail2",u.className="form-control",u.required=!0,c.appendChild(u),d.appendChild(c);var g=document.createElement("div");g.className="form-group";var h=document.createElement("label");h.setAttribute("form","inputEmail3");var v=document.createTextNode("Create a password");h.appendChild(v),g.appendChild(h);var f=document.createElement("input");f.setAttribute("type","password"),f.setAttribute("name","name"),f.setAttribute("placeholder","At least 6 characters"),f.id="inputEmail3",f.className="form-control",f.required=!0,g.appendChild(f),d.appendChild(g);var C=document.createElement("button");C.onclick=function(){return _("signup",E)},C.className="main_hs_btn viewranks",C.id="createloginBtnMain";var y=document.createTextNode("Submit");C.appendChild(y),d.appendChild(C),t.appendChild(d),Q.getElementById("leaderboard-wrapper").appendChild(t),isMobile||Q.getElementById("inputEmail1").focus()}(1)},g.className="main_hs_btn guestsubmitmainhs";var h=document.createTextNode("Submit High Score");g.appendChild(h),e.appendChild(g);var v=document.createElement("a");v.onclick=function(){try{window.parent.openLeaderboards()}catch(e){console.log(e)}},v.className="viewleaderguest";var b=document.createElement("img");b.setAttribute("src","https://imgs2.dab3games.com/highscore-games-icon.jpg"),b.setAttribute("alt","icon"),b.setAttribute("width","40"),b.setAttribute("height","40"),v.appendChild(b);var E=document.createTextNode("View Leaderboard");v.appendChild(E),e.appendChild(v)}var f=document.createElement("div");hsData.data.login?f.className="popmoregameswrap":f.className="popmoregameswrap userrbpop";var C=document.createElement("div");
             //C.className="signup_txti moregametxt guessmoregmtxt",hsData.data.login||(C.className="signup_txti moregametxt");var y=document.createTextNode("More Games");C.appendChild(y),f.appendChild(C);var w=window.parent.jsMoreGames,N=document.createElement("div");N.className="moregames_wrapper guestmoregames";var A=10;for(hsData.data.login||(A=5,N.className="moregames_wrapper"),i=0;i<A;i++){var T=document.createElement("div");T.className="thumbWrapper";var k=document.createElement("div"),B=document.createElement("a");
             // if(w[i].io==1){
-            // B.setAttribute("href","https://pooki.com/io/"+w[i].url_key);
+            // B.setAttribute("href","https://gamezy24.com/io/"+w[i].url_key);
             // }else{
-            // B.setAttribute("href","https://pooki.com/en/g/"+w[i].url_key);
+            // B.setAttribute("href","https://gamezy24.com/en/g/"+w[i].url_key);
             // }
             // B.setAttribute("title",w[i].name),B.setAttribute("target","_blank");
             // var x=document.createTextNode(w[i].name);B.appendChild(x);var I=document.createElement("img");I.setAttribute("src","https://imgs2.dab3games.com/"+w[i].thumb),I.setAttribute("alt",w[i].name),I.setAttribute("width","200"),I.setAttribute("height","200"),k.appendChild(B),k.appendChild(I),T.appendChild(k),N.appendChild(T)}f.appendChild(N),e.appendChild(f),Q.body.appendChild(e),S();
@@ -1254,7 +1254,7 @@ pookiAPI = {};
   }, 999);
 
   var startGameManually;
-  pookiAPI.GEvents = {
+  gamezy24API.GEvents = {
     start: function (adResponse) {
       console.log("event START");
 
@@ -1349,17 +1349,17 @@ pookiAPI = {};
       }
 
       if (isDevMode) {
-        console.log("pookiAPI: Reward Ad Offered");
+        console.log("gamezy24API: Reward Ad Offered");
 
         //returns true 50% of time
         var x = Math.random() < 0.7;
         if (x) {
           canGiveReward = true;
-          console.log("pookiAPI: Reward ad available, show buttons");
+          console.log("gamezy24API: Reward ad available, show buttons");
         } else {
           canGiveReward = false;
           if (!isTestingMode) {
-            console.log("pookiAPI: No reward ad available, hide buttons");
+            console.log("gamezy24API: No reward ad available, hide buttons");
           }
         }
         devModeAdcallback = callback;
@@ -1437,7 +1437,7 @@ pookiAPI = {};
   var giveRewardTimeout;
   var beforeReward = function (showAdFn, canShowButton) {
     if (isDevMode) {
-      console.log("pookiAPI: Can give reward ad");
+      console.log("gamezy24API: Can give reward ad");
     }
     clearTimeout(giveRewardTimeout);
     canGiveReward = true;
@@ -1447,7 +1447,7 @@ pookiAPI = {};
 
   var adDismissed = function (callback) {
     if (isDevMode) {
-      console.log("pookiAPI: Reward ad dismissed");
+      console.log("gamezy24API: Reward ad dismissed");
     }
 
     canGiveReward = false;
@@ -1455,7 +1455,7 @@ pookiAPI = {};
   };
   var adCompled = function (callback) {
     if (isDevMode) {
-      console.log("pookiAPI: Reward ad completed");
+      console.log("gamezy24API: Reward ad completed");
     }
 
     canGiveReward = false;
@@ -1478,7 +1478,7 @@ pookiAPI = {};
     }
 
     if (isDevMode) {
-      console.log("pookiAPI: Ad stated");
+      console.log("gamezy24API: Ad stated");
     }
 
     if (useEvent && !isDevMode) {
@@ -1517,7 +1517,7 @@ pookiAPI = {};
     }
 
     if (isDevMode) {
-      console.log("pookiAPI: Ad completed");
+      console.log("gamezy24API: Ad completed");
     }
 
     if (useEvent && !isDevMode) {
@@ -1542,14 +1542,14 @@ pookiAPI = {};
     }
   };
 
-  pookiAPI.APIAds = {
+  gamezy24API.APIAds = {
     show: function (response) {
       console.log("ad count: ", adCount);
       console.log("ad timer: ", adTimer);
 
       if (adTimer < 30) {
         if (isDevMode) {
-          console.log("pookiAPI: Ad called too soon, skipped");
+          console.log("gamezy24API: Ad called too soon, skipped");
         }
         try {
           response();
@@ -1616,18 +1616,18 @@ pookiAPI = {};
       }
 
       if (isDevMode) {
-        console.log("pookiAPI: Ad called...");
+        console.log("gamezy24API: Ad called...");
       }
 
       if (adCount < 1) {
-        pookiAPI.GEvents.start(response);
+        gamezy24API.GEvents.start(response);
       } else {
-        pookiAPI.GEvents.next(response);
+        gamezy24API.GEvents.next(response);
       }
       adCount += 1;
 
       if (isDevMode) {
-        console.log("pookiAPI: Ad call #", adCount);
+        console.log("gamezy24API: Ad call #", adCount);
       }
 
       try {
@@ -1647,7 +1647,7 @@ pookiAPI = {};
 
   //send api is loaded
   try {
-    if (isOnpooki) {
+    if (isOngamezy24) {
       window.parent.postMessage("api_loaded", "*");
     }
   } catch (e) {
@@ -1655,9 +1655,9 @@ pookiAPI = {};
   }
 
   //
-  // listen for parent variables on non pooki
+  // listen for parent variables on non gamezy24
   //
-  if (!isOnpooki && isOnApprovedWebsite) {
+  if (!isOngamezy24 && isOnApprovedWebsite) {
     console.log("listen for events");
     try {
       window.addEventListener("message", function (event) {

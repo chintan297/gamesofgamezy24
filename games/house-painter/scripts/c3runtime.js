@@ -41096,7 +41096,7 @@ self.A.K.ul.Ca = {
     },
     () => -10,
     () => "fx",
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
     () => "NewWindow",
   ];
 }

@@ -11,7 +11,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
     />
 
-    <script src="./pooki-sdk.js"></script>
+    <script src="./gamezy24-sdk.js"></script>
     <script src="./lib/isMobile.min.js"></script>
     <script src="./lib/howler.min.js"></script>
     <script src="./lib/pako.min.js"></script>
@@ -103,16 +103,16 @@
         passive: false,
       });
 
-      PookiSDK.init()
+      Gamezy24SDK.init()
         .then(() => {
-          console.log("Pooki SDK successfully initialized");
+          console.log("Gamezy24 SDK successfully initialized");
         })
         .catch(() => {
           console.log("Initialized, but the user likely has adblock");
         });
 
-      PookiSDK.gameLoadingFinished = function () {};
-      PookiSDK.gameLoadingStart = function () {};
+      Gamezy24SDK.gameLoadingFinished = function () {};
+      Gamezy24SDK.gameLoadingStart = function () {};
 
       // Ad callback
       const adBreak = function () {

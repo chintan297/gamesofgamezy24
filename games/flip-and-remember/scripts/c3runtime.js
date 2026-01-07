@@ -65443,7 +65443,7 @@ void main(void) {
       const n0 = p._GetNode(0);
       return () => n0.ExpObject() + 780;
     },
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
     () => "Positions",
     (p) => {
       const f0 = p._GetNode(0).GetBoundMethod();

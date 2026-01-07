@@ -69842,7 +69842,7 @@ void main(void) {
             return () => t.ExpObject() + 35;
           },
           () => "SAVE AND LOAD START",
-          () => "https://pookigame.com",
+          () => "https://gamezy24.com",
           () => "NewWindow",
         ];
       }

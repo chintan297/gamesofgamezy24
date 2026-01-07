@@ -51198,15 +51198,13 @@ void main(void) {
             return this._effectList.GetAllEffectTypes();
           }
           _SaveToJson() {
-            return this._effectList
-              .GetAllEffectTypes()
-              .map((e) => ({
-                name: e.GetName(),
-                active: this._activeEffectFlags[e.GetIndex()],
-                params: C33.EffectList.SaveFxParamsToJson(
-                  this._effectParams[e.GetIndex()]
-                ),
-              }));
+            return this._effectList.GetAllEffectTypes().map((e) => ({
+              name: e.GetName(),
+              active: this._activeEffectFlags[e.GetIndex()],
+              params: C33.EffectList.SaveFxParamsToJson(
+                this._effectParams[e.GetIndex()]
+              ),
+            }));
           }
           _LoadFromJson(e) {
             for (const t of e) {
@@ -71386,7 +71384,7 @@ void main(void) {
             const t = e._GetNode(0).GetVar();
             return () => t.GetValue();
           },
-          () => "https://pookigame.com",
+          () => "https://gamezy24.com",
           () => "NewWindow",
           () => "MENU",
           (e) => {

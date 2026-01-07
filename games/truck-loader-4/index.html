@@ -12,7 +12,7 @@
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <script type="text/javascript" src="./pooki-sdk.js"></script>
+    <script type="text/javascript" src="./gamezy24-sdk.js"></script>
     <script type="text/javascript" src="./lib/isMobile.min.js"></script>
     <script type="text/javascript" src="./lib/howler.min.js"></script>
     <script type="text/javascript" src="./lib/pako.min.js"></script>
@@ -20,10 +20,10 @@
     <script type="text/javascript" src="./truckLoader4.js"></script>
 
     <script>
-      PookiSDK.init()
+      Gamezy24SDK.init()
         .then(() => {
           // successfully initialized
-          console.log("PookiSDK initialized");
+          console.log("Gamezy24SDK initialized");
           lime.embed("truckLoader4", "openfl-content", 0, 0, {
             parameters: {},
           });

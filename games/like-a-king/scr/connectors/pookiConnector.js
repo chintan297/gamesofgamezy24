@@ -1,7 +1,7 @@
 class Connector {
   constructor() {
     this.currency = "USD";
-    this.uid = "pooki_local_user";
+    this.uid = "gamezy24_local_user";
 
     //Выключаем лишнее управление
     window.addEventListener("keydown", (ev) => {
@@ -50,7 +50,7 @@ class Connector {
     //При первом вызове считаем что игра загрузилась
     if (!this.firstLoading) {
       this.firstLoading = true;
-      PookiSDK.gameLoadingFinished();
+      Gamezy24SDK.gameLoadingFinished();
     }
     callback();
   }

@@ -38945,17 +38945,17 @@ self.C.ya.xp.xa = {
     },
     () => "Buttons_Settings",
     () => "Shadow_In",
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
     () => "NewWindow",
     (a) => {
       const e = a.H(0).eb;
       return () =>
-        b("https://pookigame.com/", e.La()) +
+        b("https://gamezy24.com/", e.La()) +
         "&image=https://user-profile.s3.envato.com/files/122504059/bomb.jpg";
     },
     () => "Share",
-    () => "https://pookigame.com/",
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
+    () => "https://gamezy24.com/",
     () => "FishMenu_Settings",
     (a) => {
       const e = a.H(0).Da();

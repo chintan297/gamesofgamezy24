@@ -40288,7 +40288,7 @@ RewardAds = {
   showRewAd: function (a, b, c) {
     null == b && (b = function () {});
     if (!1 === this.testAd)
-      PookiGame.ad.break({
+      Gamezy24Game.ad.break({
         type: "reward",
         beforeReward: function (a) {
           a();
@@ -44300,10 +44300,10 @@ GamePlay.prototype = {
   },
   onGameOver: function (a) {
     this.countCollectedCarrots();
-    a === LEVEL_OVER_EXIT_BY_USER && PookiGame.game.gameOver();
+    a === LEVEL_OVER_EXIT_BY_USER && Gamezy24Game.game.gameOver();
     a === LEVEL_WIN &&
-      (PookiGame.game.levelComplete(gamePlay.currentLevel + 1),
-      PookiGame.score.update(gamePlay.currentLevel + 1));
+      (Gamezy24Game.game.levelComplete(gamePlay.currentLevel + 1),
+      Gamezy24Game.score.update(gamePlay.currentLevel + 1));
   },
   unlockNextLevel: function () {
     this.levelsProgress.length > this.currentLevel + 1 &&
@@ -44576,7 +44576,7 @@ Preloader.prototype = {
   preload: function () {
     game.stage.backgroundColor = GAME_BG_COLOR;
     loadAllGameData();
-    musicPlayer.musicON = PookiGame.audio.isEnabled();
+    musicPlayer.musicON = Gamezy24Game.audio.isEnabled();
     loadLanguageSettings();
     gameTexts.create();
     this.createPreloadBG();
@@ -44780,7 +44780,7 @@ function updateGameLanguage(a) {
 }
 function loadAllGameData() {
   try {
-    var a = PookiGame.storage.getItem("rtb-data");
+    var a = Gamezy24Game.storage.getItem("rtb-data");
     if (null !== a && ((parsedData = JSON.parse(a)), null !== parsedData)) {
       var b = parsedData.lvlz;
       null !== b && (gamePlay.levelsProgress = b);
@@ -44794,7 +44794,7 @@ function loadAllGameData() {
       if (SOUNDS_ENABLED) {
         b = parsedData.msc;
         if (!0 === b || !1 === b) musicPlayer.musicON = b;
-        musicPlayer.musicON = PookiGame.audio.isEnabled();
+        musicPlayer.musicON = Gamezy24Game.audio.isEnabled();
       }
     }
   } catch (c) {}
@@ -44810,10 +44810,10 @@ function saveAllGameData() {
   a.lvlz = gamePlay.levelsProgress;
   a.hnt = gamePlay.hintCount;
   a.hnttm = Math.floor(gamePlay.hint_timeTillNext);
-  a.msc = PookiGame.audio.isEnabled();
+  a.msc = Gamezy24Game.audio.isEnabled();
   a.levelprogress = gamePlay.lastLevel;
   try {
-    PookiGame.storage.setItem("rtb-data", JSON.stringify(a));
+    Gamezy24Game.storage.setItem("rtb-data", JSON.stringify(a));
   } catch (b) {}
 }
 var resolutionX_min = 420,
@@ -44848,7 +44848,7 @@ function phaserInit() {
   game.state.add("PreloadState", Preloader);
   game.state.add("GameState", GameState);
   game.state.start("SplashState");
-  PookiGame.game.firstFrameReady();
+  Gamezy24Game.game.firstFrameReady();
 }
 function setBG() {
   document.body.style.backgroundImage = "url('assets/img/bg4.png')";
@@ -44879,9 +44879,9 @@ RUNNING_ON_IOS ||
 document.documentElement.style.overflow = "hidden";
 document.body.scroll = "no";
 function enableFullscreen() {}
-if ("undefined" == typeof PookiGame || null == PookiGame)
-  console.warn("PookiGame is undefined"),
-    (PookiGame = {
+if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
+  console.warn("Gamezy24Game is undefined"),
+    (Gamezy24Game = {
       audio: {
         subscribe: function () {},
         isEnabled: function () {
@@ -44907,13 +44907,13 @@ if ("undefined" == typeof PookiGame || null == PookiGame)
         },
       },
     });
-PookiGame.audio.subscribe(function (a) {
+Gamezy24Game.audio.subscribe(function (a) {
   gamesnacksSoundToggle(a);
 });
-PookiGame.game.onPause(function () {
+Gamezy24Game.game.onPause(function () {
   gameState.onGamePause();
 });
-PookiGame.game.onResume(function () {
+Gamezy24Game.game.onResume(function () {
   gameState.onGameResume();
 });
 function gamesnacksSoundToggle(a) {
@@ -44926,7 +44926,7 @@ function gamesnacksSoundToggle(a) {
   });
 }
 function showGoogleAd(a, b, c, d, e, f, g) {
-  PookiGame.ad.break({
+  Gamezy24Game.ad.break({
     type: a || "next",
     beforeAd: b || function () {},
     afterAd: c || function () {},
@@ -44936,7 +44936,7 @@ function showGoogleAd(a, b, c, d, e, f, g) {
     beforeReward: g || function () {},
   });
 }
-PookiGame.game.ready();
+Gamezy24Game.game.ready();
 document.addEventListener("visibilitychange", function () {
   if (null != gameState)
     if (document.hidden) gameState.onGamePause();

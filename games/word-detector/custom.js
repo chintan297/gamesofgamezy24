@@ -1,14 +1,14 @@
-window.POOKIGAME = {
+window.GAMEZY24GAME = {
   gameReady: function () {
     try {
-      window.PookiGame.game.ready();
+      window.Gamezy24Game.game.ready();
     } catch (e) {
       console.warn(e);
     }
   },
   subscribeToAudioUpdates: function (callback) {
     try {
-      window.PookiGame.audio.subscribe(callback);
+      window.Gamezy24Game.audio.subscribe(callback);
     } catch (e) {
       console.warn(e);
     }
@@ -16,7 +16,7 @@ window.POOKIGAME = {
   isAudioEnabled: function () {
     let isAudioEnabled = true;
     try {
-      isAudioEnabled = window.PookiGame.audio.isEnabled();
+      isAudioEnabled = window.Gamezy24Game.audio.isEnabled();
     } catch (e) {
       console.warn(e);
     }
@@ -24,21 +24,21 @@ window.POOKIGAME = {
   },
   sendScore: function (score) {
     try {
-      window.PookiGame.score.update(score);
+      window.Gamezy24Game.score.update(score);
     } catch (e) {
       console.warn(e);
     }
   },
   gameOver: function () {
     try {
-      window.PookiGame.game.gameOver();
+      window.Gamezy24Game.game.gameOver();
     } catch (e) {
       console.warn(e);
     }
   },
   levelComplete: function (level) {
     try {
-      window.PookiGame.game.levelComplete(level);
+      window.Gamezy24Game.game.levelComplete(level);
     } catch (e) {
       console.warn(e);
     }
@@ -49,16 +49,21 @@ window.famobi = window.famobi || {};
 
 window.famobi.localStorage = {
   setItem: function (key, value) {
-    window.PookiGame.storage.setItem(window.famobi_gameID + ":" + key, value);
+    window.Gamezy24Game.storage.setItem(
+      window.famobi_gameID + ":" + key,
+      value
+    );
   },
   getItem: function (key) {
-    return window.PookiGame.storage.getItem(window.famobi_gameID + ":" + key);
+    return window.Gamezy24Game.storage.getItem(
+      window.famobi_gameID + ":" + key
+    );
   },
   removeItem: function (key) {
-    window.PookiGame.storage.removeItem(window.famobi_gameID + ":" + key);
+    window.Gamezy24Game.storage.removeItem(window.famobi_gameID + ":" + key);
   },
   clear: function () {
-    window.PookiGame.storage.clear();
+    window.Gamezy24Game.storage.clear();
   },
 };
 
@@ -66,8 +71,8 @@ window.famobi.hasGameReadyCalled = false;
 window.famobi.hideSplashScreen = function () {
   if (!window.famobi.hasGameReadyCalled) {
     window.famobi.hasGameReadyCalled = true;
-    console.log("POOKIGAME.gameReady");
-    POOKIGAME.gameReady();
+    console.log("GAMEZY24GAME.gameReady");
+    GAMEZY24GAME.gameReady();
   }
 };
 window.famobi.audio = window.famobi.audio || {
@@ -89,7 +94,7 @@ window.famobi.audio = window.famobi.audio || {
       // return this.sfx;
       default:
         // return this.bgm && this.sfx;
-        return POOKIGAME.isAudioEnabled();
+        return GAMEZY24GAME.isAudioEnabled();
     }
   },
 };
@@ -114,23 +119,23 @@ window.famobi_analytics.trackEvent = function (event, params) {
   return new Promise(function (resolve, reject) {
     switch (event) {
       case "EVENT_LIVESCORE":
-        console.log("POOKIGAME.sendScore", params.liveScore);
-        POOKIGAME.sendScore(params.liveScore);
+        console.log("GAMEZY24GAME.sendScore", params.liveScore);
+        GAMEZY24GAME.sendScore(params.liveScore);
         return resolve(event, params);
       case "EVENT_LEVELSCORE":
-        console.log("POOKIGAME.sendScore", params.levelScore);
-        POOKIGAME.sendScore(params.levelScore);
+        console.log("GAMEZY24GAME.sendScore", params.levelScore);
+        GAMEZY24GAME.sendScore(params.levelScore);
         return resolve(event, params);
       case "EVENT_TOTALSCORE":
-        console.log("POOKIGAME.sendScore", params.totalScore);
-        POOKIGAME.sendScore(params.totalScore);
+        console.log("GAMEZY24GAME.sendScore", params.totalScore);
+        GAMEZY24GAME.sendScore(params.totalScore);
         return resolve(event, params);
       case "EVENT_LEVELFAIL":
         if (params.reason == "quit") {
           //break;
         }
-        console.log("POOKIGAME.gameOver");
-        POOKIGAME.gameOver();
+        console.log("GAMEZY24GAME.gameOver");
+        GAMEZY24GAME.gameOver();
         return resolve(event, params);
       case "EVENT_LEVELSUCCESS":
         console.log("EVENT_LEVELSUCCESS");
@@ -148,8 +153,8 @@ window.famobi_analytics.trackEvent = function (event, params) {
               gsLevel = parseInt(params.levelName.replace(/\D/g, "")) || -1;
             }
         }
-        console.log("POOKIGAME.levelComplete", gsLevel);
-        POOKIGAME.levelComplete(gsLevel);
+        console.log("GAMEZY24GAME.levelComplete", gsLevel);
+        GAMEZY24GAME.levelComplete(gsLevel);
         break;
       default:
       // ...
@@ -167,7 +172,7 @@ window.famobi_analytics.trackScreen = function (screen) {
 };
 
 // Gamesnack Audio Listener
-POOKIGAME.subscribeToAudioUpdates((isAudioEnabled) => {
+GAMEZY24GAME.subscribeToAudioUpdates((isAudioEnabled) => {
   console.log("audio update received!");
 
   if (isAudioEnabled) {

@@ -3962,19 +3962,19 @@ var js_GS_gameIsReady = !1,
   GS_Testing = !1;
 
 function js_GS_saveValue(e, a) {
-  window.Pooki && Pooki.storage.setItem(e, a);
+  window.Gamezy24 && Gamezy24.storage.setItem(e, a);
 }
 
 function js_GS_loadValue(e) {
-  if (window.Pooki) {
-    return Number(Pooki.storage.getItem(e));
+  if (window.Gamezy24) {
+    return Number(Gamezy24.storage.getItem(e));
   }
   return null;
 }
 
 function js_GS_isValueExists(e) {
-  if (window.Pooki) {
-    return null == Number(Pooki.storage.getItem(e)) ? 0 : 1;
+  if (window.Gamezy24) {
+    return null == Number(Gamezy24.storage.getItem(e)) ? 0 : 1;
   }
   return 0;
 }
@@ -3983,26 +3983,26 @@ function js_GS_gameReady() {
   if (js_GS_gameIsReady) return 0;
   (js_GS_gameIsReady = !0),
     pc.app.mouse.disableContextMenu(),
-    window.Pooki &&
-      (Pooki.game.onPause(() => {
+    window.Gamezy24 &&
+      (Gamezy24.game.onPause(() => {
         js_GS_eventCall("pause");
       }),
-      Pooki.game.onResume(() => {
+      Gamezy24.game.onResume(() => {
         js_GS_eventCall("resume");
       }),
-      Pooki.game.firstFrameReady(),
-      Pooki.game.ready(),
+      Gamezy24.game.firstFrameReady(),
+      Gamezy24.game.ready(),
       setTimeout(() => {
         var e = !js_GS_isAudioEnabled();
         (GameAudio.gsMute = e),
           GameAudio.switch(GameAudio.gsMute, !0),
-          Pooki.audio.subscribe((e) => {
+          Gamezy24.audio.subscribe((e) => {
             GS_firstAudioSubSkipped
               ? js_GS_eventCall("audio_switched", e)
               : (GS_firstAudioSubSkipped = !0);
           });
       }, 200)),
-    console.log("Pooki JS: game ready");
+    console.log("Gamezy24 JS: game ready");
 }
 
 function js_GS_log(e) {
@@ -4010,7 +4010,7 @@ function js_GS_log(e) {
 }
 
 function js_GS_eventCall(e, a = 0) {
-  switch ((js_GS_log("[EventHandler] Pooki JS event: " + e), e)) {
+  switch ((js_GS_log("[EventHandler] Gamezy24 JS event: " + e), e)) {
     case "audio_switched":
       if (!GameAudio.instance) return;
       (GameAudio.gsMute = !a),
@@ -4052,8 +4052,8 @@ function js_GS_ad_reward_test1(e) {}
 function js_GS_ad_reward_prepare(e, a) {
   (window.GS_rewardSuccessCallback = e),
     (window.GS_rewardFailCallback = a),
-    window.Pooki
-      ? Pooki.ad.break({
+    window.Gamezy24
+      ? Gamezy24.ad.break({
           type: "reward",
           name: "reward_placement",
           beforeAd: () => {
@@ -4080,7 +4080,7 @@ function js_GS_ad_reward_prepare(e, a) {
           console.log("test function"), js_GS_eventCall("adreward");
         }),
         js_GS_eventCall("beforeReward")),
-    js_GS_log("Pooki JS: ad reward prepare");
+    js_GS_log("Gamezy24 JS: ad reward prepare");
 }
 
 function js_GS_is_ad_reward_available() {
@@ -4088,18 +4088,18 @@ function js_GS_is_ad_reward_available() {
 }
 
 function js_GS_ad_reward() {
-  window.Pooki
+  window.Gamezy24
     ? window.GS_showAdFunction &&
       (window.GS_showAdFunction(), (window.GS_showAdFunction = null))
     : GS_Testing && js_GS_eventCall("adreward"),
-    js_GS_log("Pooki JS: ad reward");
+    js_GS_log("Gamezy24 JS: ad reward");
 }
 
 function js_GS_ad_preroll() {}
 
 function js_GS_ad_interstitial() {
-  window.Pooki &&
-    Pooki.ad.break({
+  window.Gamezy24 &&
+    Gamezy24.ad.break({
       type: "start",
       name: "game_interstitial",
       beforeAd: () => {
@@ -4112,25 +4112,26 @@ function js_GS_ad_interstitial() {
         js_GS_eventCall("adbreakdone");
       },
     }),
-    js_GS_log("Pooki JS: ad interstitial");
+    js_GS_log("Gamezy24 JS: ad interstitial");
 }
 
 function js_GS_levelCompleted(e) {
-  window.Pooki && Pooki.game.levelComplete(e),
-    js_GS_log("Pooki JS: level complete " + e.toString());
+  window.Gamezy24 && Gamezy24.game.levelComplete(e),
+    js_GS_log("Gamezy24 JS: level complete " + e.toString());
 }
 
 function js_GS_sendScore(e) {
-  window.Pooki && Pooki.score.update(e),
-    js_GS_log("Pooki JS: score updated " + e.toString());
+  window.Gamezy24 && Gamezy24.score.update(e),
+    js_GS_log("Gamezy24 JS: score updated " + e.toString());
 }
 
 function js_GS_gameOver() {
-  window.Pooki && Pooki.game.gameOver(), js_GS_log("Pooki JS: game over");
+  window.Gamezy24 && Gamezy24.game.gameOver(),
+    js_GS_log("Gamezy24 JS: game over");
 }
 
 function js_GS_isAudioEnabled() {
-  return !!window.Pooki && Pooki.audio.isEnabled();
+  return !!window.Gamezy24 && Gamezy24.audio.isEnabled();
 }
 
 function js_isIE() {

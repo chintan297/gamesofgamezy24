@@ -38,7 +38,7 @@
           }),
           (this.throwNotLoaded = function () {
             console.debug(
-              "PookiSDK is not loaded yet. Not all methods are available."
+              "Gamezy24SDK is not loaded yet. Not all methods are available."
             );
           });
       }
@@ -59,10 +59,10 @@
                   t = e,
                   o = t.fn,
                   i = t.options;
-                "function" == typeof window.PookiSDK[o]
+                "function" == typeof window.Gamezy24SDK[o]
                   ? (null == e ? void 0 : e.resolveFn) ||
                     (null == e ? void 0 : e.rejectFn)
-                    ? window.PookiSDK[o](i)
+                    ? window.Gamezy24SDK[o](i)
                         .then(function () {
                           for (var n = [], t = 0; t < arguments.length; t++)
                             n[t] = arguments[t];
@@ -76,7 +76,7 @@
                             e.rejectFn.apply(e, n);
                         })
                     : void 0 !== (null == e ? void 0 : e.fn) &&
-                      window.PookiSDK[o](i)
+                      window.Gamezy24SDK[o](i)
                   : console.error("Cannot execute " + e.fn);
               },
               n = this;
@@ -88,7 +88,7 @@
         e
       );
     })())();
-  (window.PookiSDK = {
+  (window.Gamezy24SDK = {
     init: t.init,
     initWithVideoHB: t.init,
     customEvent: t.throwNotLoaded,
@@ -115,7 +115,7 @@
       "roundEnd",
       "muteAd",
     ].forEach(function (e) {
-      window.PookiSDK[e] = t.noArguments(e);
+      window.Gamezy24SDK[e] = t.noArguments(e);
     }),
     [
       "setDebug",
@@ -129,12 +129,12 @@
       "sendHighscore",
       "setDebugTouchOverlayController",
     ].forEach(function (e) {
-      window.PookiSDK[e] = t.oneArgument(e);
+      window.Gamezy24SDK[e] = t.oneArgument(e);
     });
   var o,
     i =
-      ((o = window.pookiSDKVersion) || (o = e("ab") || "v2.263.0"),
-      "pooki-sdk-" + (n ? "kids" : "core") + "-" + o + ".js"),
+      ((o = window.gamezy24SDKVersion) || (o = e("ab") || "v2.263.0"),
+      "gamezy24-sdk-" + (n ? "kids" : "core") + "-" + o + ".js"),
     r = document.createElement("script");
   r.setAttribute("src", i),
     r.setAttribute("type", "text/javascript"),

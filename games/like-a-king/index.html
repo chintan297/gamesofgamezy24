@@ -14,17 +14,17 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <link rel="stylesheet" href="css/frame-ya.css" type="text/css" />
     <!--SDK-->
-    <script src="./pooki-sdk.js"></script>
+    <script src="./gamezy24-sdk.js"></script>
     <script>
-      PookiSDK.init()
+      Gamezy24SDK.init()
         .then(() => {
-          // debugLog("Pooki SDK successfully initialized");
+          // debugLog("Gamezy24 SDK successfully initialized");
         })
         .catch(() => {
           // debugLog("Initialized, but the user likely has adblock");
         });
-      PookiSDK.gameLoadingStart();
-      PookiSDK.setDebug(false);
+      Gamezy24SDK.gameLoadingStart();
+      Gamezy24SDK.setDebug(false);
     </script>
     <script>
       versionsURL = "conf/ver.json";

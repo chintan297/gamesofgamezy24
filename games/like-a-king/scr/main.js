@@ -1078,7 +1078,7 @@ const a0_0x22a1 = [
   "remove",
   "gameActionsMenu_buildingsDestroy.png",
   "setCoins",
-  "pooki",
+  "gamezy24",
   "tutorial/steps/tutorial11/TutorialStep11_1",
   "isShowed",
   "setAnimation",
@@ -3271,7 +3271,7 @@ const a0_0x22a1 = [
   "getHeight",
   "OFFSET",
   "LootMenuBoxUnlockingInfo",
-  "Pooki",
+  "Gamezy24",
   "main/GlobalEvent",
   "gui/popups/PopupsManager",
   "MAIN_MENU_ARENA_DESC",
@@ -24175,7 +24175,7 @@ define(
           const _0x30e32c = _0x2567de;
           if (
             (_0x10e5de[_0x30e32c(0xef2)][_0x30e32c(0x1317)][_0x30e32c(0xd49)] =
-              "pooki")
+              "gamezy24")
           )
             return;
           _0x10e5de[_0x30e32c(0xef2)][_0x30e32c(0x1162)](_0x30e32c(0x6f9), {

@@ -1,16 +1,16 @@
 // Audio handling integration
 function checkSound() {
   console.log("Check Sound fired..!");
-  if (PookiGame.audio.g == true) {
-    console.log("Check Sound -- is on", PookiGame.audio.g);
+  if (Gamezy24Game.audio.g == true) {
+    console.log("Check Sound -- is on", Gamezy24Game.audio.g);
     c3_callFunction("checksound", [0]);
   } else {
-    console.log("Check Sound -- is off", PookiGame.audio.g);
+    console.log("Check Sound -- is off", Gamezy24Game.audio.g);
     c3_callFunction("checksound", [1]);
   }
 }
 
-PookiGame.audio.subscribe((isEnabled) => {
+Gamezy24Game.audio.subscribe((isEnabled) => {
   if (isEnabled) {
     console.log("Set Sound on");
     c3_callFunction("checksound", [0]);
@@ -25,23 +25,23 @@ PookiGame.audio.subscribe((isEnabled) => {
 
 function gameOver() {
   console.log("gameOver fired..!");
-  PookiGame.game.gameOver();
+  Gamezy24Game.game.gameOver();
 }
 
 // First Frame Ready integration
 function gameFirstFrameReady() {
   console.log("gameFirstFrameReady fired..!");
-  PookiGame.game.firstFrameReady();
+  Gamezy24Game.game.firstFrameReady();
 }
 
 // Game Paused integration
-PookiGame.game.onPause(() => {
+Gamezy24Game.game.onPause(() => {
   console.log("Game Paused fired..!");
   c3_callFunction("gamePause", [0]);
 });
 
 // Game Resumed integration
-PookiGame.game.onResume(() => {
+Gamezy24Game.game.onResume(() => {
   console.log("Game Resumed fired..!");
   c3_callFunction("gameResume", [0]);
 });
@@ -49,25 +49,25 @@ PookiGame.game.onResume(() => {
 // Game Ready integration
 function gameReady() {
   console.log("Game Ready fired..!");
-  PookiGame.game.ready();
+  Gamezy24Game.game.ready();
 }
 
 // Game Score integration
 function sendScore(score) {
   console.log("sendScore fired..!", score);
-  PookiGame.score.update(score);
+  Gamezy24Game.score.update(score);
 }
 
 // Game Storage Integration
 function clearData() {
   console.log("clearData fired..!");
-  PookiGame.storage.clear();
+  Gamezy24Game.storage.clear();
 }
 
 // Get Item Integration
 function getItem(itemName) {
   console.log("getItem fired..!", itemName);
-  let starsEarned = PookiGame.storage.getItem(itemName);
+  let starsEarned = Gamezy24Game.storage.getItem(itemName);
   // console.log("getItem retrieved:", starsEarned);
   c3_callFunction("getData", [itemName, starsEarned]);
   console.log("getItem fired:", itemName, starsEarned);
@@ -77,13 +77,13 @@ function getItem(itemName) {
 // Remove Item Integration
 function removeItem(itemName) {
   console.log("removeItem fired..!", itemName);
-  PookiGame.storage.removeItem(itemName);
+  Gamezy24Game.storage.removeItem(itemName);
 }
 
 // Set Item Integration
 function setItem(itemName, itemValue) {
   console.log("setItem fired..!");
-  PookiGame.storage.setItem(String(itemName), String(itemValue));
+  Gamezy24Game.storage.setItem(String(itemName), String(itemValue));
 }
 
 // ----------------------------------

@@ -5,15 +5,15 @@
   "cnfURL": "conf/",
   "scrURL": "scr/",
 
-  "provider": "pookiConnector",
-  "ads": "pookiAds",
-  "analytics": "pookiAnalytics",
+  "provider": "gamezy24Connector",
+  "ads": "gamezy24Ads",
+  "analytics": "gamezy24Analytics",
 
   "partLoad": true,
 
   "platforms": {
     "list": [],
-    "default": "pooki"
+    "default": "gamezy24"
   },
 
   "appdata": {

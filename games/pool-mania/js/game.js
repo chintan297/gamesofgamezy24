@@ -40843,7 +40843,7 @@ var r = !0,
   ga = !1,
   ha = navigator.userAgent || navigator.vendor || window.opera;
 if (ha.match(/iPad/i) || ha.match(/iPhone/i) || ha.match(/iPod/i)) ga = !0;
-var partnerName = "pooki";
+var partnerName = "gamezy24";
 window.partnerName = partnerName;
 console.info(
   "%c %c   Inlogic Software 2021 | Pool Mania v1.0.0 | 20.07.2021  %c ",
@@ -46928,7 +46928,7 @@ Nc.prototype = {
       ((this.Ke = !1), this.zb());
   },
   zb: function () {
-    pookiAPI.init("lagdev_70", "");
+    gamezy24API.init("lagdev_70", "");
     hack = {
       qb: [
         { jd: "fgImg", sd: "pak_plmm", qd: 4 },
@@ -47135,7 +47135,7 @@ window.onscroll = function () {
 function showAd() {
   game.sound.mute = !0;
   game.paused = !0;
-  pookiAPI.APIAds.show(
+  gamezy24API.APIAds.show(
     "interstitial",
     "pool-mania",
     "pool-mania-game.png",

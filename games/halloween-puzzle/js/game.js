@@ -42546,7 +42546,7 @@ function toggleMusic(a) {
       (ScenePause.instance.music.frameName = "sound_off"),
       (dataMusic = !1);
   else {
-    if (!PookiGame.audio.isEnabled()) return;
+    if (!Gamezy24Game.audio.isEnabled()) return;
     dataMusic = !0;
     soundManager.soundPlaying = !0;
     soundManager.musicPlaying = !0;
@@ -42968,7 +42968,7 @@ var Preloader = function (a) {},
   preloadState;
 Preloader.prototype = {
   preload: function () {
-    PookiGame.game.firstFrameReady();
+    Gamezy24Game.game.firstFrameReady();
     game.input.maxPointers = 1;
     sceneLanguages = null;
     startTime = Date.now();
@@ -43147,7 +43147,7 @@ GameData.Reset = function () {
 GameData.Load = function () {
   GameData.Reset();
   var a = null,
-    a = JSON.parse(PookiGame.storage.getItem(GameData.ProfileName));
+    a = JSON.parse(Gamezy24Game.storage.getItem(GameData.ProfileName));
   if (null === a) this.Save(), this.Load();
   else {
     a.dataVersion !== dataVersion &&
@@ -43177,7 +43177,7 @@ GameData.Save = function () {
   a.dataVersion = dataVersion;
   a.dataFirstPlayRotate = dataFirstPlayRotate;
   try {
-    PookiGame.storage.setItem(GameData.ProfileName, JSON.stringify(a));
+    Gamezy24Game.storage.setItem(GameData.ProfileName, JSON.stringify(a));
   } catch (b) {}
 };
 GameData.ProfileResetVars = function () {};
@@ -45932,15 +45932,15 @@ function onGameStart() {}
 var GAME_OVER_GAME = 0,
   GAME_OVER_USER = 1;
 function onGameOver(a) {
-  a === GAME_OVER_GAME && PookiGame.game.gameOver();
+  a === GAME_OVER_GAME && Gamezy24Game.game.gameOver();
   isSuccessfully
-    ? (PookiGame.game.levelComplete(level.id + 1),
-      PookiGame.score.update(
+    ? (Gamezy24Game.game.levelComplete(level.id + 1),
+      Gamezy24Game.score.update(
         dataLevelDone.reduce(function (a, c) {
           return 1 === c ? a + 1 : a;
         }, 0)
       ))
-    : PookiGame.game.gameOver();
+    : Gamezy24Game.game.gameOver();
   showGoogleAd();
 }
 function updateTime() {
@@ -46329,8 +46329,8 @@ GameState.prototype = {
     startMenu();
     game.input.mouseWheel.callback = this.wheelCallback;
     onGameResize();
-    SoundToggle(PookiGame.audio.isEnabled());
-    PookiGame.game.ready();
+    SoundToggle(Gamezy24Game.audio.isEnabled());
+    Gamezy24Game.game.ready();
   },
   wheelCallback: function (a) {
     SceneGame.instance.grpScene.visible &&
@@ -46480,11 +46480,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "\n        .game-button {\n            position: fixed;\n            top: 10px;\n            right: 10px;\n            padding: 10px 20px;\n            background-color: #007bff;\n            color: white;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n            z-index: 1000;\n        }\n        \n        #audioButton { top: 10px; }\n        #pauseButton { top: 60px; }\n        #resumeButton { top: 110px; }\n    ";
     document.head.appendChild(e);
   }
-  if ("undefined" == typeof PookiGame || null == PookiGame)
+  if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
     (soundState = "true" === localStorage.getItem("soundState")),
       a(),
-      console.warn("PookiGame is undefined"),
-      (PookiGame = {
+      console.warn("Gamezy24Game is undefined"),
+      (Gamezy24Game = {
         audio: {
           subscribe: function (a) {
             soundStateCallback = a;
@@ -46523,13 +46523,13 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         },
       });
-  PookiGame.audio.subscribe(function (a) {
+  Gamezy24Game.audio.subscribe(function (a) {
     SoundToggle(a);
   });
-  PookiGame.game.onPause(function () {
+  Gamezy24Game.game.onPause(function () {
     pauseFunction();
   });
-  PookiGame.game.onResume(function () {
+  Gamezy24Game.game.onResume(function () {
     unpauseFunction();
   });
   phaserInit();
@@ -46570,7 +46570,7 @@ function SoundToggle(a) {
       adConfig({ sound: a ? "on" : "off" }));
 }
 function showGoogleAd(a, b, c, d) {
-  PookiGame.ad.break({
+  Gamezy24Game.ad.break({
     type: (void 0 === a ? "next" : a) || "next",
     beforeAd:
       b ||
@@ -46588,7 +46588,7 @@ function showGoogleAd(a, b, c, d) {
       d ||
       function (a) {
         "frequencyCapped" === a.breakStatus &&
-          SoundToggle(PookiGame.audio.isEnabled());
+          SoundToggle(Gamezy24Game.audio.isEnabled());
       },
   });
 }

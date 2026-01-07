@@ -8,7 +8,7 @@
     <meta id="viewport" name="viewport" content="width=device-width,
     initial-scale=1.0, maximum-scale=1.0, user-scalable=no", "minimal-ui" />
 
-    <script src="./pooki-sdk.js"></script>
+    <script src="./gamezy24-sdk.js"></script>
     <script type="text/javascript" src="./lib/isMobile.min.js"></script>
     <script type="text/javascript" src="./lib/howler.min.js"></script>
     <script type="text/javascript" src="./lib/pako.min.js"></script>
@@ -47,9 +47,9 @@
         passive: false,
       });
 
-      PookiSDK.init()
+      Gamezy24SDK.init()
         .then(() => {
-          console.log("Pooki SDK successfully initialized");
+          console.log("Gamezy24 SDK successfully initialized");
           // your code to continue to game
           //lime.embed ("truckLoader4", "openfl-content", 0, 0, { parameters: {} });
         })
@@ -58,7 +58,7 @@
           // your code to continue to game
           //lime.embed ("truckLoader4", "openfl-content", 0, 0, { parameters: {} });
         });
-      //PookiSDK.setDebug(true);
+      //Gamezy24SDK.setDebug(true);
     </script>
 
     <style>

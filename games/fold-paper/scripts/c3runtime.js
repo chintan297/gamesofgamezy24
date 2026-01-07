@@ -42880,15 +42880,13 @@ THE SOFTWARE.
       return this._effectList.GetAllEffectTypes();
     }
     _SaveToJson() {
-      return this._effectList
-        .GetAllEffectTypes()
-        .map((et) => ({
-          name: et.GetName(),
-          active: this._activeEffectFlags[et.GetIndex()],
-          params: C3.EffectList.SaveFxParamsToJson(
-            this._effectParams[et.GetIndex()]
-          ),
-        }));
+      return this._effectList.GetAllEffectTypes().map((et) => ({
+        name: et.GetName(),
+        active: this._activeEffectFlags[et.GetIndex()],
+        params: C3.EffectList.SaveFxParamsToJson(
+          this._effectParams[et.GetIndex()]
+        ),
+      }));
     }
     _LoadFromJson(arr) {
       for (const o of arr) {
@@ -57193,7 +57191,7 @@ THE SOFTWARE.
       const v0 = p._GetNode(0).GetVar();
       return () => v0.GetValue().toString();
     },
-    () => "https://pookigame.com/",
+    () => "https://gamezy24.com/",
     () => "NewWindow",
     () => 700,
     (p) => {

@@ -67,12 +67,12 @@
         height: 130px !important;
       }
 
-      #pookigame-carousel-iframe {
+      #gamezy24-carousel-iframe {
         box-shadow: none !important;
       }
 
       /*popup*/
-      #pookigame-popup-iframe {
+      #gamezy24-popup-iframe {
         width: 95% !important;
       }
 
@@ -120,7 +120,7 @@
         new_element.id = element_id;
         new_element.src =
           location.protocol +
-          "//api.pookigame.net/sdk" +
+          "//api.gamezy24.net/sdk" +
           "?app_id=" +
           "iplay-DodgeBird" +
           "&v=" +
@@ -134,7 +134,7 @@
           );
           return match && decodeURIComponent(match[1].replace(/\+/g, " "));
         })("app_id"),
-        "pookigame-jssdk"
+        "gamezy24-jssdk"
       );
     </script>
   </head>
@@ -181,7 +181,7 @@
     <script>
       function doPlayVideoAds() {
         //alert('begin doPlayVideoAds');
-        if (window.pookigame) {
+        if (window.gamezy24) {
           window.dispatchEvent(new Event("SJM.DisplayVideoAd"));
         }
       }

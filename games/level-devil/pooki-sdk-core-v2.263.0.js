@@ -732,21 +732,21 @@
       var e = i(564),
         t = i.n(e);
       const n = {
-        ready: "pookiAppReady",
-        adblocked: "pookiAppAdblocked",
+        ready: "gamezy24AppReady",
+        adblocked: "gamezy24AppAdblocked",
         ads: {
-          completed: "pookiAdsCompleted",
-          error: "pookiAdsError",
-          impression: "pookiAdsImpression",
-          durationChange: "pookiAdsDurationChange",
-          limit: "pookiAdsLimit",
-          ready: "pookiAdsReady",
-          requested: "pookiAdsRequested",
-          prebidRequested: "pookiAdsPrebidRequested",
-          skipped: "pookiAdsSkipped",
-          started: "pookiAdsStarted",
-          stopped: "pookiAdsStopped",
-          busy: "pookiAdsBusy",
+          completed: "gamezy24AdsCompleted",
+          error: "gamezy24AdsError",
+          impression: "gamezy24AdsImpression",
+          durationChange: "gamezy24AdsDurationChange",
+          limit: "gamezy24AdsLimit",
+          ready: "gamezy24AdsReady",
+          requested: "gamezy24AdsRequested",
+          prebidRequested: "gamezy24AdsPrebidRequested",
+          skipped: "gamezy24AdsSkipped",
+          started: "gamezy24AdsStarted",
+          stopped: "gamezy24AdsStopped",
+          busy: "gamezy24AdsBusy",
           position: {
             preroll: "PP",
             midroll: "PM",
@@ -754,16 +754,16 @@
             display: "DP",
           },
           video: {
-            clicked: "pookiVideoAdsClicked",
-            firstQuartile: "pookiVideoAdsFirstQuartile",
-            midPoint: "pookiVideoAdsMidPoint",
-            thirdQuartile: "pookiVideoAdsThirdQuartile",
-            error: "pookiVideoAdsError",
-            loaderError: "pookiVideoAdsLoaderError",
-            paused: "pookiVideoAdsPauseTriggered",
-            resumed: "pookiVideoAdsResumedTriggered",
-            progress: "pookiVideoAdsProgress",
-            buffering: "pookiVideoAdsBuffering",
+            clicked: "gamezy24VideoAdsClicked",
+            firstQuartile: "gamezy24VideoAdsFirstQuartile",
+            midPoint: "gamezy24VideoAdsMidPoint",
+            thirdQuartile: "gamezy24VideoAdsThirdQuartile",
+            error: "gamezy24VideoAdsError",
+            loaderError: "gamezy24VideoAdsLoaderError",
+            paused: "gamezy24VideoAdsPauseTriggered",
+            resumed: "gamezy24VideoAdsResumedTriggered",
+            progress: "gamezy24VideoAdsProgress",
+            buffering: "gamezy24VideoAdsBuffering",
           },
         },
         info: {
@@ -777,64 +777,64 @@
           },
         },
         message: {
-          event: "pookiMessageEvent",
-          sdkDetails: "pookiMessageSdkDetails",
-          toggleProgrammaticAds: "pookiMessageToggleProgrammaticAds",
-          setpookiURLParams: "pookiMessageSetpookiURLParams",
+          event: "gamezy24MessageEvent",
+          sdkDetails: "gamezy24MessageSdkDetails",
+          toggleProgrammaticAds: "gamezy24MessageToggleProgrammaticAds",
+          setgamezy24URLParams: "gamezy24MessageSetgamezy24URLParams",
         },
         tracking: {
-          custom: "pookiTrackingCustom",
+          custom: "gamezy24TrackingCustom",
           togglePlayerAdvertisingConsent:
-            "pookiTrackingTogglePlayerAdvertisingConsent",
-          debugTrueInProduction: "pookiMessageDebugTrueProduction",
+            "gamezy24TrackingTogglePlayerAdvertisingConsent",
+          debugTrueInProduction: "gamezy24MessageDebugTrueProduction",
           screen: {
-            gameplayStart: "pookiTrackingScreenGameplayStart",
-            gameplayStop: "pookiTrackingScreenGameplayStop",
-            gameLoadingStarted: "pookiTrackingScreenGameLoadingStarted",
-            gameLoadingProgress: "pookiTrackingScreenGameLoadingProgress",
-            gameLoadingFinished: "pookiTrackingScreenGameLoadingFinished",
-            commercialBreak: "pookiTrackingScreenCommercialBreak",
-            rewardedBreak: "pookiTrackingScreenRewardedBreak",
-            happyTime: "pookiTrackingScreenHappyTime",
-            firstRound: "pookiTrackingScreenFirstRound",
-            roundStart: "pookiTrackingScreenRoundStart",
-            roundEnd: "pookiTrackingScreenRoundEnd",
-            gameInteractive: "pookiTrackingScreenGameInteractive",
-            displayAd: "pookiTrackingScreenDisplayAdRequest",
-            destroyAd: "pookiTrackingScreenDisplayAdDestroy",
+            gameplayStart: "gamezy24TrackingScreenGameplayStart",
+            gameplayStop: "gamezy24TrackingScreenGameplayStop",
+            gameLoadingStarted: "gamezy24TrackingScreenGameLoadingStarted",
+            gameLoadingProgress: "gamezy24TrackingScreenGameLoadingProgress",
+            gameLoadingFinished: "gamezy24TrackingScreenGameLoadingFinished",
+            commercialBreak: "gamezy24TrackingScreenCommercialBreak",
+            rewardedBreak: "gamezy24TrackingScreenRewardedBreak",
+            happyTime: "gamezy24TrackingScreenHappyTime",
+            firstRound: "gamezy24TrackingScreenFirstRound",
+            roundStart: "gamezy24TrackingScreenRoundStart",
+            roundEnd: "gamezy24TrackingScreenRoundEnd",
+            gameInteractive: "gamezy24TrackingScreenGameInteractive",
+            displayAd: "gamezy24TrackingScreenDisplayAdRequest",
+            destroyAd: "gamezy24TrackingScreenDisplayAdDestroy",
           },
           sdk: {
             status: {
-              initialized: "pookiTrackingSdkStatusInitialized",
-              failed: "pookiTrackingSdkStatusFailed",
+              initialized: "gamezy24TrackingSdkStatusInitialized",
+              failed: "gamezy24TrackingSdkStatusFailed",
             },
           },
           ads: {
             status: {
-              busy: "pookiTrackingAdsStatusBusy",
-              completed: "pookiTrackingAdsStatusCompleted",
-              error: "pookiTrackingAdsStatusError",
-              displayError: "pookiTrackingAdsStatusDisplayError",
-              impression: "pookiTrackingAdsStatusImpression",
-              limit: "pookiTrackingAdsStatusLimit",
-              ready: "pookiTrackingAdsStatusReady",
-              requested: "pookiTrackingAdsStatusRequested",
-              prebidRequested: "pookiTrackingAdsStatusPrebidRequested",
-              skipped: "pookiTrackingAdsStatusSkipped",
-              started: "pookiTrackingAdsStatusStarted",
-              buffering: "pookiTrackingAdsStatusBuffering",
+              busy: "gamezy24TrackingAdsStatusBusy",
+              completed: "gamezy24TrackingAdsStatusCompleted",
+              error: "gamezy24TrackingAdsStatusError",
+              displayError: "gamezy24TrackingAdsStatusDisplayError",
+              impression: "gamezy24TrackingAdsStatusImpression",
+              limit: "gamezy24TrackingAdsStatusLimit",
+              ready: "gamezy24TrackingAdsStatusReady",
+              requested: "gamezy24TrackingAdsStatusRequested",
+              prebidRequested: "gamezy24TrackingAdsStatusPrebidRequested",
+              skipped: "gamezy24TrackingAdsStatusSkipped",
+              started: "gamezy24TrackingAdsStatusStarted",
+              buffering: "gamezy24TrackingAdsStatusBuffering",
             },
             video: {
-              clicked: "pookiTrackingAdsVideoClicked",
-              error: "pookiTrackingAdsVideoError",
-              loaderError: "pookiTrackingAdsVideoLoaderError",
-              progress: "pookiTrackingAdsVideoProgress",
-              paused: "pookiTrackingAdsVideoPaused",
-              resumed: "pookiTrackingAdsVideoResumed",
+              clicked: "gamezy24TrackingAdsVideoClicked",
+              error: "gamezy24TrackingAdsVideoError",
+              loaderError: "gamezy24TrackingAdsVideoLoaderError",
+              progress: "gamezy24TrackingAdsVideoProgress",
+              paused: "gamezy24TrackingAdsVideoPaused",
+              resumed: "gamezy24TrackingAdsVideoResumed",
             },
             display: {
-              requested: "pookiTrackingScreenDisplayAdRequested",
-              impression: "pookiTrackingScreenDisplayAdImpression",
+              requested: "gamezy24TrackingScreenDisplayAdRequested",
+              impression: "gamezy24TrackingScreenDisplayAdImpression",
             },
           },
         },
@@ -1055,7 +1055,7 @@
           "; path=/; samesite=none; secure; max-age=15552000; domain=" +
           l;
       }
-      l.endsWith("pooki-gdn.com") && (l = "pooki-gdn.com");
+      l.endsWith("gamezy24-gdn.com") && (l = "gamezy24-gdn.com");
       var h = function (e, t, i, n) {
           return new (i || (i = Promise))(function (r, o) {
             function a(e) {
@@ -1201,7 +1201,7 @@
                 (n || (n = Array.prototype.slice.call(t, 0, r)), (n[r] = t[r]));
           return e.concat(n || Array.prototype.slice.call(t));
         },
-        f = "pooki_gcuid",
+        f = "gamezy24_gcuid",
         v = u(f);
       const b = (function () {
           function e() {}
@@ -2374,7 +2374,7 @@
                         {
                           bidder: "openx",
                           params: {
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                             unit: "540105196",
                           },
                         },
@@ -2450,7 +2450,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_Instream_Prebid",
+                          inventoryCode: "gamezy24_Instream_Prebid",
                           video: G({}, o),
                         },
                       },
@@ -2501,7 +2501,7 @@
                           bidder: "openx",
                           params: {
                             unit: "539859872",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -2563,7 +2563,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -2590,7 +2590,7 @@
                           bidder: "openx",
                           params: {
                             unit: "539859873",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -2652,7 +2652,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_300x250_Prebid",
+                          inventoryCode: "gamezy24_300x250_Prebid",
                         },
                       },
                     ],
@@ -2679,7 +2679,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543540497",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -2733,7 +2733,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_970x250_Prebid",
+                          inventoryCode: "gamezy24_970x250_Prebid",
                         },
                       },
                     ],
@@ -2760,7 +2760,7 @@
                           bidder: "openx",
                           params: {
                             unit: "539859871",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -2822,7 +2822,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -2849,7 +2849,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543540495",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -2911,7 +2911,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -2938,7 +2938,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543885656",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -3001,7 +3001,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -3028,7 +3028,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543885657",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -3091,7 +3091,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_300x250_Prebid",
+                          inventoryCode: "gamezy24_300x250_Prebid",
                         },
                       },
                     ],
@@ -3118,7 +3118,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543885650",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -3180,7 +3180,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_970x250_Prebid",
+                          inventoryCode: "gamezy24_970x250_Prebid",
                         },
                       },
                     ],
@@ -3207,7 +3207,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543885653",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -3269,7 +3269,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -3296,7 +3296,7 @@
                           bidder: "openx",
                           params: {
                             unit: "543885649",
-                            delDomain: "pooki-d.openx.net",
+                            delDomain: "gamezy24-d.openx.net",
                           },
                         },
                         {
@@ -3359,7 +3359,7 @@
                       {
                         bidder: "triplelift",
                         params: {
-                          inventoryCode: "pooki_HDX_Prebid",
+                          inventoryCode: "gamezy24_HDX_Prebid",
                         },
                       },
                     ],
@@ -3465,7 +3465,7 @@
                       name: "pubCommonId",
                       storage: {
                         type: "cookie",
-                        name: "pooki_pubcid",
+                        name: "gamezy24_pubcid",
                         expires: 180,
                       },
                     },
@@ -3800,9 +3800,9 @@
                         })(o)),
                         (k = {
                           cpm: S,
-                          vast: "", //”"null.html?https://api.pooki.com/ads/houseads/video/vast" + ("" === $e.gameId ? "" : "?game_id=" + $e.gameId),
-                          bidder: "pooki",
-                          videoCacheKey: "pooki",
+                          vast: "", //”"null.html?https://api.gamezy24.com/ads/houseads/video/vast" + ("" === $e.gameId ? "" : "?game_id=" + $e.gameId),
+                          bidder: "gamezy24",
+                          videoCacheKey: "gamezy24",
                         });
                     }
                     if (!k || !k.videoCacheKey)
@@ -3895,11 +3895,11 @@
                   : window.location) || void 0 === e
               ? void 0
               : e.hostname) || "";
-        return "yes" === I("pooki-ad-server")
-          ? (console.log("DEBUG: Only running pooki-ad-server"), !0)
+        return "yes" === I("gamezy24-ad-server")
+          ? (console.log("DEBUG: Only running gamezy24-ad-server"), !0)
           : "localhost" !== t &&
-              "game-cdn.pooki.com" !== t &&
-              !t.endsWith(".pooki-gdn.com") &&
+              "game-cdn.gamezy24.com" !== t &&
+              !t.endsWith(".gamezy24-gdn.com") &&
               ("ninja.io" === t
                 ? Math.random() <= 0.5
                 : "venge.io" === t
@@ -3914,7 +3914,7 @@
             (this.ima = e),
             (this.siteID = t.siteID || 3),
             (this.country = t.country || "ZZ"),
-            (this.usepookiAdserver = $()),
+            (this.usegamezy24Adserver = $()),
             (this.totalRetries = t.totalRetries || d.waterfallRetries || 1),
             (this.timing = t.timing || new c(d.adTiming)),
             a.addEventListener(
@@ -3962,7 +3962,7 @@
             y() ? (i = "mobile") : w() && (i = "tablet"),
               e === n.ads.position.rewarded && (o = "rewarded");
             var a = "/21682198607/";
-            return tt.GetIspookiIFrame()
+            return tt.GetIsgamezy24IFrame()
               ? [
                   "" +
                     a +
@@ -4065,7 +4065,7 @@
                 waterfall: this.retries,
               }),
               a.dispatchEvent(n.ads.requested),
-              this.usepookiAdserver
+              this.usegamezy24Adserver
                 ? (console.debug(
                     "adRequest started with Prebid Video enabled (" +
                       this.retries +
@@ -4121,20 +4121,20 @@
         );
       })();
       const te = ee;
-      var ie = "pookiSdkContainer",
-        ne = "pookiSdkFixed",
-        re = "pookiSdkOverlay",
-        oe = "pookiSdkHidden",
-        ae = "pookiSdkInsideContainer",
-        se = "pookiSdkPauseButton",
-        de = "pookiSdkPauseButtonBG",
-        Ae = "pookiSdkStartAdButton",
-        ce = "pookiSdkProgressBar",
-        le = "pookiSdkProgressContainer",
-        ue = "pookiSdkSpinnerContainer",
-        pe = "pookiSdkVideoContainer",
-        he = "pookiSdkVisible",
-        me = "pookiSDKAdContainer";
+      var ie = "gamezy24SdkContainer",
+        ne = "gamezy24SdkFixed",
+        re = "gamezy24SdkOverlay",
+        oe = "gamezy24SdkHidden",
+        ae = "gamezy24SdkInsideContainer",
+        se = "gamezy24SdkPauseButton",
+        de = "gamezy24SdkPauseButtonBG",
+        Ae = "gamezy24SdkStartAdButton",
+        ce = "gamezy24SdkProgressBar",
+        le = "gamezy24SdkProgressContainer",
+        ue = "gamezy24SdkSpinnerContainer",
+        pe = "gamezy24SdkVideoContainer",
+        he = "gamezy24SdkVisible",
+        me = "gamezy24SDKAdContainer";
       var ge = function (e, t, i) {
         if (i || 2 === arguments.length)
           for (var n, r = 0, o = t.length; r < o; r++)
@@ -4166,7 +4166,7 @@
           ) {
             var i = document.createElement("style");
             (i.innerHTML =
-              "\n.pookiSdkContainer {\n\toverflow: hidden;\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\theight: 100%;\n\tz-index: 1000;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n.pookiSdkContainer.pookiSdkFixed {\n\tposition: fixed;\n}\n\n.pookiSdkContainer.pookiSdkVisible {\n\tdisplay: block;\n}\n\n.pookiSdkContainer.pookiSdkHidden,\n.pookiSdkSpinnerContainer.pookiSdkHidden {\n\tdisplay: none;\n}\n\n.pookiSdkContainer.pookiSdkHidden,\n.pookiSdkSpinnerContainer {\n\tpointer-events: none;\n}\n\n.pookiSdkSpinnerContainer {\n\tz-index: 10;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbackground: url('https://a.pooki.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;\n\tuser-select: none;\n}\n\n.pookiSdkInsideContainer {\n\tbackground: #000;\n\tposition: relative;\n\tz-index: 1;\n\twidth: 100%;\n\theight: 100%;\n\tdisplay: flex;\n\tflex-direction: column;\n\n\topacity: 0;\n\t-webkit-transition: opacity 0.5s ease-in-out;\n\t-moz-transition: opacity 0.5s ease-in-out;\n\t-ms-transition: opacity 0.5s ease-in-out;\n\t-o-transition: opacity 0.5s ease-in-out;\n\ttransition: opacity 0.5s ease-in-out;\n}\n\n.pookiSdkContainer.pookiSdkVisible .pookiSdkInsideContainer {\n\topacity: 1;\n}\n\n.pookiSDKAdContainer, .pookiSdkVideoContainer {\n\tposition: absolute;\n\twidth: 100%;\n\theight: 100%;\n}\n\n.pookiSdkStartAdButton {\n\tposition: absolute;\n\tz-index: 9999;\n\ttop: 0;\n\n\tpadding-top: 10%;\n\twidth: 100%;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #FFF;\n\n\tfont: 700 15pt 'Arial', sans-serif;\n\tfont-weight: bold;\n\tletter-spacing: 1px;\n\ttransition: 0.1s ease-in-out;\n\tline-height: 1em;\n}\n\n.pookiSdkPauseButton {\n\tcursor:pointer;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    z-index: 1;\n}\n\n.pookiSdkPauseButton:before {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: block;\n\tborder: 2px solid #fff;\n\tborder-radius: 50%;\n\tuser-select: none;\n\tbackground-color: rgba(0, 0, 0, 0.6);\n\ttransition: background-color 0.5s ease;\n\tanimation: 1s linear infinite pulse;\n}\n\n.pookiSdkPauseButton:after {\n\tcontent: '';\n\tposition: absolute;\n\tdisplay: block;\n\tbox-sizing: border-box;\n\tborder-color: transparent transparent transparent #fff;\n\tborder-style: solid;\n\tborder-width: 26px 0 26px 40px;\n\tpointer-events: none;\n\tanimation: 1s linear infinite pulse;\n\tleft: 6px;\n}\n.pookiSdkPauseButtonBG {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: block;\n    content: '';\n    background: rgba(0, 43, 80, 0.5);\n    width: 100%;\n    height: 100%;\n}\n\n.pookiSdkPauseButtonBG:hover{\n\tbackground: rgba(0, 43, 80, 0.7);\n}\n\n@keyframes pulse {\n\t0% {\n\t\ttransform: translate(-50%, -50%) scale(0.95);\n\t}\n\t70% {\n\t\ttransform: translate(-50%, -50%) scale(1.1);\n\t}\n\t100% {\n\t\ttransform: translate(-50%, -50%) scale(0.95);\n\t}\n}\n\n.pookiSdkProgressContainer {\n\tbackground: #B8C7DD;\n\twidth: 100%;\n\theight: 5px;\n\tposition: absolute;\n\tbottom: 0;\n\tz-index: 9999;\n}\n\n.pookiSdkProgressBar {\n\tposition:relative;\n\tbottom:0px;\n\tbackground: #FFDC00;\n\theight: 100%;\n\twidth: 0%;\n\ttransition: width 0.5s;\n\ttransition-timing-function: linear;\n}\n\n.pookiSdkProgressBar.pookiSdkVisible, .pookiSdkPauseButton.pookiSdkVisible, .pookiSdkStartAdButton.pookiSdkVisible {\n\tdisplay: block;\n\tpointer-events: auto;\n}\n\n.pookiSdkProgressBar.pookiSdkHidden, .pookiSdkPauseButton.pookiSdkHidden, .pookiSdkStartAdButton.pookiSdkHidden {\n\tdisplay: none;\n\tpointer-events: none;\n}\n"),
+              "\n.gamezy24SdkContainer {\n\toverflow: hidden;\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\twidth: 100%;\n\theight: 100%;\n\tz-index: 1000;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n.gamezy24SdkContainer.gamezy24SdkFixed {\n\tposition: fixed;\n}\n\n.gamezy24SdkContainer.gamezy24SdkVisible {\n\tdisplay: block;\n}\n\n.gamezy24SdkContainer.gamezy24SdkHidden,\n.gamezy24SdkSpinnerContainer.gamezy24SdkHidden {\n\tdisplay: none;\n}\n\n.gamezy24SdkContainer.gamezy24SdkHidden,\n.gamezy24SdkSpinnerContainer {\n\tpointer-events: none;\n}\n\n.gamezy24SdkSpinnerContainer {\n\tz-index: 10;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbackground: url('https://a.gamezy24.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;\n\tuser-select: none;\n}\n\n.gamezy24SdkInsideContainer {\n\tbackground: #000;\n\tposition: relative;\n\tz-index: 1;\n\twidth: 100%;\n\theight: 100%;\n\tdisplay: flex;\n\tflex-direction: column;\n\n\topacity: 0;\n\t-webkit-transition: opacity 0.5s ease-in-out;\n\t-moz-transition: opacity 0.5s ease-in-out;\n\t-ms-transition: opacity 0.5s ease-in-out;\n\t-o-transition: opacity 0.5s ease-in-out;\n\ttransition: opacity 0.5s ease-in-out;\n}\n\n.gamezy24SdkContainer.gamezy24SdkVisible .gamezy24SdkInsideContainer {\n\topacity: 1;\n}\n\n.gamezy24SDKAdContainer, .gamezy24SdkVideoContainer {\n\tposition: absolute;\n\twidth: 100%;\n\theight: 100%;\n}\n\n.gamezy24SdkStartAdButton {\n\tposition: absolute;\n\tz-index: 9999;\n\ttop: 0;\n\n\tpadding-top: 10%;\n\twidth: 100%;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #FFF;\n\n\tfont: 700 15pt 'Arial', sans-serif;\n\tfont-weight: bold;\n\tletter-spacing: 1px;\n\ttransition: 0.1s ease-in-out;\n\tline-height: 1em;\n}\n\n.gamezy24SdkPauseButton {\n\tcursor:pointer;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    z-index: 1;\n}\n\n.gamezy24SdkPauseButton:before {\n\tcontent: '';\n\tposition: absolute;\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: block;\n\tborder: 2px solid #fff;\n\tborder-radius: 50%;\n\tuser-select: none;\n\tbackground-color: rgba(0, 0, 0, 0.6);\n\ttransition: background-color 0.5s ease;\n\tanimation: 1s linear infinite pulse;\n}\n\n.gamezy24SdkPauseButton:after {\n\tcontent: '';\n\tposition: absolute;\n\tdisplay: block;\n\tbox-sizing: border-box;\n\tborder-color: transparent transparent transparent #fff;\n\tborder-style: solid;\n\tborder-width: 26px 0 26px 40px;\n\tpointer-events: none;\n\tanimation: 1s linear infinite pulse;\n\tleft: 6px;\n}\n.gamezy24SdkPauseButtonBG {\n    position: fixed;\n    top: 0;\n    left: 0;\n    display: block;\n    content: '';\n    background: rgba(0, 43, 80, 0.5);\n    width: 100%;\n    height: 100%;\n}\n\n.gamezy24SdkPauseButtonBG:hover{\n\tbackground: rgba(0, 43, 80, 0.7);\n}\n\n@keyframes pulse {\n\t0% {\n\t\ttransform: translate(-50%, -50%) scale(0.95);\n\t}\n\t70% {\n\t\ttransform: translate(-50%, -50%) scale(1.1);\n\t}\n\t100% {\n\t\ttransform: translate(-50%, -50%) scale(0.95);\n\t}\n}\n\n.gamezy24SdkProgressContainer {\n\tbackground: #B8C7DD;\n\twidth: 100%;\n\theight: 5px;\n\tposition: absolute;\n\tbottom: 0;\n\tz-index: 9999;\n}\n\n.gamezy24SdkProgressBar {\n\tposition:relative;\n\tbottom:0px;\n\tbackground: #FFDC00;\n\theight: 100%;\n\twidth: 0%;\n\ttransition: width 0.5s;\n\ttransition-timing-function: linear;\n}\n\n.gamezy24SdkProgressBar.gamezy24SdkVisible, .gamezy24SdkPauseButton.gamezy24SdkVisible, .gamezy24SdkStartAdButton.gamezy24SdkVisible {\n\tdisplay: block;\n\tpointer-events: auto;\n}\n\n.gamezy24SdkProgressBar.gamezy24SdkHidden, .gamezy24SdkPauseButton.gamezy24SdkHidden, .gamezy24SdkStartAdButton.gamezy24SdkHidden {\n\tdisplay: none;\n\tpointer-events: none;\n}\n"),
               document.head.appendChild(i);
           }
         }
@@ -4249,8 +4249,8 @@
               (this.spinnerContainer = document.createElement("div")),
               (this.adContainer = document.createElement("div")),
               (this.videoContainer = document.createElement("video")),
-              (this.adContainer.id = "pookiSDKAdContainer"),
-              (this.videoContainer.id = "pookiSDKVideoContainer"),
+              (this.adContainer.id = "gamezy24SDKAdContainer"),
+              (this.videoContainer.id = "gamezy24SDKVideoContainer"),
               (this.containerDiv.className = ie),
               (this.insideContainer.className = ae),
               (this.pauseButton.className = se),
@@ -4291,7 +4291,7 @@
               i instanceof HTMLElement ||
               ((i = null),
               console.error(
-                "pooki-SDK: wrapper is not a HTMLElement, falling back to document.body"
+                "gamezy24-SDK: wrapper is not a HTMLElement, falling back to document.body"
               )),
               n();
           }),
@@ -4414,22 +4414,23 @@
             ((e.style.display = "none"),
             document.body.appendChild(e),
             e.contentWindow &&
-              ((window.pookiKeysChanged = new Map()),
+              ((window.gamezy24KeysChanged = new Map()),
               e.contentWindow.document.open(),
               e.contentWindow.document.write(
-                "<script>\nconst lsKey = 'pooki_lsexpire';\nconst lifetime = 1000*60*60*24*30*6;\n\nwindow.addEventListener('storage', function(event) {\n\ttry {\n\t\tconst key = event.key;\n\n\t\t// key is null when localStorage.clear() is called.\n\t\tif (key === null) {\n\t\t\tlocalStorage.removeItem(lsKey);\n\t\t\treturn;\n\t\t}\n\n\t\tif (key === lsKey) return;\n\n\t\tconst updates = JSON.parse(localStorage.getItem(lsKey)) || {};\n\n\t\t// newValue is null when localStorage.removeItem() is called.\n\t\tif (event.newValue === null) {\n\t\t\tdelete updates[key];\n\n\t\t\t// window.parent is the game itself. This code is executed in\n\t\t\t// an iframe without src which makes it the same context as it's parent\n\t\t\t// which makes it save to access the parent's properties.\n\t\t\twindow.parent.pookiKeysChanged.set(key, 'remove');\n\t\t} else {\n\t\t\tupdates[key] = Date.now();\n\t\t\twindow.parent.pookiKeysChanged.set(key, 'set');\n\t\t}\n\t\tlocalStorage.setItem(lsKey, JSON.stringify(updates));\n\t} catch (e) {}\n});\n\nfunction expire() {\n\tconst updates = JSON.parse(localStorage.getItem(lsKey)) || {};\n\tconst expireBefore = Date.now() - lifetime;\n\tvar removed = false;\n\n\tObject.keys(updates).map(function(key) {\n\t\tif (updates[key] < expireBefore) {\n\t\t\tlocalStorage.removeItem(key);\n\t\t\tdelete updates[key];\n\t\t\tremoved = true;\n\t\t}\n\t});\n\n\tif (removed) {\n\t\tlocalStorage.setItem(lsKey, JSON.stringify(updates));\n\t}\n}\n\ntry {\n\texpire();\n} catch (e) {}\n</script>"
+                "<script>\nconst lsKey = 'gamezy24_lsexpire';\nconst lifetime = 1000*60*60*24*30*6;\n\nwindow.addEventListener('storage', function(event) {\n\ttry {\n\t\tconst key = event.key;\n\n\t\t// key is null when localStorage.clear() is called.\n\t\tif (key === null) {\n\t\t\tlocalStorage.removeItem(lsKey);\n\t\t\treturn;\n\t\t}\n\n\t\tif (key === lsKey) return;\n\n\t\tconst updates = JSON.parse(localStorage.getItem(lsKey)) || {};\n\n\t\t// newValue is null when localStorage.removeItem() is called.\n\t\tif (event.newValue === null) {\n\t\t\tdelete updates[key];\n\n\t\t\t// window.parent is the game itself. This code is executed in\n\t\t\t// an iframe without src which makes it the same context as it's parent\n\t\t\t// which makes it save to access the parent's properties.\n\t\t\twindow.parent.gamezy24KeysChanged.set(key, 'remove');\n\t\t} else {\n\t\t\tupdates[key] = Date.now();\n\t\t\twindow.parent.gamezy24KeysChanged.set(key, 'set');\n\t\t}\n\t\tlocalStorage.setItem(lsKey, JSON.stringify(updates));\n\t} catch (e) {}\n});\n\nfunction expire() {\n\tconst updates = JSON.parse(localStorage.getItem(lsKey)) || {};\n\tconst expireBefore = Date.now() - lifetime;\n\tvar removed = false;\n\n\tObject.keys(updates).map(function(key) {\n\t\tif (updates[key] < expireBefore) {\n\t\t\tlocalStorage.removeItem(key);\n\t\t\tdelete updates[key];\n\t\t\tremoved = true;\n\t\t}\n\t});\n\n\tif (removed) {\n\t\tlocalStorage.setItem(lsKey, JSON.stringify(updates));\n\t}\n}\n\ntry {\n\texpire();\n} catch (e) {}\n</script>"
               ),
               e.contentWindow.document.close(),
-              !window.location.hostname.endsWith("pooki-gdn.com") && $e.gameId))
+              !window.location.hostname.endsWith("gamezy24-gdn.com") &&
+                $e.gameId))
           ) {
             var t = document.createElement("iframe");
             (t.style.display = "none"),
-              (t.src = ""), //null.html?https://" + $e.gameId + ".pooki-gdn.com/pooki-savegame-store.html",
+              (t.src = ""), //null.html?https://" + $e.gameId + ".gamezy24-gdn.com/gamezy24-savegame-store.html",
               (t.onload = function () {
                 if (
                   (setInterval(function () {
                     var e = [];
-                    window.pookiKeysChanged.forEach(function (t, i) {
+                    window.gamezy24KeysChanged.forEach(function (t, i) {
                       "set" === t
                         ? e.push([t, i, localStorage.getItem(i)])
                         : e.push([t, i]);
@@ -4443,9 +4444,9 @@
                             },
                             "*"
                           ),
-                        window.pookiKeysChanged.clear());
+                        window.gamezy24KeysChanged.clear());
                   }, 1e3),
-                  !localStorage.getItem("pookiMigrated"))
+                  !localStorage.getItem("gamezy24Migrated"))
                 ) {
                   for (var e = [], i = 0; i < localStorage.length; i++) {
                     var n = localStorage.key(i);
@@ -4460,7 +4461,7 @@
                       },
                       "*"
                     ),
-                    localStorage.setItem("pookiMigrated", "1");
+                    localStorage.setItem("gamezy24Migrated", "1");
                 }
               }),
               document.body.appendChild(t);
@@ -4679,7 +4680,7 @@
               });
             }),
             (this.videoElement = document.getElementById(
-              "pookiSDKVideoContainer"
+              "gamezy24SDKVideoContainer"
             )),
             (this.adsManager = null),
             (this.volume = e),
@@ -4692,7 +4693,7 @@
             this.adDisplayContainer ||
               (window.google &&
                 (this.adDisplayContainer = new google.ima.AdDisplayContainer(
-                  document.getElementById("pookiSDKAdContainer"),
+                  document.getElementById("gamezy24SDKAdContainer"),
                   this.videoElement
                 )));
           }),
@@ -5774,7 +5775,7 @@
                   return (
                     (e = n.sent()) &&
                       (((t = document.createElement("script")).src =
-                        "//game-cdn.pooki.com/scripts/touchOverlayController.js"),
+                        "//game-cdn.gamezy24.com/scripts/touchOverlayController.js"),
                       (t.onload = function () {
                         new window.OverlayController(document.body, e);
                       }),
@@ -5942,7 +5943,7 @@
             var o = parseInt(I("site_id"), 10) || 0;
             return (
               r.debug ||
-                (i = tt.GetIspookiIFrame()
+                (i = tt.GetIsgamezy24IFrame()
                   ? "/21682198607/" +
                     n +
                     "_ingame_" +
@@ -5960,7 +5961,7 @@
                     "_ingame_" +
                     e),
               {
-                id: "pooki-" + Qe(),
+                id: "gamezy24-" + Qe(),
                 adUnitPath: i,
                 size: e,
                 width: t[0],
@@ -5984,14 +5985,14 @@
               (s.duringGameplayFn = r);
             var d = document.createElement("div");
             (d.id = s.id),
-              (d.className = "pooki-ad-slot"),
+              (d.className = "gamezy24-ad-slot"),
               (d.style.width = s.width + "px"),
               (d.style.height = s.height + "px"),
               (d.style.overflow = "hidden"),
               (d.style.position = "relative"),
-              d.setAttribute("data-pooki-ad-size", s.size),
+              d.setAttribute("data-gamezy24-ad-size", s.size),
               e.appendChild(d),
-              e.setAttribute("data-pooki-ad-id", s.id),
+              e.setAttribute("data-gamezy24-ad-id", s.id),
               (s.intersectionObserver = new window.IntersectionObserver(
                 function (e) {
                   var t;
@@ -6095,14 +6096,14 @@
 
                 )
                   e.removeChild(e.lastChild);
-                e.removeAttribute("data-pooki-ad-id"),
+                e.removeAttribute("data-gamezy24-ad-id"),
                   this.slotMap.delete(r.id);
               }
             } else console.error("destroyAd called on a container without ad");
           }),
           (e.prototype.getIGDSlotID = function (e) {
             if (!e) return null;
-            var t = e.getAttribute("data-pooki-ad-id");
+            var t = e.getAttribute("data-gamezy24-ad-id");
             return t || null;
           }),
           e
@@ -6422,13 +6423,13 @@
                 r.log = e;
               }),
               (this.sdkNotBootedButCalled = function () {
-                console.error("The pooki SDK has not yet been initialized");
+                console.error("The gamezy24 SDK has not yet been initialized");
               }),
               (this.IGD = $() ? new We() : new Fe());
-            var e = I("pookiDebug");
+            var e = I("gamezy24Debug");
             "" !== e &&
               (this.setDebug("true" === e), (this.debugIsOverwritten = !0)),
-              "" !== I("pookiLogging") && this.setLogging(!0);
+              "" !== I("gamezy24Logging") && this.setLogging(!0);
           }
           return (
             (e.prototype.init = function (e) {
@@ -6442,7 +6443,7 @@
                   i && this.registerHandler("onReady", i),
                   r && this.registerHandler("onAdblocked", r),
                   this.isInitialized
-                    ? console.error("pooki SDK has already been initialized")
+                    ? console.error("gamezy24 SDK has already been initialized")
                     : (this.initializingPromise ||
                         (this.initializingPromise = this.lazyLoadInit()),
                       this.initializingPromise)
@@ -6472,7 +6473,7 @@
               (this.isBot = "1" === I("bot")),
                 this.setupDefaultEvents(),
                 at.setupDefaultEvents(),
-                e.GetIspookiIFrame() && ye(),
+                e.GetIsgamezy24IFrame() && ye(),
                 setTimeout(b.trackSavegames, 1e4);
               var v = Je({}, d),
                 k = je;
@@ -6705,14 +6706,14 @@
                       else
                         a.dispatchEvent(n.ads.error, {
                           message:
-                            "No USP detected, please contact developersupport@pooki.com for more information",
+                            "No USP detected, please contact developersupport@gamezy24.com for more information",
                         });
                     else
                       a.dispatchEvent(n.ads.error, {
                         message:
-                          "No TCFv2 CMP detected, please contact developersupport@pooki.com for more information",
+                          "No TCFv2 CMP detected, please contact developersupport@gamezy24.com for more information",
                       });
-                  else console.error("pooki-SDK: Invalid position");
+                  else console.error("gamezy24-SDK: Invalid position");
                 else
                   a.dispatchEvent(n.ads.error, {
                     reason: "Interstitials are disabled on mobile",
@@ -6754,11 +6755,11 @@
 									position: s
 								});
 						else a.dispatchEvent(n.ads.error, {
-							message: "No USP detected, please contact developersupport@pooki.com for more information",
+							message: "No USP detected, please contact developersupport@gamezy24.com for more information",
 							position: s
 						});
 						else a.dispatchEvent(n.ads.error, {
-							message: "No TCFv2 CMP detected, please contact developersupport@pooki.com for more information",
+							message: "No TCFv2 CMP detected, please contact developersupport@gamezy24.com for more information",
 							position: s
 						})
 					}*/
@@ -6969,7 +6970,7 @@
             (e.prototype.setVolume = function (e) {
               this.ima && this.ima.setVolume(e);
             }),
-            (e.GetIspookiIFrame = function () {
+            (e.GetIsgamezy24IFrame = function () {
               return (parseInt(I("site_id"), 10) || 0) > 0;
             }),
             (e.childDirected = !1),
@@ -6987,7 +6988,7 @@
             var i = window.parent;
             if (!s(e, n.message)) {
               var r = Object.keys(n.message).map(function (e) {
-                return "pooki.message." + e;
+                return "gamezy24.message." + e;
               });
               throw new TypeError(
                 "Argument 'type' must be one of " + r.join(", ")
@@ -6996,7 +6997,7 @@
             var o = t || {};
             $e.gameId &&
               $e.versionId &&
-              (o.pookifordevs = {
+              (o.gamezy24fordevs = {
                 game_id: $e.gameId,
                 game_version_id: $e.versionId,
               }),
@@ -7100,13 +7101,15 @@
                 return;
               Object.keys(t).length
                 ? console.info(
-                    "%cpooki_TRACKER: %cTracked event '" + e + "' with data:",
+                    "%cgamezy24_TRACKER: %cTracked event '" +
+                      e +
+                      "' with data:",
                     "font-weight: bold",
                     "",
                     t
                   )
                 : console.info(
-                    "%cpooki_TRACKER: %cTracked event '" + e + "'",
+                    "%cgamezy24_TRACKER: %cTracked event '" + e + "'",
                     "font-weight: bold",
                     ""
                   );
@@ -7172,7 +7175,7 @@
             return e instanceof Error;
         }
       }
-      var dt = "pooki_erruid",
+      var dt = "gamezy24_erruid",
         At = Date.now(),
         ct = u(dt);
 
@@ -7210,9 +7213,9 @@
       "undefined" != typeof window &&
         ((t().remoteFetching = !1),
         t().report.subscribe(function (e) {
-          if ("Script error." === e.message && window.pookiLastCatch) {
-            var i = window.pookiLastCatch;
-            (window.pookiLastCatch = null), t().report(i);
+          if ("Script error." === e.message && window.gamezy24LastCatch) {
+            var i = window.gamezy24LastCatch;
+            (window.gamezy24LastCatch = null), t().report(i);
           } else ut(e);
         }),
         (window.onunhandledrejection = function (e) {
@@ -7518,13 +7521,13 @@
                   new Promise(function (t, i) {
                     var r = new URLSearchParams(),
                       o = Object.keys(e);
-                    if (tt.GetIspookiIFrame()) {
-                      var a = I("pooki_url");
+                    if (tt.GetIsgamezy24IFrame()) {
+                      var a = I("gamezy24_url");
                       o.forEach(function (t) {
                         r.set("gd" + t, e[t]);
                       }),
                         t(a + "?" + r.toString()),
-                        it.sendMessage(n.message.setpookiURLParams, {
+                        it.sendMessage(n.message.setgamezy24URLParams, {
                           params: e,
                         });
                     } else
@@ -7541,7 +7544,7 @@
                           ))
                         : i(
                             new Error(
-                              "shareableURL only works on pooki or a top level frame"
+                              "shareableURL only works on gamezy24 or a top level frame"
                             )
                           );
                   })
@@ -7557,10 +7560,10 @@
                 st(t) ? e.report(t) : e.report(new Error(t));
               }),
               (this.warning = function (e, t) {
-                console.warn("pookiSDK." + e + ": " + t);
+                console.warn("gamezy24SDK." + e + ": " + t);
               }),
               (this.error = function (e, t) {
-                console.error("pookiSDK." + e + ": " + t);
+                console.error("gamezy24SDK." + e + ": " + t);
               });
           }
           return (
@@ -7580,6 +7583,6 @@
           );
         })();
       var mt = new ht();
-      for (var gt in mt) window.pookiSDK[gt] = mt[gt];
+      for (var gt in mt) window.gamezy24SDK[gt] = mt[gt];
     })();
 })();

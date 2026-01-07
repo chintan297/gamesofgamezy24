@@ -4207,7 +4207,7 @@
       return (
         ((a = document.currentScript) == null
           ? void 0
-          : a.getAttribute("data-target-origin")) || window.POOKI_TEST_ORIGIN
+          : a.getAttribute("data-target-origin")) || window.GAMEZY24_TEST_ORIGIN
       );
     },
     ta: function (a) {
@@ -4272,7 +4272,7 @@
     b = Qf.ta(b);
     var d = Qf.oa();
     a = new Nf(a, c, b, d, Qf.ra(), d.da ? new Pf(a, window) : void 0);
-    window.Pooki = a;
+    window.Gamezy24 = a;
     Object.defineProperty(window, "localStorage", {
       get: function () {
         throw Error("window.localStorage not available.");

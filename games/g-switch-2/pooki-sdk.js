@@ -108,7 +108,7 @@
           }),
           (this.throwNotLoaded = function () {
             console.debug(
-              "PookiSDK is not loaded yet. Not all methods are available."
+              "Gamezy24SDK is not loaded yet. Not all methods are available."
             );
           });
       }
@@ -129,10 +129,10 @@
                   t = e,
                   o = t.fn,
                   r = t.options;
-                "function" == typeof window.PookiSDK[o]
+                "function" == typeof window.Gamezy24SDK[o]
                   ? (null == e ? void 0 : e.resolveFn) ||
                     (null == e ? void 0 : e.rejectFn)
-                    ? window.PookiSDK[o](r)
+                    ? window.Gamezy24SDK[o](r)
                         .then(function () {
                           for (var n = [], t = 0; t < arguments.length; t++)
                             n[t] = arguments[t];
@@ -146,7 +146,7 @@
                             e.rejectFn.apply(e, n);
                         })
                     : void 0 !== (null == e ? void 0 : e.fn) &&
-                      window.PookiSDK[o](r)
+                      window.Gamezy24SDK[o](r)
                   : console.error("Cannot execute " + e.fn);
               },
               n = this;
@@ -158,7 +158,7 @@
         e
       );
     })())();
-    (window.PookiSDK = {
+    (window.Gamezy24SDK = {
       init: o.init,
       initWithVideoHB: o.init,
       customEvent: o.throwNotLoaded,
@@ -177,7 +177,7 @@
         "roundEnd",
         "muteAd",
       ].forEach(function (e) {
-        window.PookiSDK[e] = o.noArguments(e);
+        window.Gamezy24SDK[e] = o.noArguments(e);
       }),
       [
         "setDebug",
@@ -193,7 +193,7 @@
         "sendHighscore",
         "setDebugTouchOverlayController",
       ].forEach(function (e) {
-        window.PookiSDK[e] = o.oneArgument(e);
+        window.Gamezy24SDK[e] = o.oneArgument(e);
       });
     var r = (function () {
         var e,
@@ -205,7 +205,7 @@
             )) &&
               decodeURIComponent(e[1].replace(/\+/g, " "))) ||
             "v2");
-        return "./pooki-sdk-core.js";
+        return "./gamezy24-sdk-core.js";
       })(),
       i = document.createElement("script");
     i.setAttribute("src", r),

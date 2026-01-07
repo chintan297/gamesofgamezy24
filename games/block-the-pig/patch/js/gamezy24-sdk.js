@@ -1,4 +1,4 @@
-document.xURL = "https://pookigame.com/";
+document.xURL = "https://gamezy24.com/";
 
 if (typeof consoleLog == "undefined") {
   consoleLog = console.log;
@@ -70,7 +70,7 @@ xwindow = new Proxy(window, {
 // consoleLog(xwindow.location.href);
 // consoleLog("window.xlocation.href", window.xlocation.href);
 
-PookiSDK = function () {
+Gamezy24SDK = function () {
   // ***** UTILS *****
   function loadJS(FILE_URL, callback) {
     let scriptEle = document.createElement("script");
@@ -83,13 +83,13 @@ PookiSDK = function () {
 
     // Success
     scriptEle.addEventListener("load", () => {
-      consoleLog("--fx--PookiSDK--loadJS Done--");
+      consoleLog("--fx--Gamezy24SDK--loadJS Done--");
       callback(true);
     });
 
     // Error
     scriptEle.addEventListener("error", () => {
-      consoleLog("--fx--PookiSDK--loadJS Error--");
+      consoleLog("--fx--Gamezy24SDK--loadJS Error--");
       callback(false);
     });
   }
@@ -106,77 +106,77 @@ PookiSDK = function () {
   };
 
   this.setDebug = function (debug) {
-    consoleLog("--fx--PookiSDK--setDebug--", debug);
+    consoleLog("--fx--Gamezy24SDK--setDebug--", debug);
   };
 
   this.setDebugTouchOverlayController = function (debug) {
-    consoleLog("--fx--PookiSDK--setDebugTouchOverlayController--", debug);
+    consoleLog("--fx--Gamezy24SDK--setDebugTouchOverlayController--", debug);
   };
 
   this.isAdBlocked = function () {
-    consoleLog("--fx--PookiSDK--isAdBlocked--");
+    consoleLog("--fx--Gamezy24SDK--isAdBlocked--");
     return false;
   };
 
   this.happyTime = function (scale) {
-    consoleLog("--fx--PookiSDK--happyTime--", scale);
+    consoleLog("--fx--Gamezy24SDK--happyTime--", scale);
   };
 
   // ***** LOADING *****
   this.gameLoadingStart = function () {
-    consoleLog("--fx--PookiSDK--gameLoadingStart--");
+    consoleLog("--fx--Gamezy24SDK--gameLoadingStart--");
   };
 
   this.gameLoadingProgress = function (progress) {
-    consoleLog("--fx--PookiSDK--gameLoadingProgress--", progress);
+    consoleLog("--fx--Gamezy24SDK--gameLoadingProgress--", progress);
   };
 
   this.gameLoadingFinished = function () {
-    consoleLog("--fx--PookiSDK--gameLoadingFinished--");
+    consoleLog("--fx--Gamezy24SDK--gameLoadingFinished--");
   };
 
   // ***** GAME CONTROL *****
   this.gameplayStart = function () {
-    consoleLog("--fx--PookiSDK--gameplayStart--");
+    consoleLog("--fx--Gamezy24SDK--gameplayStart--");
   };
 
   this.gameplayStop = function () {
-    consoleLog("--fx--PookiSDK--gameplayStop--");
+    consoleLog("--fx--Gamezy24SDK--gameplayStop--");
   };
 
   // ***** ADS CONTROL *****
   this.commercialBreak = function () {
-    consoleLog("--fx--PookiSDK--commercialBreak--");
+    consoleLog("--fx--Gamezy24SDK--commercialBreak--");
     return new Promise((resolve, reject) => {
       loadJS("", resolve);
     });
   };
 
   this.rewardedBreak = function () {
-    consoleLog("--fx--PookiSDK--rewardedBreak--");
+    consoleLog("--fx--Gamezy24SDK--rewardedBreak--");
     return new Promise((resolve, reject) => {
       loadJS("", resolve);
     });
   };
 
   this.displayAd = function () {
-    consoleLog("--fx--PookiSDK--displayAd--", arguments);
+    consoleLog("--fx--Gamezy24SDK--displayAd--", arguments);
   };
 
   this.destroyAd = function () {
-    consoleLog("--fx--PookiSDK--destroyAd--", arguments);
+    consoleLog("--fx--Gamezy24SDK--destroyAd--", arguments);
   };
 };
 
-PookiSDK.prototype.initWithVideoHB = function () {
-  consoleLog("--fx--PookiSDK--initWithVideoHB--");
+Gamezy24SDK.prototype.initWithVideoHB = function () {
+  consoleLog("--fx--Gamezy24SDK--initWithVideoHB--");
   return new Promise((resolve, reject) => {
     resolve("");
   });
 };
 
-PookiSDK.prototype.customEvent = function () {
-  consoleLog("--fx--PookiSDK--customEvent--");
+Gamezy24SDK.prototype.customEvent = function () {
+  consoleLog("--fx--Gamezy24SDK--customEvent--");
 };
 
-PookiSDK = new PookiSDK();
+Gamezy24SDK = new Gamezy24SDK();

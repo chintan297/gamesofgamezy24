@@ -39379,9 +39379,9 @@
 //# sourceMappingURL=phaser.map
 SoundManager = function (a) {
   this.game = a;
-  pookigameIsActive
-    ? (SOUNDS_ENABLED = PookiGame.audio.isEnabled())
-    : console.error("PookiGame - audio is enabled");
+  gamezy24IsActive
+    ? (SOUNDS_ENABLED = Gamezy24Game.audio.isEnabled())
+    : console.error("Gamezy24Game - audio is enabled");
   try {
     (this.musicPlaying = this.soundPlaying = SOUNDS_ENABLED), loadAllGameData();
   } catch (c) {
@@ -40382,9 +40382,9 @@ Preloader.prototype = {
     100 <= a && this._create();
   },
   _create: function () {
-    pookigameIsActive
-      ? PookiGame.game.ready()
-      : console.error("PookiGame - ready");
+    gamezy24IsActive
+      ? Gamezy24Game.game.ready()
+      : console.error("Gamezy24Game - ready");
     game.input.onDown.add(this.inputListener, this);
     game.add
       .tween(percentageText)
@@ -40451,14 +40451,14 @@ function saveAllGameData() {
   a.lng = language;
   a.prfl = topScore;
   try {
-    PookiGame.storage.setItem("pwrwlData", JSON.stringify(a));
+    Gamezy24Game.storage.setItem("pwrwlData", JSON.stringify(a));
   } catch (c) {}
 }
 var loadedProfile = "";
 function loadAllGameData() {
   var a;
   try {
-    (a = PookiGame.storage.getItem("pwrwlData")),
+    (a = Gamezy24Game.storage.getItem("pwrwlData")),
       (loadedProfile = JSON.parse(a));
   } catch (c) {}
 }
@@ -41089,7 +41089,7 @@ SceneGame.prototype = {
   BallHitFlash: function () {
     SceneGame.instance.IncrementScore();
     SceneGame.instance.IncrementBonus();
-    PookiGame.score.update(gameScore);
+    Gamezy24Game.score.update(gameScore);
   },
   BallHitBottom: function (a) {
     a.body.velocity.set(0);
@@ -41159,9 +41159,9 @@ SceneGame.prototype = {
     this.onGameOver();
   },
   onGameOver: function () {
-    pookigameIsActive
-      ? PookiGame.game.gameOver()
-      : console.error("PookiGame - score update", gameScore);
+    gamezy24IsActive
+      ? Gamezy24Game.game.gameOver()
+      : console.error("Gamezy24Game - score update", gameScore);
     this.showAdvert();
   },
   showAdvert: function () {},
@@ -41770,8 +41770,8 @@ SceneGameOver.prototype = {
     SceneToReturnFromLanguage = grpSceneGameOver;
     SceneGameOver.instance.HideAnimated();
     SceneLanguages.instance.ShowAnimated();
-    pookigameIsActive
-      ? PookiGame.ad.break({
+    gamezy24IsActive
+      ? Gamezy24Game.ad.break({
           type: "next",
           beforeAd: function () {},
           afterAd: function () {},
@@ -41780,15 +41780,15 @@ SceneGameOver.prototype = {
           adDismissed: function () {},
           beforeReward: function () {},
         })
-      : console.error("PookiGame - reklama");
+      : console.error("Gamezy24Game - reklama");
   },
   OnPressedGameOverInstructions: function () {
     soundManager.playSound("menu-move2");
     SceneToReturnFromInstructions = grpSceneGameOver;
     SceneGameOver.instance.HideAnimated();
     SceneInstructions.instance.ShowAnimated();
-    pookigameIsActive
-      ? PookiGame.ad.break({
+    gamezy24IsActive
+      ? Gamezy24Game.ad.break({
           type: "next",
           beforeAd: function () {},
           afterAd: function () {},
@@ -41797,7 +41797,7 @@ SceneGameOver.prototype = {
           adDismissed: function () {},
           beforeReward: function () {},
         })
-      : console.error("PookiGame - reklama");
+      : console.error("Gamezy24Game - reklama");
   },
   ShowAnimated: function (a) {
     void 0 === a && (a = !0);
@@ -41960,8 +41960,8 @@ ScenePause.prototype = {
     SceneToReturnFromLanguage = grpScenePause;
     ScenePause.instance.HideAnimated();
     SceneLanguages.instance.ShowAnimated();
-    pookigameIsActive
-      ? PookiGame.ad.break({
+    gamezy24IsActive
+      ? Gamezy24Game.ad.break({
           type: "next",
           beforeAd: function () {},
           afterAd: function () {},
@@ -41970,15 +41970,15 @@ ScenePause.prototype = {
           adDismissed: function () {},
           beforeReward: function () {},
         })
-      : console.error("PookiGame - reklama");
+      : console.error("Gamezy24Game - reklama");
   },
   OnPressedPauseInstructions: function () {
     soundManager.playSound("menu-move2");
     SceneToReturnFromInstructions = grpScenePause;
     ScenePause.instance.HideAnimated();
     SceneInstructions.instance.ShowAnimated();
-    pookigameIsActive
-      ? PookiGame.ad.break({
+    gamezy24IsActive
+      ? Gamezy24Game.ad.break({
           type: "next",
           beforeAd: function () {},
           afterAd: function () {},
@@ -41987,7 +41987,7 @@ ScenePause.prototype = {
           adDismissed: function () {},
           beforeReward: function () {},
         })
-      : console.error("PookiGame - reklama");
+      : console.error("Gamezy24Game - reklama");
   },
   ShowAnimated: function () {
     soundManager.playMusic("music_menu");
@@ -42441,9 +42441,9 @@ function phaserInit() {
   game.state.start("SplashState");
   document.documentElement.style.overflow = "hidden";
   document.body.scroll = "no";
-  pookigameIsActive
-    ? PookiGame.game.firstFrameReady()
-    : console.error("PookiGame - first frame ready");
+  gamezy24IsActive
+    ? Gamezy24Game.game.firstFrameReady()
+    : console.error("Gamezy24Game - first frame ready");
 }
 function isPortrait() {
   switch (window.orientation) {
@@ -42488,9 +42488,9 @@ RUNNING_ON_IOS ||
     a.preventDefault();
   }));
 function enableFullscreen() {}
-if ("undefined" == typeof PookiGame || null == PookiGame)
-  console.warn("PookiGame is undefined"),
-    (PookiGame = {
+if ("undefined" == typeof Gamezy24Game || null == Gamezy24Game)
+  console.warn("Gamezy24Game is undefined"),
+    (Gamezy24Game = {
       audio: {
         subscribe: function () {},
         isEnabled: function () {
@@ -42516,7 +42516,7 @@ if ("undefined" == typeof PookiGame || null == PookiGame)
         },
       },
     });
-var pookigameIsActive = !0,
+var gamezy24IsActive = !0,
   setAudio = function (a) {
     "undefined" != typeof soundManager &&
       null != soundManager &&
@@ -42530,13 +42530,13 @@ var pookigameIsActive = !0,
             soundManager.stopMusic());
       });
   };
-PookiGame.audio.subscribe(function (a) {
+Gamezy24Game.audio.subscribe(function (a) {
   soundManager && setAudio(a);
 });
-PookiGame.game.onPause(function () {
+Gamezy24Game.game.onPause(function () {
   gameState.onGamePause();
 });
-PookiGame.game.onResume(function () {
+Gamezy24Game.game.onResume(function () {
   gameState.onGamePause();
 });
 phaserInit();
